@@ -1,0 +1,83 @@
+[
+  {
+    "_id": "64f4ea01d33a4a001b8a9a08",
+    "email": "teacher3@example.com",
+    "password": "hashedpassword8",
+    "passwordConfirm": "hashedpassword8",
+    "role": "teacher",
+    "role_id": "64f4ea01d33a4a001b8a9c03",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a09",
+    "email": "student4@example.com",
+    "password": "hashedpassword9",
+    "passwordConfirm": "hashedpassword9",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d04",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a0a",
+    "email": "admin3@example.com",
+    "password": "hashedpassword10",
+    "passwordConfirm": "hashedpassword10",
+    "role": "admin",
+    "role_id": "64f4ea01d33a4a001b8a9b03",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a0b",
+    "email": "student5@example.com",
+    "password": "hashedpassword11",
+    "passwordConfirm": "hashedpassword11",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d05",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a0c",
+    "email": "teacher4@example.com",
+    "password": "hashedpassword12",
+    "passwordConfirm": "hashedpassword12",
+    "role": "teacher",
+    "role_id": "64f4ea01d33a4a001b8a9c04",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a0d",
+    "email": "admin4@example.com",
+    "password": "hashedpassword13",
+    "passwordConfirm": "hashedpassword13",
+    "role": "admin",
+    "role_id": "64f4ea01d33a4a001b8a9b04",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a0e",
+    "email": "student6@example.com",
+    "password": "hashedpassword14",
+    "passwordConfirm": "hashedpassword14",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d06",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a0f",
+    "email": "teacher5@example.com",
+    "password": "hashedpassword15",
+    "passwordConfirm": "hashedpassword15",
+    "role": "teacher",
+    "role_id": "64f4ea01d33a4a001b8a9c05",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9a10",
+    "email": "student7@example.com",
+    "password": "hashedpassword16",
+    "passwordConfirm": "hashedpassword16",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d07",
+    "active": true
+  }
+]

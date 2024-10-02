@@ -1,0 +1,54 @@
+[
+  {
+    "_id": "64f4ea01d33a4a001b8a9f01",
+    "name": "Class A3",
+    "center": "64f4ea01d33a4a001b8a9e03",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "students": ["64f4ea01d33a4a001b8a9d03"],
+    "schedule": [
+      {
+        "day": "Monday",
+        "start_time": "11:00",
+        "end_time": "12:30"
+      },
+      {
+        "day": "Wednesday",
+        "start_time": "11:00",
+        "end_time": "12:30"
+      }
+    ]
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9f02",
+    "name": "Class B2",
+    "center": "64f4ea01d33a4a001b8a9e04",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
+    "students": ["64f4ea01d33a4a001b8a9d04", "64f4ea01d33a4a001b8a9d05"],
+    "schedule": [
+      {
+        "day": "Tuesday",
+        "start_time": "13:00",
+        "end_time": "14:30"
+      },
+      {
+        "day": "Thursday",
+        "start_time": "13:00",
+        "end_time": "14:30"
+      }
+    ]
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9f03",
+    "name": "Class C1",
+    "center": "64f4ea01d33a4a001b8a9e03",
+    "teacher": "64f4ea01d33a4a001b8a9c05",
+    "students": ["64f4ea01d33a4a001b8a9d06"],
+    "schedule": [
+      {
+        "day": "Friday",
+        "start_time": "15:00",
+        "end_time": "16:30"
+      }
+    ]
+  }
+]

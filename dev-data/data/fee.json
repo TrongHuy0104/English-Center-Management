@@ -1,0 +1,38 @@
+[
+  {
+    "_id": "66fa9aed1723bc10a378c40a",
+    "class": "64f4ea01d33a4a001b8a9f01",
+    "student": "64f4ea01d33a4a001b8a9d03",
+    "amount": 500,
+    "due_date": "2024-10-10",
+    "paid": true,
+    "payment_date": "2024-09-25"
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40b",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "student": "64f4ea01d33a4a001b8a9d04",
+    "amount": 600,
+    "due_date": "2024-10-15",
+    "paid": false,
+    "payment_date": null
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40c",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "student": "64f4ea01d33a4a001b8a9d05",
+    "amount": 700,
+    "due_date": "2024-10-20",
+    "paid": false,
+    "payment_date": null
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40d",
+    "class": "64f4ea01d33a4a001b8a9f01",
+    "student": "64f4ea01d33a4a001b8a9d06",
+    "amount": 550,
+    "due_date": "2024-10-22",
+    "paid": true,
+    "payment_date": "2024-09-30"
+  }
+]
