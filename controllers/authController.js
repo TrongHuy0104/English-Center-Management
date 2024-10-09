@@ -15,7 +15,7 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, res) => {
-  const token = signToken(user.user._id);
+  const token = signToken(user?.user?._id || user._id);
 
   const cookieOptions = {
     expires: new Date(
