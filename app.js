@@ -1,5 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const hpp = require('hpp');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 // const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -8,7 +15,16 @@ const AppError = require('./utils/appError');
 
 const app = express();
 
+const corsOptions = {
+  origin: 'http://localhost:5173',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
 // 1) MIDDLEWARES
+app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // Set security HTTP headers
 app.use(helmet());
@@ -41,11 +57,6 @@ app.use(
     whitelist: [],
   }),
 );
-
-app.use((req, res, next) => {
-  console.log('Hello from the middleware 👋');
-  next();
-});
 
 // Compute time execute a request
 app.use((req, res, next) => {

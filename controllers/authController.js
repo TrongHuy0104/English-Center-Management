@@ -5,6 +5,9 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const sendEmail = require('../utils/email');
 const { promisify } = require('util');
+const Student = require('../models/studentModel');
+const Admin = require('../models/adminModel');
+const Teacher = require('../models/teacherModel');
 
 const signToken = (id) =>
   jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -12,7 +15,7 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, res) => {
-  const token = signToken(user._id);
+  const token = signToken(user.user._id);
 
   const cookieOptions = {
     expires: new Date(
@@ -55,12 +58,33 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   // 2) Check if user exists && password is correct
-  const user = await User.findOne({ email }).select('+password');
+  let user;
+  user = await User.findOne({ email }).select('+password');
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError('Incorrect email or password', 401));
   }
+  // 3) Check user role
+  if (user.role === 'user') {
+    return next(
+      new AppError('You do not have permission to access the system', 401),
+    );
+  }
 
-  // 3) If everything ok, send token to client
+  // Get user information
+  let roleData;
+  if (user.role === 'admin') {
+    roleData = await Admin.findById(user.role_id);
+  } else if (user.role === 'student') {
+    roleData = await Student.findById(user.role_id);
+  } else if (user.role === 'teacher') {
+    roleData = await Teacher.findById(user.role_id);
+  }
+  user = {
+    user,
+    roleDetails: roleData, // contains specific data for the role
+  };
+
+  // 4) If everything ok, send token to client
   createSendToken(user, 200, res);
 });
 
@@ -83,6 +107,8 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(' ')[1];
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
+  } else if (res.cookies.jwt) {
+    token = res.cookies.jwt;
   }
 
   if (!token) {
@@ -113,6 +139,8 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   // GRANT ACCESS TO PROTECTED ROUTE
+  console.log('currentUser', currentUser);
+
   req.user = currentUser;
   next();
 });
@@ -200,8 +228,6 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1) Get user from collection
-  console.log('req.user', req.user);
-
   const user = await User.findById(req.user.id).select('+password');
 
   // 2) Check if POSTed current password is correct
