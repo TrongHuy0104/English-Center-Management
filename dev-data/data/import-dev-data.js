@@ -41,7 +41,6 @@ const salaries = JSON.parse(
   fs.readFileSync(`${__dirname}/salary.json`, 'utf8'),
 );
 const fees = JSON.parse(fs.readFileSync(`${__dirname}/fee.json`, 'utf8'));
-console.log('fees', fees);
 
 // IMPORT DATA INTO DB
 const importData = async () => {

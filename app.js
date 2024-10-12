@@ -1,14 +1,32 @@
 const express = require('express');
 const morgan = require('morgan');
+const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
+const hpp = require('hpp');
+const cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 // const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
+const teacherRouter = require('./routes/teacherRoutes');
+const classRouter = require('./routes/classRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
 const app = express();
 
+const corsOptions = {
+  origin: 'http://localhost:5173',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
 // 1) MIDDLEWARES
+app.use(cors(corsOptions));
+app.use(cookieParser());
 
 // Set security HTTP headers
 app.use(helmet());
@@ -42,11 +60,6 @@ app.use(
   }),
 );
 
-app.use((req, res, next) => {
-  console.log('Hello from the middleware 👋');
-  next();
-});
-
 // Compute time execute a request
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
@@ -56,6 +69,8 @@ app.use((req, res, next) => {
 // 3) ROUTES
 // app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/teacher', teacherRouter);
+app.use('/api/v1/classes', classRouter);
 
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {

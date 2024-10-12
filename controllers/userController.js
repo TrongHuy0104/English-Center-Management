@@ -1,3 +1,6 @@
+const Admin = require('../models/adminModel');
+const Student = require('../models/studentModel');
+const Teacher = require('../models/teacherModel');
 const User = require('../models/userModel');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
@@ -52,13 +55,25 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getUser = catchAsync(async (req, res, next) => {
-  const user = await User.findById(req.params.id);
-  console.log(user);
-
+exports.getRoleUser = catchAsync(async (req, res, next) => {
+  let user = await User.findById(req.params.id);
   if (!user) {
     return next(new AppError('No user found with that ID', 404));
   }
+
+  let roleData;
+  if (user.role === 'admin') {
+    roleData = await Admin.findById(user.role_id);
+  } else if (user.role === 'student') {
+    roleData = await Student.findById(user.role_id);
+  } else if (user.role === 'teacher') {
+    roleData = await Teacher.findById(user.role_id);
+  }
+
+  user = {
+    user,
+    roleDetails: roleData, // contains specific data for the role
+  };
 
   res.status(200).json({
     status: 'success',
