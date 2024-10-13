@@ -34,5 +34,45 @@
     "due_date": "2024-10-22",
     "paid": true,
     "payment_date": "2024-09-30"
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40c",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "student": "64f4ea01d33a4a001b8a9b04",
+    "amount": 700,
+    "due_date": "2024-10-20T00:00:00.000Z",
+    "paid": false,
+    "payment_date": null,
+    "__v": 0
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40d",
+    "class": "64f4ea01d33a4a001b8a9f01",
+    "student": "64f4ea01d33a4a001b8a9b04",
+    "amount": 550,
+    "due_date": "2024-10-22T00:00:00.000Z",
+    "paid": true,
+    "payment_date": "2024-09-30T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40a",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "student": "64f4ea01d33a4a001b8a9b04",
+    "amount": 500,
+    "due_date": "2024-10-10T00:00:00.000Z",
+    "paid": true,
+    "payment_date": "2024-09-25T00:00:00.000Z",
+    "__v": 0
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c40b",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "student": "64f4ea01d33a4a001b8a9b04",
+    "amount": 600,
+    "due_date": "2024-10-15T00:00:00.000Z",
+    "paid": false,
+    "payment_date": null,
+    "__v": 0
   }
 ]
