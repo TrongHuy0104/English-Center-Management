@@ -8,9 +8,9 @@ const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-// const tourRouter = require('./routes/tourRoutes');
-const studentRouter = require('./routes/studentPortalRoutes');
 const userRouter = require('./routes/userRoutes');
+const studentRouter = require('./routes/studentRoutes');
+const attendanceRoutes = require('./routes/studentRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
