@@ -2,7 +2,7 @@
 const Salary = require('../models/salaryModel');
 const factory = require('./handlerFactory');
 
-// Sử dụng các hàm từ handlerFactory
+// use funtcion from handlerFactory
 exports.getAllSalaries = factory.getAll(Fee);
 exports.getSalary = factory.getOne(Fee);
 exports.createSalary = factory.createOne(Fee);

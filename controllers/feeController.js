@@ -4,7 +4,6 @@ const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
 // use funtcion from handlerFactory
-// exports.getAllFees = factory.getAll(Fee);
 exports.getFee = factory.getOne(Fee);
 exports.createFee = factory.createOne(Fee);
 exports.updateFee = factory.updateOne(Fee);
