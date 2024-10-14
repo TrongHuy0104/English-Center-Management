@@ -6,6 +6,7 @@ const feeSchema = new mongoose.Schema({
   },
   student: {
     type: mongoose.Schema.ObjectId,
+    ref: 'Student',
   },
   amount: {
     type: Number,
