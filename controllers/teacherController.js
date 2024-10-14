@@ -4,10 +4,9 @@ const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
-// Hàm lấy thông tin của giáo viên dựa trên teacherId
+// Get teacher by ID
 exports.getTeacherById = catchAsync(async (req, res, next) => {
     const teacherData = await Teacher.findById(req.params.id);
-    console.log(req.params.id);
     if(!teacherData) {
         return next(new AppError('No teacher found with that ID', 404));
     }
@@ -18,7 +17,8 @@ exports.getTeacherById = catchAsync(async (req, res, next) => {
         },
       });
 });
-// Hàm lấy lịch học của giáo viên dựa trên teacherId
+
+// Get teacher schedule by teacherId
 exports.getTeacherSchedule = catchAsync(async (req, res, next) => {
     const teacherId = req.params.teacherId;
     const classes = await Class.find({ teacher: teacherId });
@@ -40,10 +40,9 @@ exports.getTeacherSchedule = catchAsync(async (req, res, next) => {
     });
 });
 
-// Hàm lấy class của giáo viên dựa trên teacherId
+// Get classes by teacherId
 exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
     const teacherId = req.params.teacherId; 
-  
     const classes = await Class.find({ teacher: teacherId }); 
   
     if (classes.length === 0) {
@@ -58,11 +57,9 @@ exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
     });
   });
   
-  // Hàm cập nhật thông tin giáo viên
+  // Update teacher
   exports.updateTeacher = catchAsync(async (req, res, next) => {
     const teacherId = req.params.id; 
-  
-
     const updatedTeacher = await Teacher.findByIdAndUpdate(
       teacherId,
       {
@@ -81,7 +78,6 @@ exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
       return next(new AppError('No teacher found with that ID', 404)); 
     }
   
-
     const { name, phone, gender, dateOfBirth } = updatedTeacher;
   
     res.status(200).json({
