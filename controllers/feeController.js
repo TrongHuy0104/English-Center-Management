@@ -11,22 +11,13 @@ exports.updateFee = factory.updateOne(Fee);
 exports.deleteFee = factory.deleteOne(Fee);
 
 exports.getAllFees = catchAsync(async (req, res, next) => {
-  try {
-    // get fee data and populate student and class from class
-    const fees = await Fee.find().populate('student', 'name phone');
+  const fees = await Fee.find().populate('student', 'name phone');
 
-    res.status(200).json({
-      status: 'success',
-      results: fees.length,
-      data: {
-        fees,
-      },
-    });
-  } catch (err) {
-    console.error('Error fetching fees:', err);
-    res.status(500).json({
-      status: 'error',
-      message: 'An error occurred while fetching fees',
-    });
-  }
+  res.status(200).json({
+    status: 'success',
+    results: fees.length,
+    data: {
+      fees,
+    },
+  });
 });
