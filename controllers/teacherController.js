@@ -3,6 +3,8 @@ const Class = require('../models/classModel');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
+const TeacherSalary = require('../models/salaryModel');
+const Center = require('../models/centerModel');
 
 // Get teacher by ID
 exports.getTeacherById = catchAsync(async (req, res, next) => {
@@ -18,31 +20,10 @@ exports.getTeacherById = catchAsync(async (req, res, next) => {
       });
 });
 
-// Get teacher schedule by teacherId
-exports.getTeacherSchedule = catchAsync(async (req, res, next) => {
-    const teacherId = req.params.teacherId;
-    const classes = await Class.find({ teacher: teacherId });
-
-    if (!classes || classes.length === 0) {
-        return next(new AppError('No schedule found for this teacher ID', 404));
-    }
-
-    const schedules = classes.map(classData => ({
-        className: classData.name,
-        schedule: classData.schedule
-    }));
-
-    res.status(200).json({
-        status: 'success',
-        data: {
-            schedules
-        }
-    });
-});
-
 // Get classes by teacherId
 exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
     const teacherId = req.params.teacherId; 
+    console.log('Requested teacherId:', teacherId);
     const classes = await Class.find({ teacher: teacherId }); 
   
     if (classes.length === 0) {
@@ -93,5 +74,38 @@ exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
     });
   });
 
-
   exports.getTeacherById = factory.getOne(Teacher);
+
+  //Get salary by teacherId
+  exports.getSalaryByTeacherId = catchAsync(async (req, res, next) => {
+    const salaryData = await TeacherSalary.find({ teacher: req.params.teacherId }); // Lấy dữ liệu lương theo ID giáo viên
+  
+    if (!salaryData || salaryData.length === 0) {
+      return next(new AppError("No salary data found for this teacher.", 404));
+    }
+  
+   
+    res.status(200).json({
+      status: "success",
+      data: {
+        salary: salaryData,
+      },
+    });
+  });
+  
+//Get center by teacherId
+  exports.getCenterByTeacherId = catchAsync(async (req, res, next) => {
+    const { teacherId } = req.params;
+    const center = await Center.findOne({ teachers: teacherId });
+  
+    if (!center) {
+      return next(new AppError("No center found for this teacher.", 404));
+    }
+  
+    res.status(200).json({
+      status: "success",
+      data: {
+        center,
+      },
+    });
+  });
