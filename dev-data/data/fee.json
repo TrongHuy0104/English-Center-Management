@@ -1,38 +1,164 @@
 [
   {
-    "_id": "66fa9aed1723bc10a378c40a",
-    "class": "64f4ea01d33a4a001b8a9f01",
-    "student": "64f4ea01d33a4a001b8a9d03",
-    "amount": 500,
-    "due_date": "2024-10-10",
-    "paid": true,
-    "payment_date": "2024-09-25"
+    "_id": "670e90cdd92f4207cfb72127",
+    "fee_name": "NB English 1",
+    "price": 500000,
+    "description": "Class for newbie, need to learn base english",
+    "classes": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9f03",
+        "status": "complete",
+        "due_date": {
+          "$date": "2024-10-24T00:00:00.000Z"
+        },
+        "create_date": {
+          "$date": "2024-10-22T00:00:00.000Z"
+        }
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9f02",
+        "status": "not yet",
+        "due_date": {
+          "$date": "2024-10-24T00:00:00.000Z"
+        },
+        "create_date": {
+          "$date": "2024-10-22T00:00:00.000Z"
+        }
+      }
+    ],
+    "students": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9d06",
+        "status": "paid"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d03",
+        "status": "unpaid"
+      }
+    ]
   },
   {
-    "_id": "66fa9aed1723bc10a378c40b",
-    "class": "64f4ea01d33a4a001b8a9f02",
-    "student": "64f4ea01d33a4a001b8a9d04",
-    "amount": 600,
-    "due_date": "2024-10-15",
-    "paid": false,
-    "payment_date": null
+    "_id": "6716842c9bd17159f32ccd3a",
+    "fee_name": "NB English 2",
+    "price": 600000,
+    "description": "Class for newbie, need to learn base english",
+    "classes": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9f03",
+        "status": "complete",
+        "due_date": {
+          "$date": "2024-10-24T00:00:00.000Z"
+        },
+        "create_date": {
+          "$date": "2024-10-22T00:00:00.000Z"
+        }
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9f02",
+        "status": "not yet",
+        "due_date": {
+          "$date": "2024-10-24T00:00:00.000Z"
+        },
+        "create_date": {
+          "$date": "2024-10-22T00:00:00.000Z"
+        }
+      }
+    ],
+    "students": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9d06",
+        "status": "paid"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d03",
+        "status": "unpaid"
+      }
+    ]
   },
   {
-    "_id": "66fa9aed1723bc10a378c40c",
-    "class": "64f4ea01d33a4a001b8a9f03",
-    "student": "64f4ea01d33a4a001b8a9d05",
-    "amount": 700,
-    "due_date": "2024-10-20",
-    "paid": false,
-    "payment_date": null
+    "_id": "671684b99bd17159f32ccd3b",
+    "fee_name": "AD English 1",
+    "description": "Class for those who want to learn advanced from NB English classes",
+    "classes": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9f03",
+        "status": "complete",
+        "due_date": {
+          "$date": "2024-10-24T00:00:00.000Z"
+        },
+        "create_date": {
+          "$date": "2024-10-22T00:00:00.000Z"
+        }
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9f02",
+        "status": "not yet",
+        "due_date": {
+          "$date": "2024-10-24T00:00:00.000Z"
+        },
+        "create_date": {
+          "$date": "2024-10-22T00:00:00.000Z"
+        }
+      }
+    ],
+    "students": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9d06",
+        "status": "paid"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d03",
+        "status": "unpaid"
+      }
+    ],
+    "price": 100000
   },
   {
-    "_id": "66fa9aed1723bc10a378c40d",
-    "class": "64f4ea01d33a4a001b8a9f01",
-    "student": "64f4ea01d33a4a001b8a9d06",
-    "amount": 550,
-    "due_date": "2024-10-22",
-    "paid": true,
-    "payment_date": "2024-09-30"
+    "_id": "67185711ef919c06c2349bc9",
+    "fee_name": "AD English 2",
+    "price": 500000,
+    "description": "Class for those who want to learn advanced from NB English classes",
+    "classes": [],
+    "students": [],
+    "__v": 0
+  },
+  {
+    "_id": "67185be3ef919c06c2349c0c",
+    "fee_name": "AD English 3",
+    "price": 500000,
+    "description": "Class for those who want to learn advanced from NB English classes",
+    "classes": [
+      [
+        {
+          "_id": "64f4ea01d33a4a001b8a9f03",
+          "status": "complete",
+          "due_date": "2024-10-24T00:00:00.000Z",
+          "create_date": "2024-10-22T00:00:00.000Z"
+        }
+      ],
+      [
+        {
+          "_id": "64f4ea01d33a4a001b8a9f02",
+          "status": "not yet",
+          "due_date": "2024-10-24T00:00:00.000Z",
+          "create_date": "2024-10-22T00:00:00.000Z"
+        }
+      ]
+    ],
+    "students": [
+      [
+        {
+          "_id": "64f4ea01d33a4a001b8a9d06",
+          "status": "paid"
+        }
+      ],
+      [
+        {
+          "_id": "64f4ea01d33a4a001b8a9d03",
+          "status": "unpaid"
+        }
+      ]
+    ],
+    "__v": 0
   }
 ]

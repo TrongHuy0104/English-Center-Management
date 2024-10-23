@@ -1,27 +1,24 @@
-// controllers/feeController.js
-const Fee = require('../models/feeModel');
+// controllers/SalaryController.js
+const Salary = require('../models/salaryModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 const Class = require('../models/classModel');
 
 // use funtcion from handlerFactory
-exports.getAllFees = factory.getAll(Fee);
-// exports.getFee = factory.getOne(Fee);
-exports.createFee = factory.createOne(Fee);
-exports.updateFee = factory.updateOne(Fee);
-exports.deleteFee = factory.deleteOne(Fee);
+// exports.getAllFees = factory.getAll(Fee);
+exports.getSalary = factory.getOne(Salary);
+exports.createSalary = factory.createOne(Salary);
+exports.updateSalary = factory.updateOne(Salary);
+exports.deleteSalary = factory.deleteOne(Salary);
 
-exports.getFee = catchAsync(async (req, res, next) => {
-  const fee = await Fee.findById(req.params.id).populate('classDetails');
-
-  if (!fee) {
-    return next(new AppError('No fee found with that ID', 404));
-  }
+exports.getAllSalarys = catchAsync(async (req, res, next) => {
+  const Salaries = await Salary.find().populate('student', 'name phone');
 
   res.status(200).json({
     status: 'success',
+    results: salaries.length,
     data: {
-      fee,
+      salaries,
     },
   });
 });
