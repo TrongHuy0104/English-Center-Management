@@ -46,6 +46,9 @@ exports.signup = catchAsync(async (req, res, next) => {
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
   });
+
+  if (newUser) await Student.create({ name: req.body.name });
+
   createSendToken(newUser, 201, res);
 });
 
