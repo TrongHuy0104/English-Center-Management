@@ -1,26 +1,41 @@
 const mongoose = require('mongoose');
 
 const feeSchema = new mongoose.Schema({
-  class: {
-    type: mongoose.Schema.ObjectId,
+  fee_name: {
+    type: String,
+    required: true,
   },
-  student: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'Student',
-  },
-  amount: {
+  price: {
     type: Number,
+    required: true,
   },
-  due_date: {
-    type: Date,
+  description: {
+    type: String,
+    required: true,
   },
-  paid: {
-    type: Boolean,
-  },
-  payment_date: {
-    type: Date,
-  },
+  classes: [
+    {
+      type: Array,
+      ref: 'Class',
+    },
+  ],
+  students: [
+    {
+      type: Array,
+      ref: 'Student',
+    },
+  ],
 });
+
+feeSchema.virtual('classDetails', {
+  ref: 'Class',
+  localField: 'classes._id',
+  foreignField: '_id',
+  justOne: false,
+});
+
+feeSchema.set('toJSON', { virtuals: true });
+feeSchema.set('toObject', { virtuals: true });
 
 const Fee = mongoose.model('Fee', feeSchema);
 module.exports = Fee;
