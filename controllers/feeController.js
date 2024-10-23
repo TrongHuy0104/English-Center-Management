@@ -1,4 +1,3 @@
-// controllers/feeController.js
 const Fee = require('../models/feeModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
