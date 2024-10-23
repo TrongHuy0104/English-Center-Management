@@ -3,61 +3,53 @@ const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
 
 // 1. Ghi nhận điểm danh hoặc cập nhật điểm danh nếu đã có
-exports.takeOrUpdateAttendance = catchAsync(async (req, res, next) => {
-    const { date, attendanceList } = req.body;
+exports.takeAttendance = catchAsync(async (req, res, next) => {
+    const { attendanceList } = req.body; // Lấy danh sách điểm danh từ body
     const classId = req.params.classId;
+    const date = req.params.date; // Lấy ngày từ params
 
     // Kiểm tra xem tất cả các trường cần thiết đã có trong body request chưa
-    if (
-        !date ||
-        !attendanceList ||
-        !Array.isArray(attendanceList) ||
-        attendanceList.length === 0
-    ) {
-        return next(new AppError('Missing required fields: date and attendanceList', 400));
+    if (!attendanceList || !Array.isArray(attendanceList) || attendanceList.length === 0) {
+        return next(new AppError('Missing required fields: attendanceList', 400));
     }
 
     // Định dạng lại date
     const formattedDate = new Date(date);
 
-    // Tìm kiếm dữ liệu điểm danh hiện tại
-    const attendanceData = await Attendance.findOne({ class: classId, date: formattedDate });
+    // Tìm bản ghi điểm danh đã tồn tại
+    let attendance = await Attendance.findOne({ class: classId, date: formattedDate });
 
-    if (attendanceData) {
-        // Nếu dữ liệu điểm danh đã tồn tại, cập nhật nó
-        attendanceData.student_attendance = attendanceList.map((student) => ({
+    if (attendance) {
+        // Nếu đã tồn tại, cập nhật bản ghi
+        attendance.student_attendance = attendanceList.map(student => ({
             student_id: student.studentId,
             status: student.status,
         }));
-
-        // Cập nhật thông tin giáo viên
-        attendanceData.teacher_attendance = {
-            teacher_id: req.user.id,
-            status: 'present', // Có thể thay đổi nếu cần
-        };
-
-        await attendanceData.save(); // Lưu thay đổi
     } else {
-        // Nếu chưa có dữ liệu điểm danh, tạo mới
-        const attendance = await Attendance.create({
+        // Nếu không tồn tại, tạo mới bản ghi điểm danh
+        attendance = await Attendance.create({
             class: classId,
             date: formattedDate,
             teacher_attendance: {
-                teacher_id: req.user.id,
+                teacher_id: req.user.id, // Giả sử bạn có ID giáo viên từ auth middleware
                 status: 'present', // Có thể thay đổi nếu cần
             },
-            student_attendance: attendanceList.map((student) => ({
+            student_attendance: attendanceList.map(student => ({
                 student_id: student.studentId,
                 status: student.status,
             })),
         });
     }
 
-    res.status(200).json({
+    // Lưu bản ghi điểm danh nếu đã cập nhật
+    if (attendance) {
+        await attendance.save();
+    }
+
+    res.status(201).json({
         status: 'success',
-        message: attendanceData ? 'Attendance updated successfully' : 'Attendance created successfully',
         data: {
-            attendance: attendanceData || attendance,
+            attendance,
         },
     });
 });

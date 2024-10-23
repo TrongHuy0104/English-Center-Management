@@ -6,8 +6,8 @@ const router = express.Router();
 // Đảm bảo rằng middleware protect được sử dụng
 router.use(authController.protect);
 
-// Điểm danh học sinh - Cập nhật hoặc tạo mới
-router.put('/classes/:classId/attendance/:date', attendanceController.takeOrUpdateAttendance);
+// Điểm danh học sinh
+router.post('/classes/:classId/attendance/:date', attendanceController.takeAttendance);
 
 // Lấy dữ liệu điểm danh
 router.get('/classes/:classId/attendance/:date', attendanceController.getAttendanceData);
