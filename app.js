@@ -8,7 +8,6 @@ const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-// const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const feeRouter = require('./routes/feeRoutes');
 const salaryRouter = require('./routes/salaryRoutes');
