@@ -5,7 +5,7 @@ const factory = require('./handlerFactory');
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
   // Tìm tất cả các lớp mà sinh viên hiện tại đang tham gia
   const classes = await Class.find({
-    students: { $in: [req.user._id] }, // Tìm trong mảng students
+    students: { $in: [req.user.role_id] }, // Tìm trong mảng students
   }).populate('schedule');
   if (!classes) {
     return next(new AppError('No classes found with that Student ID', 404));

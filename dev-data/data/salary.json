@@ -17,7 +17,7 @@
     "shiftPay": 250,
     "calculatedSalary": 2000,
     "paid": false,
-    "paymentDate": null
+    "paymentDate": "2024-09-29"
   },
   {
     "_id": "66fa9aed1723bc10a378c42c",
@@ -27,6 +27,6 @@
     "shiftPay": 250,
     "calculatedSalary": 3000,
     "paid": false,
-    "paymentDate": null
+    "paymentDate": "2024-09-29"
   }
 ]
