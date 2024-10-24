@@ -10,7 +10,6 @@ const cookieParser = require('cookie-parser');
 
 const userRouter = require('./routes/userRoutes');
 const studentRouter = require('./routes/studentRoutes');
-const attendanceRoutes = require('./routes/studentRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
