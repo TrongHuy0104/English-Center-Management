@@ -5,10 +5,18 @@
     "phone": "4567891230",
     "gender": "male",
     "dateOfBirth": "1985-05-05",
-    "centers": ["64f4ea01d33a4a001b8a9e04"],
-    "classes": ["64f4ea01d33a4a001b8a9f01"],
-    "salary": ["66fa9aed1723bc10a378c42a"],
-    "attendances": ["66fa9aed1723bc10a378c41a", "66fa9aed1723bc10a378c41d"]
+    "centers": [
+      "64f4ea01d33a4a001b8a9e04"
+    ],
+    "classes": [
+      "64f4ea01d33a4a001b8a9f01"
+    ],
+    "salary": [
+      "66fa9aed1723bc10a378c42a"
+    ],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a"
+    ]
   },
   {
     "_id": "64f4ea01d33a4a001b8a9c04",
@@ -16,10 +24,18 @@
     "phone": "9871234560",
     "gender": "female",
     "dateOfBirth": "1989-03-03",
-    "centers": ["64f4ea01d33a4a001b8a9e03"],
-    "classes": ["64f4ea01d33a4a001b8a9f02"],
-    "salary": ["66fa9aed1723bc10a378c42b"],
-    "attendances": ["66fa9aed1723bc10a378c41b"]
+    "centers": [
+      "64f4ea01d33a4a001b8a9e03"
+    ],
+    "classes": [
+      "64f4ea01d33a4a001b8a9f02"
+    ],
+    "salary": [
+      "66fa9aed1723bc10a378c42b"
+    ],
+    "attendances": [
+      "66fa9aed1723bc10a378c41b"
+    ]
   },
   {
     "_id": "64f4ea01d33a4a001b8a9c05",
@@ -27,9 +43,18 @@
     "phone": "6549873210",
     "gender": "female",
     "dateOfBirth": "1991-08-08",
-    "centers": ["64f4ea01d33a4a001b8a9e03", "64f4ea01d33a4a001b8a9e04"],
-    "classes": ["64f4ea01d33a4a001b8a9f03"],
-    "salary": ["66fa9aed1723bc10a378c42c"],
-    "attendances": ["66fa9aed1723bc10a378c41c"]
+    "centers": [
+      "64f4ea01d33a4a001b8a9e03",
+      "64f4ea01d33a4a001b8a9e04"
+    ],
+    "classes": [
+      "64f4ea01d33a4a001b8a9f03"
+    ],
+    "salary": [
+      "66fa9aed1723bc10a378c42c"
+    ],
+    "attendances": [
+      "66fa9aed1723bc10a378c41c"
+    ]
   }
 ]
