@@ -4,6 +4,7 @@ const salarySchema = new mongoose.Schema({
   teacher: {
     type: mongoose.Schema.ObjectId,
     required: true,
+    ref: 'Teacher',
   },
   month: {
     type: String,
