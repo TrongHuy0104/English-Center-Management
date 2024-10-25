@@ -1,54 +1,83 @@
 [
   {
-    "_id": "64f4ea01d33a4a001b8a9f01",
-    "name": "Class A3",
-    "center": "64f4ea01d33a4a001b8a9e03",
-    "teacher": "64f4ea01d33a4a001b8a9c03",
-    "students": ["64f4ea01d33a4a001b8a9d03"],
+    "_id": "64f4ea01d33a4a001b8a9f03",
+    "name": "Class A1",
+    "center": "64f4ea01d33a4a001b8a9e04",
+    "teacher": "64f4ea01d33a4a001b8a9c05",
+    "students": [
+      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d04"
+    ],
     "schedule": [
       {
-        "day": "Monday",
-        "start_time": "11:00",
-        "end_time": "12:30"
+        "date": "2024-10-16T00:00:00Z",
+        "dayOfWeek": "Wednesday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
       },
       {
-        "day": "Wednesday",
-        "start_time": "11:00",
-        "end_time": "12:30"
+        "date": "2024-10-17T00:00:00Z",
+        "dayOfWeek": "Thursday",
+        "slot": 2,
+        "start_time": "08:45",
+        "end_time": "10:15"
       }
-    ]
+    ],
+    "__v": 0
   },
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
-    "center": "64f4ea01d33a4a001b8a9e04",
-    "teacher": "64f4ea01d33a4a001b8a9c04",
-    "students": ["64f4ea01d33a4a001b8a9d04", "64f4ea01d33a4a001b8a9d05"],
+    "center": "64f4ea01d33a4a001b8a9e05",
+    "teacher": "64f4ea01d33a4a001b8a9c06",
+    "students": [
+      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d05"
+    ],
     "schedule": [
       {
-        "day": "Tuesday",
-        "start_time": "13:00",
-        "end_time": "14:30"
+        "date": "2024-10-15T00:00:00Z",
+        "dayOfWeek": "Tuesday",
+        "slot": 3,
+        "start_time": "10:30",
+        "end_time": "12:00"
       },
       {
-        "day": "Thursday",
-        "start_time": "13:00",
-        "end_time": "14:30"
+        "date": "2024-10-18T00:00:00Z",
+        "dayOfWeek": "Friday",
+        "slot": 4,
+        "start_time": "12:30",
+        "end_time": "14:00"
       }
-    ]
+    ],
+    "__v": 0
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9f03",
-    "name": "Class C1",
-    "center": "64f4ea01d33a4a001b8a9e03",
-    "teacher": "64f4ea01d33a4a001b8a9c05",
-    "students": ["64f4ea01d33a4a001b8a9d06"],
+    "_id": "64f4ea01d33a4a001b8a9f01",
+    "name": "Class C3",
+    "center": "64f4ea01d33a4a001b8a9e06",
+    "teacher": "64f4ea01d33a4a001b8a9c07",
+    "students": [
+      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d06"
+    ],
     "schedule": [
       {
-        "day": "Friday",
-        "start_time": "15:00",
-        "end_time": "16:30"
+        "date": "2024-10-19T00:00:00Z",
+        "dayOfWeek": "Saturday",
+        "slot": 5,
+        "start_time": "14:15",
+        "end_time": "15:45"
+      },
+      {
+        "date": "2024-10-20T00:00:00Z",
+        "dayOfWeek": "Sunday",
+        "slot": 6,
+        "start_time": "16:00",
+        "end_time": "17:30"
       }
-    ]
+    ],
+    "__v": 0
   }
 ]
