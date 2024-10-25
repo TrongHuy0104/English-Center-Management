@@ -5,12 +5,37 @@ const catchAsync = require('../utils/catchAsync');
 
 // use funtcion from handlerFactory
 // exports.getAllSalaries = factory.getAll(Fee);
-exports.getSalary = factory.getOne(Salary);
+// exports.getSalary = factory.getOne(Salary);
 exports.createSalary = factory.createOne(Salary);
 exports.updateSalary = factory.updateOne(Salary);
-exports.deleteSalary = factory.deleteOne(Salary);
+exports.deleteSalary = catchAsync(async (req, res, next) => {
+  await Salary.findByIdAndUpdate(req.user.id, { active: false });
+
+  res.status(204).json({
+    status: 'success',
+    data: null,
+  });
+});
 exports.getAllSalaries = catchAsync(async (req, res, next) => {
-  const salaries = await Salary.find().populate('teacher', 'name');
+  const salaries = await Salary.find({ active: true }).populate(
+    'teacher',
+    'name',
+  );
+
+  res.status(200).json({
+    status: 'success',
+    results: salaries.length,
+    data: {
+      salaries,
+    },
+  });
+});
+
+exports.getSalary = catchAsync(async (req, res, next) => {
+  const salaries = await Salary.findById(req.params.id).populate(
+    'teacher',
+    'name',
+  );
 
   res.status(200).json({
     status: 'success',
