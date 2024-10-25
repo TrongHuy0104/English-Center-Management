@@ -7,14 +7,14 @@ const adminSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    required: [true, 'Please provide your phone number'],
+    // required: [true, 'Please provide your phone number'],
   },
   gender: {
     type: String,
     enum: ['male', 'female', 'other'],
   },
   dateOfBirth: Date,
-  managedCenterIds: [
+  centers: [
     {
       type: mongoose.Schema.ObjectId,
       ref: 'Center',

@@ -83,6 +83,46 @@ exports.getRoleUser = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.createNewUser = catchAsync(async (req, res, next) => {
+  const newUser = await User.create({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+    passwordConfirm: req.body.passwordConfirm,
+    role: req.body.role,
+  });
+
+  if (!newUser) return;
+  if (req.body.role === 'student') {
+    const newStudent = await Student.create({
+      name: req.body.name,
+      centers: req.body.center,
+    });
+    await User.findByIdAndUpdate(newUser._id, { role_id: newStudent._id });
+  }
+  if (req.body.role === 'admin') {
+    const newAdmin = await Admin.create({
+      name: req.body.name,
+      centers: req.body.center,
+    });
+    await User.findByIdAndUpdate(newUser._id, { role_id: newAdmin._id });
+  }
+  if (req.body.role === 'teacher') {
+    const newTeacher = await Teacher.create({
+      name: req.body.name,
+      centers: req.body.center,
+    });
+    await User.findByIdAndUpdate(newUser._id, { role_id: newTeacher._id });
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      data: newUser,
+    },
+  });
+});
+
 exports.getAllUsers = factory.getAll(User);
 exports.getUser = factory.getOne(User);
 
