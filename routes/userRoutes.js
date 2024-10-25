@@ -18,7 +18,10 @@ router.get('/me', userController.getMe, userController.getRoleUser);
 
 router.use(authController.restrictTo('admin'));
 
-router.route('/').get(userController.getAllUsers);
+router
+  .route('/')
+  .get(userController.getAllUsers)
+  .post(userController.createNewUser);
 router
   .route('/:id')
   .get(userController.getUser)
