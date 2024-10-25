@@ -19,8 +19,17 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
     // Tìm bản ghi điểm danh đã tồn tại
     let attendance = await Attendance.findOne({ class: classId, date: formattedDate });
 
+    const teacherId = req.user.id; // Giả sử bạn có ID giáo viên từ auth middleware
+    const teacherStatus = attendance ? attendance.teacher_attendance.status : 'absent';
+
+    // Nếu bản ghi điểm danh đã tồn tại
     if (attendance) {
-        // Nếu đã tồn tại, cập nhật bản ghi
+        // Nếu teacher_status là absent, cập nhật sang present
+        if (teacherStatus === 'absent') {
+            attendance.teacher_attendance.status = 'present';
+        }
+
+        // Cập nhật danh sách sinh viên
         attendance.student_attendance = attendanceList.map(student => ({
             student_id: student.studentId,
             status: student.status,
@@ -31,8 +40,8 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
             class: classId,
             date: formattedDate,
             teacher_attendance: {
-                teacher_id: req.user.id, // Giả sử bạn có ID giáo viên từ auth middleware
-                status: 'present', // Có thể thay đổi nếu cần
+                teacher_id: teacherId,
+                status: 'present', // Mặc định là present nếu mới tạo
             },
             student_attendance: attendanceList.map(student => ({
                 student_id: student.studentId,
@@ -41,10 +50,8 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
         });
     }
 
-    // Lưu bản ghi điểm danh nếu đã cập nhật
-    if (attendance) {
-        await attendance.save();
-    }
+    // Lưu bản ghi điểm danh
+    await attendance.save();
 
     res.status(201).json({
         status: 'success',
