@@ -16,4 +16,7 @@ router.route('/fees/:id')
 router.route('/my-class')
   .get(classController.getScheduleOfStudent);
 
+  router.route('/my-class/classes')
+  .get(classController.getAllClass);
+
 module.exports = router;

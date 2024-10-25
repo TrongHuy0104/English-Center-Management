@@ -2,6 +2,8 @@ const Class = require('../models/classModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
+exports.getAllClass = factory.getAll(Class);
+
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
   // Tìm tất cả các lớp mà sinh viên hiện tại đang tham gia
   const classes = await Class.find({
