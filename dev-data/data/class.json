@@ -20,17 +20,21 @@
         "date": "2024-10-23T00:00:00Z",
         "dayOfWeek": "Wednesday",
         "slot": 2,
-        "start_time": "09:00",
-        "end_time": "10:30"
+        "start_time": "08:45",
+        "end_time": "10:15"
       },
       {
         "date": "2024-10-25T00:00:00Z",
         "dayOfWeek": "Friday",
         "slot": 3,
-        "start_time": "11:00",
-        "end_time": "12:30"
+        "start_time": "10:30",
+        "end_time": "12:00"
       }
-    ]
+    ],
+    "description": "Class A1 for students learning Ielts 6.0 .",
+    "current_enrollment": 2,
+    "max_enrollment": 30,
+    "enrollment_deadline": "2024-10-10T00:00:00Z"
   },
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
@@ -53,18 +57,21 @@
         "date": "2024-10-24T00:00:00Z",
         "dayOfWeek": "Thursday",
         "slot": 4,
-        "start_time": "13:00",
-        "end_time": "14:30"
+        "start_time": "12:30",
+        "end_time": "14:00"
       },
       {
         "date": "2024-10-27T00:00:00Z",
         "dayOfWeek": "Sunday",
         "slot": 5,
-        "start_time": "15:00",
-        "end_time": "16:30"
+        "start_time": "14:15",
+        "end_time": "15:45"
       }
     ],
-    "__v": 0
+    "description": "Class b2 for students learning Ielts 5.0 .",
+    "current_enrollment": 2,
+    "max_enrollment": 25,
+    "enrollment_deadline": "2024-10-12T00:00:00Z"
   },
   {
     "_id": "64f4ea01d33a4a001b8a9f01",
@@ -87,17 +94,20 @@
         "date": "2024-10-28T00:00:00Z",
         "dayOfWeek": "Monday",
         "slot": 6,
-        "start_time": "17:00",
-        "end_time": "18:30"
+        "start_time": "16:00",
+        "end_time": "17:30"
       },
       {
         "date": "2024-10-29T00:00:00Z",
         "dayOfWeek": "Tuesday",
         "slot": 7,
-        "start_time": "08:00",
-        "end_time": "09:30"
+        "start_time": "18:00",
+        "end_time": "19:30"
       }
     ],
-    "__v": 0
+    "description": "Class C3 for students learning Ielts 10. .",
+    "current_enrollment": 2,
+    "max_enrollment": 20,
+    "enrollment_deadline": "2024-10-15T00:00:00Z"
   }
 ]
