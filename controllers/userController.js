@@ -96,6 +96,9 @@ exports.createNewUser = catchAsync(async (req, res, next) => {
   if (req.body.role === 'student') {
     const newStudent = await Student.create({
       name: req.body.name,
+      phone: req.body.phone,
+      gender: req.body.gender,
+      dateOfBirth: req.body.dateOfBirth,
       centers: req.body.center,
     });
     await User.findByIdAndUpdate(newUser._id, { role_id: newStudent._id });
@@ -103,6 +106,9 @@ exports.createNewUser = catchAsync(async (req, res, next) => {
   if (req.body.role === 'admin') {
     const newAdmin = await Admin.create({
       name: req.body.name,
+      phone: req.body.phone,
+      gender: req.body.gender,
+      dateOfBirth: req.body.dateOfBirth,
       centers: req.body.center,
     });
     await User.findByIdAndUpdate(newUser._id, { role_id: newAdmin._id });
@@ -110,6 +116,9 @@ exports.createNewUser = catchAsync(async (req, res, next) => {
   if (req.body.role === 'teacher') {
     const newTeacher = await Teacher.create({
       name: req.body.name,
+      phone: req.body.phone,
+      gender: req.body.gender,
+      dateOfBirth: req.body.dateOfBirth,
       centers: req.body.center,
     });
     await User.findByIdAndUpdate(newUser._id, { role_id: newTeacher._id });
