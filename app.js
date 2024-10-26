@@ -9,6 +9,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 const userRouter = require('./routes/userRoutes');
+const adminRouter = require('./routes/adminRoutes');
 const studentRouter = require('./routes/studentRoutes');
 const feeRouter = require('./routes/feeRoutes');
 const salaryRouter = require('./routes/salaryRoutes');
@@ -68,8 +69,8 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-// app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/admins', adminRouter);
 app.use('/api/v1/student', studentRouter);
 app.use('/api/v1/fees', feeRouter);
 app.use('/api/v1/salaries', salaryRouter);

@@ -37,7 +37,6 @@ const userSchema = new mongoose.Schema({
   active: {
     type: Boolean,
     default: true,
-    select: false,
   },
   passwordChangedAt: Date,
   passwordResetToken: String,
@@ -63,10 +62,10 @@ userSchema.pre('save', function (next) {
 });
 
 // Ignore user inactive
-userSchema.pre(/^find/, function (next) {
-  this.find({ active: { $ne: false } });
-  next();
-});
+// userSchema.pre(/^find/, function (next) {
+//   this.find({ active: { $ne: false } });
+//   next();
+// });
 
 // check input password is correct
 userSchema.methods.correctPassword = async function (
