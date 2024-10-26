@@ -12,15 +12,15 @@ const slotTimeMapping = {
   6: { start: '16:00', end: '17:30' },
   7: { start: '18:00', end: '19:30' },
   8: { start: '19:45', end: '21:15' }
-  // Thêm các slot khác nếu cần
+ 
 };
 
 // 1. Ghi nhận hoặc cập nhật điểm danh theo slot
 exports.takeAttendance = catchAsync(async (req, res, next) => {
-  const { attendanceList } = req.body; // Lấy danh sách điểm danh từ body
+  const { attendanceList } = req.body; 
   const classId = req.params.classId;
-  const date = req.params.date; // Lấy ngày từ params
-  const slot = parseInt(req.params.slot, 10); // Lấy slot từ params
+  const date = req.params.date; 
+  const slot = parseInt(req.params.slot, 10); 
 
   // Kiểm tra xem tất cả các trường cần thiết đã có trong body request chưa
   if (
@@ -51,9 +51,8 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
     class: classId,
     date: formattedDate,
   });
-  console.log(req.user)
-const teacherId = req.user && req.user.id;
 
+const teacherId = req.user && req.user.id;
   // Nếu bản ghi điểm danh đã tồn tại
   if (attendance) {
     // Nếu teacher_attendance.status là 'absent', cập nhật sang 'present'
@@ -122,7 +121,7 @@ const teacherId = req.user && req.user.id;
 exports.getAttendanceData = catchAsync(async (req, res, next) => {
   const classId = req.params.classId;
   const date = req.params.date;
-  const slot = parseInt(req.params.slot, 10); // Chuyển slot thành số nguyên
+  const slot = parseInt(req.params.slot, 10); 
 
   // Kiểm tra xem classId, date, và slot có được cung cấp không
   if (!classId || !date || isNaN(slot)) {
