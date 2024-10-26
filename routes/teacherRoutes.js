@@ -12,6 +12,6 @@ router.get('/:id', teacherController.getTeacherById);
 router.get('/:teacherId/salary', salaryController.getSalaryByTeacherId);
 router.get('/:teacherId/centers', centerController.getAllCenterByTeacherId);
 // Nested attendance routes under teacher with slot support
-router.post('/attendance/classes/:classId/:date/:slot', attendanceController.takeAttendance);
-router.get('/attendance/classes/:classId/:date/:slot', attendanceController.getAttendanceData);
+router.post('/:teacherId/attendance/:date/:slot', attendanceController.takeAttendance);
+router.get('/:teacherId/attendance/:date/:slot', attendanceController.getAttendanceData);
 module.exports = router;
