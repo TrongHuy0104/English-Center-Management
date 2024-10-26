@@ -21,6 +21,17 @@ const attendanceSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    slot: {
+        type: Number,
+        required: true,
+        enum: [1, 2, 3, 4, 5, 6, 7, 8],
+    },
+    start_time: {
+        type: String,
+    },
+    end_time: {
+        type: String,
+    },
     teacher_attendance: {
         teacher_id: {
             type: mongoose.Schema.Types.ObjectId,
@@ -33,42 +44,27 @@ const attendanceSchema = new mongoose.Schema({
             default: 'present',
         },
     },
-    slot_attendance: [{
-        slot: {
-            type: Number,
+    student_attendance: [{
+        student_id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Student',
             required: true,
-            enum: [1, 2, 3, 4, 5, 6, 7, 8], 
         },
-        start_time: {
-            type: String, 
+        status: {
+            type: String,
+            enum: ['present', 'absent'],
+            required: true,
         },
-        end_time: {
-            type: String, 
-        },
-        student_attendance: [{
-            student_id: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Student',
-                required: true,
-            },
-            status: {
-                type: String,
-                enum: ['present', 'absent'],
-                required: true,
-            },
-        }],
     }],
 });
 
 // Middleware để tự động gán start_time và end_time dựa vào slot
 attendanceSchema.pre('save', function (next) {
-    this.slot_attendance.forEach((slotEntry) => {
-        const slotTimes = slotTimeMapping[slotEntry.slot];
-        if (slotTimes) {
-            slotEntry.start_time = slotTimes.start_time;
-            slotEntry.end_time = slotTimes.end_time;
-        }
-    });
+    const slotTimes = slotTimeMapping[this.slot];
+    if (slotTimes) {
+        this.start_time = slotTimes.start_time;
+        this.end_time = slotTimes.end_time;
+    }
     next();
 });
 

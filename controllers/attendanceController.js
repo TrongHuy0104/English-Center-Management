@@ -12,15 +12,14 @@ const slotTimeMapping = {
   6: { start: '16:00', end: '17:30' },
   7: { start: '18:00', end: '19:30' },
   8: { start: '19:45', end: '21:15' }
- 
 };
 
 // 1. Ghi nhận hoặc cập nhật điểm danh theo slot
 exports.takeAttendance = catchAsync(async (req, res, next) => {
-  const { attendanceList } = req.body; 
-  const classId = req.params.classId;
-  const date = req.params.date; 
-  const slot = parseInt(req.params.slot, 10); 
+  const { attendanceList } = req.body;
+  const teacherId = req.params.teacherId;
+  const date = req.params.date;
+  const slot = parseInt(req.params.slot, 10);
 
   // Kiểm tra xem tất cả các trường cần thiết đã có trong body request chưa
   if (
@@ -29,9 +28,7 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
     attendanceList.length === 0 ||
     isNaN(slot)
   ) {
-    return next(
-      new AppError('Missing required fields: attendanceList, slot', 400),
-    );
+    return next(new AppError('Missing required fields: attendanceList, slot', 400));
   }
 
   // Định dạng lại date
@@ -46,63 +43,40 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
   const start_time = slotTimeMapping[slot].start;
   const end_time = slotTimeMapping[slot].end;
 
-  // Tìm bản ghi điểm danh cho lớp và ngày cụ thể
+  // Tìm bản ghi điểm danh cho giáo viên và ngày cụ thể
   let attendance = await Attendance.findOne({
-    class: classId,
+    'teacher_attendance.teacher_id': teacherId,
     date: formattedDate,
   });
 
-const teacherId = req.user && req.user.id;
   // Nếu bản ghi điểm danh đã tồn tại
   if (attendance) {
-    // Nếu teacher_attendance.status là 'absent', cập nhật sang 'present'
+    // Cập nhật trạng thái của giáo viên nếu cần
     if (attendance.teacher_attendance.status === 'absent') {
       attendance.teacher_attendance.status = 'present';
     }
 
-    // Tìm slot hiện có hoặc thêm slot mới nếu chưa tồn tại
-    const existingSlot = attendance.slot_attendance.find(
-      (s) => s.slot === slot,
-    );
-
-    if (existingSlot) {
-      // Cập nhật điểm danh của sinh viên cho slot đã tồn tại
-      existingSlot.student_attendance = attendanceList.map((student) => ({
-        student_id: student.studentId,
-        status: student.status,
-      }));
-    } else {
-      // Thêm slot mới nếu chưa tồn tại
-      attendance.slot_attendance.push({
-        slot,
-        start_time,
-        end_time,
-        student_attendance: attendanceList.map((student) => ({
-          student_id: student.studentId,
-          status: student.status,
-        })),
-      });
-    }
+    // Cập nhật danh sách điểm danh của sinh viên
+    attendance.student_attendance = attendanceList.map((student) => ({
+      student_id: student.studentId,
+      status: student.status,
+    }));
   } else {
-    // Nếu không tồn tại, tạo mới bản ghi điểm danh với slot
+    // Nếu không tồn tại, tạo mới bản ghi điểm danh
     attendance = await Attendance.create({
-      class: classId,
+      class: teacherId, // Nếu cần lưu lại teacherId vào class
       date: formattedDate,
       teacher_attendance: {
         teacher_id: teacherId,
-        status: 'present', // Mặc định là present nếu mới tạo
+        status: 'present',
       },
-      slot_attendance: [
-        {
-          slot,
-          start_time,
-          end_time,
-          student_attendance: attendanceList.map((student) => ({
-            student_id: student.studentId,
-            status: student.status,
-          })),
-        },
-      ],
+      slot,
+      start_time,
+      end_time,
+      student_attendance: attendanceList.map((student) => ({
+        student_id: student.studentId,
+        status: student.status,
+      })),
     });
   }
 
@@ -119,47 +93,33 @@ const teacherId = req.user && req.user.id;
 
 // 2. Lấy dữ liệu điểm danh theo ngày và slot
 exports.getAttendanceData = catchAsync(async (req, res, next) => {
-  const classId = req.params.classId;
+  const teacherId = req.params.teacherId;
   const date = req.params.date;
-  const slot = parseInt(req.params.slot, 10); 
+  const slot = parseInt(req.params.slot, 10);
 
-  // Kiểm tra xem classId, date, và slot có được cung cấp không
-  if (!classId || !date || isNaN(slot)) {
-    return next(new AppError('Class ID, date, and slot must be provided', 400));
+  // Kiểm tra xem teacherId, date, và slot có được cung cấp không
+  if (!teacherId || !date || isNaN(slot)) {
+    return next(new AppError('Teacher ID, date, and slot must be provided', 400));
   }
 
   // Định dạng lại date
   const formattedDate = new Date(date);
 
   const attendanceData = await Attendance.findOne({
-    class: classId,
+    'teacher_attendance.teacher_id': teacherId,
     date: formattedDate,
+    slot: slot
   });
 
   if (!attendanceData) {
-    return next(
-      new AppError('No attendance data found for this class on this date', 404),
-    );
+    return next(new AppError('No attendance data found for this teacher on this date', 404));
   }
 
-  // Tìm slot điểm danh
-  const slotAttendance = attendanceData.slot_attendance.find(
-    (s) => s.slot === slot,
-  );
-
-  if (!slotAttendance) {
-    return next(
-      new AppError(
-        `No attendance data found for slot ${slot} on this date`,
-        404,
-      ),
-    );
-  }
-
+  // Trả về dữ liệu điểm danh
   res.status(200).json({
     status: 'success',
     data: {
-      attendance: slotAttendance,
+      attendance: attendanceData,
     },
   });
 });
