@@ -32,6 +32,13 @@ const teacherSchema = new mongoose.Schema({
       ref: 'Attendance',
     },
   ],
+  shiftPay: {
+    type: Number,
+  },
+  active: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const Teacher = mongoose.model('Teacher', teacherSchema);
