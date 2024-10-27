@@ -5,8 +5,14 @@
     "center": "64f4ea01d33a4a001b8a9e04",
     "teacher": "64f4ea01d33a4a001b8a9c05",
     "students": [
-      "64f4ea01d33a4a001b8a9d04",
-      "64f4ea01d33a4a001b8a9d05"
+      {
+        "_id": "64f4ea01d33a4a001b8a9d04",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d05",
+        "enrollStatus": "Pending"
+      }
     ],
     "schedule": [
       {
@@ -31,7 +37,7 @@
         "end_time": "12:00"
       }
     ],
-    "description": "Class A1 for students learning Ielts 6.0 .",
+    "description": "Class A1 for students learning Ielts 6.0.",
     "current_enrollment": 2,
     "max_enrollment": 30,
     "enrollment_deadline": "2024-10-10T00:00:00Z"
@@ -39,11 +45,17 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
-    "center": "64f4ea01d33a4a001b8a9e05",
-    "teacher": "64f4ea01d33a4a001b8a9c06",
+    "center": "64f4ea01d33a4a001b8a9e03",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
-      "64f4ea01d33a4a001b8a9d05"
+      {
+        "_id": "64f4ea01d33a4a001b8a9d04",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d05",
+        "enrollStatus": "Not Enroll"
+      }
     ],
     "schedule": [
       {
@@ -68,7 +80,7 @@
         "end_time": "15:45"
       }
     ],
-    "description": "Class b2 for students learning Ielts 5.0 .",
+    "description": "Class B2 for students learning Ielts 5.0.",
     "current_enrollment": 2,
     "max_enrollment": 25,
     "enrollment_deadline": "2024-10-12T00:00:00Z"
@@ -76,11 +88,17 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f01",
     "name": "Class C3",
-    "center": "64f4ea01d33a4a001b8a9e06",
+    "center": "64f4ea01d33a4a001b8a9e03",
     "teacher": "64f4ea01d33a4a001b8a9c07",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
-      "64f4ea01d33a4a001b8a9d06"
+      {
+        "_id": "64f4ea01d33a4a001b8a9b04",
+        "enrollStatus": "Not Enroll"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d06",
+        "enrollStatus": "Enrolled"
+      }
     ],
     "schedule": [
       {
@@ -105,7 +123,7 @@
         "end_time": "19:30"
       }
     ],
-    "description": "Class C3 for students learning Ielts 10. .",
+    "description": "Class C3 for students learning Ielts 10.0.",
     "current_enrollment": 2,
     "max_enrollment": 20,
     "enrollment_deadline": "2024-10-15T00:00:00Z"

@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const authController = require('../controllers/authController');
 const feeController = require('../controllers/feeController');
-const classController = require('../controllers/classController')
+const classController = require('../controllers/classController');
+const notificationController = require('../controllers/notificationController');
 // Bảo vệ tất cả các route bên dưới bằng cách sử dụng JWT
 router.use(authController.protect);
 
@@ -16,7 +17,12 @@ router.route('/fees/:id')
 router.route('/my-class')
   .get(classController.getScheduleOfStudent);
 
-  router.route('/my-class/classes')
+  router.route('/classes')
   .get(classController.getAllClass);
+
+  router.get('/classes/:id', classController.getClassById);
+
+  router.route('/classes/enroll-request')
+  .post(notificationController.sendEnrollRequest);
 
 module.exports = router;

@@ -57,12 +57,19 @@ const classSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Teacher',
   },
-  students: [
-    {
+  students: [{
+    _id: {
       type: mongoose.Schema.ObjectId,
       ref: 'Student',
+      required: true,
     },
-  ],
+    enrollStatus: {
+      type: String,
+      enum: ['Not Enroll', 'Enrolled', 'Pending'],
+      default: 'Not Enroll',
+    },
+  }], // Sử dụng schema riêng cho học sinh với trạng thái enroll
+
   schedule: [scheduleSchema],  // Sử dụng schema riêng cho schedule
 
   description: {
