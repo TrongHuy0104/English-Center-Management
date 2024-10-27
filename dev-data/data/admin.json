@@ -5,7 +5,6 @@
     "phone": "1231231234",
     "gender": "female",
     "dateOfBirth": "1990-01-01",
-    "centers": ["64f4ea01d33a4a001b8a9e03"],
     "isSuperAdmin": false
   },
   {
@@ -14,7 +13,6 @@
     "phone": "3213213210",
     "gender": "male",
     "dateOfBirth": "1988-02-02",
-    "centers": ["64f4ea01d33a4a001b8a9e04"],
     "isSuperAdmin": true
   }
 ]

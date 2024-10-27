@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const Teacher = require('../../models/teacherModel');
 const Student = require('../../models/studentModel');
 const Admin = require('../../models/adminModel');
-const Center = require('../../models/centerModel');
 const Class = require('../../models/classModel');
 const Attendance = require('../../models/attendanceModel');
 const Fee = require('../../models/feeModel');
@@ -29,9 +28,6 @@ const students = JSON.parse(
 const teachers = JSON.parse(
   fs.readFileSync(`${__dirname}/teacher.json`, 'utf-8'),
 );
-const centers = JSON.parse(
-  fs.readFileSync(`${__dirname}/center.json`, 'utf-8'),
-);
 const classes = JSON.parse(fs.readFileSync(`${__dirname}/class.json`, 'utf-8'));
 const attendances = JSON.parse(
   fs.readFileSync(`${__dirname}/attendance.json`, 'utf-8'),
@@ -50,7 +46,6 @@ const importData = async () => {
     await Fee.create(fees, { validateBeforeSave: false });
     await Admin.create(admins, { validateBeforeSave: false });
     await Class.create(classes, { validateBeforeSave: false });
-    await Center.create(centers, { validateBeforeSave: false });
     await Salary.create(salaries, { validateBeforeSave: false });
     await Teacher.create(teachers, { validateBeforeSave: false });
     await Student.create(students, { validateBeforeSave: false });
@@ -68,7 +63,6 @@ const deleteData = async () => {
     await Admin.deleteMany();
     await Student.deleteMany();
     await Class.deleteMany();
-    await Center.deleteMany();
     await Salary.deleteMany();
     await Attendance.deleteMany();
     await Fee.deleteMany();

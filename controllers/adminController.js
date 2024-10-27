@@ -15,7 +15,7 @@ const paginate = (array, page_size, page_number) => {
 
 exports.getAdmins = catchAsync(async (req, res, next) => {
   const { page = 1, limit = 10, active = 'all' } = req.query;
-  const allAdmins = await Admin.find().populate('user').populate('centers');
+  const allAdmins = await Admin.find().populate('user');
   let filterAdmins;
   switch (active) {
     case 'true':
@@ -52,7 +52,6 @@ exports.createAdmin = catchAsync(async (req, res, next) => {
   if (!newUser) return;
   const newAdmin = await Admin.create({
     name: req.body.name,
-    centers: req.body.center,
     phone: req.body.phone,
     gender: req.body.gender,
     dateOfBirth: req.body.dateOfBirth,
@@ -82,7 +81,6 @@ exports.updateAdmin = catchAsync(async (req, res, next) => {
   if (!updateUser) return;
   await Admin.findByIdAndUpdate(req.params.id, {
     name: req.body.name,
-    centers: req.body.center,
     phone: req.body.phone,
     gender: req.body.gender,
     dateOfBirth: req.body.dateOfBirth,

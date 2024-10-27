@@ -2,12 +2,8 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f03",
     "name": "Class A1",
-    "center": "64f4ea01d33a4a001b8a9e04",
     "teacher": "64f4ea01d33a4a001b8a9c05",
-    "students": [
-      "64f4ea01d33a4a001b8a9d04",
-      "64f4ea01d33a4a001b8a9d05"
-    ],
+    "students": ["64f4ea01d33a4a001b8a9d04", "64f4ea01d33a4a001b8a9d05"],
     "schedule": [
       {
         "date": "2024-10-16T00:00:00Z",
@@ -35,12 +31,8 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
-    "center": "64f4ea01d33a4a001b8a9e05",
     "teacher": "64f4ea01d33a4a001b8a9c06",
-    "students": [
-      "64f4ea01d33a4a001b8a9b04",
-      "64f4ea01d33a4a001b8a9d05"
-    ],
+    "students": ["64f4ea01d33a4a001b8a9b04", "64f4ea01d33a4a001b8a9d05"],
     "schedule": [
       {
         "date": "2024-10-15T00:00:00Z",
@@ -69,12 +61,8 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f01",
     "name": "Class C3",
-    "center": "64f4ea01d33a4a001b8a9e06",
     "teacher": "64f4ea01d33a4a001b8a9c07",
-    "students": [
-      "64f4ea01d33a4a001b8a9b04",
-      "64f4ea01d33a4a001b8a9d06"
-    ],
+    "students": ["64f4ea01d33a4a001b8a9b04", "64f4ea01d33a4a001b8a9d06"],
     "schedule": [
       {
         "date": "2024-10-19T00:00:00Z",

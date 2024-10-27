@@ -13,7 +13,6 @@ const adminRouter = require('./routes/adminRoutes');
 const studentRouter = require('./routes/studentRoutes');
 const feeRouter = require('./routes/feeRoutes');
 const salaryRouter = require('./routes/salaryRoutes');
-const centerRouter = require('./routes/centerRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
@@ -74,7 +73,6 @@ app.use('/api/v1/admins', adminRouter);
 app.use('/api/v1/student', studentRouter);
 app.use('/api/v1/fees', feeRouter);
 app.use('/api/v1/salaries', salaryRouter);
-app.use('/api/v1/centers', centerRouter);
 
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {
