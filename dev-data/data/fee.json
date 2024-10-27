@@ -1,23 +1,17 @@
 [
   {
-    "_id": {
-      "$oid": "670e90cdd92f4207cfb72127"
-    },
+    "_id": "670e90cdd92f4207cfb72127",
     "fee_name": "NB English 1",
     "price": 500000,
     "description": "Class for newbie, need to learn base english",
     "classes": [],
     "students": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d06"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d06",
         "status": "paid"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d03"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d03",
         "status": "unpaid"
       }
     ],
@@ -25,37 +19,25 @@
     "active": false
   },
   {
-    "_id": {
-      "$oid": "671684b99bd17159f32ccd3b"
-    },
+    "_id": "671684b99bd17159f32ccd3b",
     "fee_name": "AD English 1",
     "price": 100000,
     "description": "Class for those who want to learn advanced from NB English classes",
     "classes": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f01"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f01",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-28T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-28T00:00:00.000Z"
-        }
+        "due_date": "2024-10-28T00:00:00.000Z",
+        "create_date": "2024-10-28T00:00:00.000Z"
       }
     ],
     "students": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d06"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d06",
         "status": "paid"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d03"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d03",
         "status": "unpaid"
       }
     ],
@@ -63,61 +45,37 @@
     "active": true
   },
   {
-    "_id": {
-      "$oid": "6716842c9bd17159f32ccd3a"
-    },
+    "_id": "6716842c9bd17159f32ccd3a",
     "fee_name": "NB English 2",
     "price": 600000,
     "description": "Class for newbie, need to learn base english",
     "classes": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f03"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f03",
         "status": "complete",
-        "due_date": {
-          "$date": "2024-10-24T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-20T00:00:00.000Z"
-        }
+        "due_date": "2024-10-24T00:00:00.000Z",
+        "create_date": "2024-10-20T00:00:00.000Z"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f02"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f02",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-24T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-20T00:00:00.000Z"
-        }
+        "due_date": "2024-10-24T00:00:00.000Z",
+        "create_date": "2024-10-20T00:00:00.000Z"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f01"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f01",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-30T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-27T00:00:00.000Z"
-        }
+        "due_date": "2024-10-30T00:00:00.000Z",
+        "create_date": "2024-10-27T00:00:00.000Z"
       }
     ],
     "students": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d06"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d06",
         "status": "paid"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d03"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d03",
         "status": "unpaid"
       }
     ],
@@ -125,24 +83,16 @@
     "active": true
   },
   {
-    "_id": {
-      "$oid": "671cdc247a381b2b3fcb71e7"
-    },
+    "_id": "671cdc247a381b2b3fcb71e7",
     "fee_name": "NB English 53",
     "price": 10000,
     "description": "Class for newbie, need to learn base english",
     "classes": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9d06"
-        },
+        "_id": "64f4ea01d33a4a001b8a9d06",
         "status": "complete",
-        "due_date": {
-          "$date": "2024-11-01T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-25T00:00:00.000Z"
-        }
+        "due_date": "2024-11-01T00:00:00.000Z",
+        "create_date": "2024-10-25T00:00:00.000Z"
       }
     ],
     "students": [],
@@ -150,9 +100,7 @@
     "active": true
   },
   {
-    "_id": {
-      "$oid": "671cdc387a381b2b3fcb7203"
-    },
+    "_id": "671cdc387a381b2b3fcb7203",
     "fee_name": "NB English 54",
     "price": 10000,
     "description": "Class for newbie, need to learn base english",
@@ -162,48 +110,28 @@
     "active": true
   },
   {
-    "_id": {
-      "$oid": "671cdc3e7a381b2b3fcb720f"
-    },
+    "_id": "671cdc3e7a381b2b3fcb720f",
     "fee_name": "NB English 54",
     "price": 50000,
     "description": "Class for newbie, need to learn base english",
     "classes": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f01"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f01",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-21T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-23T00:00:00.000Z"
-        }
+        "due_date": "2024-10-21T00:00:00.000Z",
+        "create_date": "2024-10-23T00:00:00.000Z"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f03"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f03",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-29T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-29T00:00:00.000Z"
-        }
+        "due_date": "2024-10-29T00:00:00.000Z",
+        "create_date": "2024-10-29T00:00:00.000Z"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f02"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f02",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-24T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-28T00:00:00.000Z"
-        }
+        "due_date": "2024-10-24T00:00:00.000Z",
+        "create_date": "2024-10-28T00:00:00.000Z"
       }
     ],
     "students": [],
@@ -211,48 +139,28 @@
     "active": true
   },
   {
-    "_id": {
-      "$oid": "671cdc457a381b2b3fcb721b"
-    },
+    "_id": "671cdc457a381b2b3fcb721b",
     "fee_name": "NB English 54",
     "price": 50000,
     "description": "Class for newbie, need to learn base english",
     "classes": [
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f01"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f01",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-16T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-30T00:00:00.000Z"
-        }
+        "due_date": "2024-10-16T00:00:00.000Z",
+        "create_date": "2024-10-30T00:00:00.000Z"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f03"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f03",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-23T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-29T00:00:00.000Z"
-        }
+        "due_date": "2024-10-23T00:00:00.000Z",
+        "create_date": "2024-10-29T00:00:00.000Z"
       },
       {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f02"
-        },
+        "_id": "64f4ea01d33a4a001b8a9f02",
         "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-29T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-24T00:00:00.000Z"
-        }
+        "due_date": "2024-10-29T00:00:00.000Z",
+        "create_date": "2024-10-24T00:00:00.000Z"
       }
     ],
     "students": [],
@@ -260,9 +168,7 @@
     "active": true
   },
   {
-    "_id": {
-      "$oid": "671cdc4a7a381b2b3fcb7227"
-    },
+    "_id": "671cdc4a7a381b2b3fcb7227",
     "fee_name": "NB English 54",
     "price": 10000,
     "description": "Class for newbie, need to learn base english",
@@ -270,198 +176,5 @@
     "students": [],
     "__v": 0,
     "active": true
-  },
-  {
-    "_id": {
-      "$oid": "671cdc517a381b2b3fcb7233"
-    },
-    "fee_name": "NB English 1",
-    "price": 10000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [
-      {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f01"
-        },
-        "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-03T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-15T00:00:00.000Z"
-        }
-      },
-      {
-        "_id": {
-          "$oid": "64f4ea01d33a4a001b8a9f03"
-        },
-        "status": "not yet",
-        "due_date": {
-          "$date": "2024-10-16T00:00:00.000Z"
-        },
-        "create_date": {
-          "$date": "2024-10-17T00:00:00.000Z"
-        }
-      }
-    ],
-    "students": [],
-    "__v": 5,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671cdc597a381b2b3fcb723f"
-    },
-    "fee_name": "NB English 1",
-    "price": 10000,
-    "description": "dsada",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671cec852d71121dcb942a1e"
-    },
-    "fee_name": "dsa",
-    "price": 2,
-    "description": "đá",
-    "classes": [],
-    "students": [],
-    "__v": 2,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671cec8e2d71121dcb942a2c"
-    },
-    "fee_name": "dsa",
-    "price": 200,
-    "description": "dsads",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671cf0772d71121dcb942a4c"
-    },
-    "fee_name": "NB English 54",
-    "price": 50000,
-    "description": "Class for those who want to learn advanced from NB English classes",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": true
-  },
-  {
-    "_id": {
-      "$oid": "671cf32b2d71121dcb942aab"
-    },
-    "fee_name": "NB English 54",
-    "price": 50000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671cf3a92d71121dcb942acb"
-    },
-    "fee_name": "NB English 4333",
-    "price": 10000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671cf74569e065f94d377069"
-    },
-    "fee_name": "NB English 54",
-    "price": 50000,
-    "description": "dsada",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": false
-  },
-  {
-    "_id": {
-      "$oid": "671e43aaf0e300091f1d34fa"
-    },
-    "fee_name": "NB English 4",
-    "price": 50000,
-    "description": "Class for newbie, need to learn base english",
-    "active": true,
-    "classes": [],
-    "students": [],
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "671e43b1f0e300091f1d3508"
-    },
-    "fee_name": "NB English 54",
-    "price": 10000,
-    "description": "Class for newbie, need to learn base english",
-    "active": false,
-    "classes": [],
-    "students": [],
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "671e43b9f0e300091f1d351c"
-    },
-    "fee_name": "NB English 1",
-    "price": 50000,
-    "description": "Class for newbie, need to learn base english",
-    "active": false,
-    "classes": [],
-    "students": [],
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "671e44e1f0e300091f1d353b"
-    },
-    "fee_name": "NB English 1",
-    "price": 10000,
-    "description": "Class for newbie, need to learn base english",
-    "active": true,
-    "classes": [],
-    "students": [],
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "671e44e7f0e300091f1d3549"
-    },
-    "fee_name": "NB English 1",
-    "price": 10000,
-    "description": "dsada",
-    "active": true,
-    "classes": [],
-    "students": [],
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "671e44ecf0e300091f1d3557"
-    },
-    "fee_name": "NB English 1",
-    "price": 10000,
-    "description": "dsada",
-    "active": true,
-    "classes": [],
-    "students": [],
-    "__v": 0
   }
 ]
