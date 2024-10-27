@@ -5,19 +5,20 @@
     "center": "64f4ea01d33a4a001b8a9e04",
     "teacher": "64f4ea01d33a4a001b8a9c05",
     "students": [
-      "64f4ea01d33a4a001b8a9b04"
+      "64f4ea01d33a4a001b8a9d04",
+      "64f4ea01d33a4a001b8a9d05"
     ],
     "schedule": [
       {
-        "date": "2024-10-16T00:00:00Z",
-        "dayOfWeek": "Wednesday",
+        "date": "2024-10-27T00:00:00Z",
+        "dayOfWeek": "Sunday",
         "slot": 1,
         "start_time": "07:00",
         "end_time": "08:30"
       },
       {
-        "date": "2024-10-17T00:00:00Z",
-        "dayOfWeek": "Thursday",
+        "date": "2024-10-28T00:00:00Z",
+        "dayOfWeek": "Monday",
         "slot": 2,
         "start_time": "08:45",
         "end_time": "10:15"
@@ -29,9 +30,9 @@
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
     "center": "64f4ea01d33a4a001b8a9e05",
-    "teacher": "64f4ea01d33a4a001b8a9c06",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d04",
       "64f4ea01d33a4a001b8a9d05"
     ],
     "schedule": [
@@ -56,9 +57,9 @@
     "_id": "64f4ea01d33a4a001b8a9f01",
     "name": "Class C3",
     "center": "64f4ea01d33a4a001b8a9e06",
-    "teacher": "64f4ea01d33a4a001b8a9c07",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d04",
       "64f4ea01d33a4a001b8a9d06"
     ],
     "schedule": [
