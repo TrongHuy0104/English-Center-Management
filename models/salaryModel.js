@@ -27,6 +27,11 @@ const salarySchema = new mongoose.Schema({
     default: false,
   },
   paymentDate: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
 });
 
 const Salary = mongoose.model('Salary', salarySchema);
