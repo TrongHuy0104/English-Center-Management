@@ -11,7 +11,14 @@ const AppError = require('../utils/appError');
 exports.createFee = factory.createOne(Fee);
 // exports.createFee = factory.createOne(Fee);
 exports.updateFee = factory.updateOne(Fee);
-exports.deleteFee = factory.deleteOne(Fee);
+exports.deleteFee = catchAsync(async (req, res, next) => {
+  await Fee.findByIdAndUpdate(req.user.id, { active: false });
+
+  res.status(204).json({
+    status: 'success',
+    data: null,
+  });
+});
 
 const mongoose = require('mongoose');
 
@@ -88,11 +95,11 @@ exports.getAllFees = async (req, res) => {
     const skip = (page - 1) * limit; // Tính toán số mục cần bỏ qua
 
     // Tìm các phí với phân trang
-    const fees = await Fee.find()
+    const fees = await Fee.find({ active: true })
       .skip(skip) // Bỏ qua số mục dựa trên trang hiện tại
       .limit(Number(limit)); // Lấy số mục cho trang hiện tại
 
-    const totalFees = await Fee.countDocuments(); // Đếm tổng số tài liệu
+    const totalFees = await Fee.countDocuments({ active: true }); // Đếm tổng số tài liệu
 
     res.status(200).json({
       status: 'success',
@@ -114,8 +121,6 @@ exports.getFee = catchAsync(async (req, res, next) => {
   const fee = await Fee.findById(req.params.id)
     .populate('classDetails')
     .populate('studentDetails');
-  console.log(req.params.id);
-  console.log('fee:', fee);
 
   if (!fee) {
     return next(new AppError('No fee found with that ID', 404));
@@ -132,16 +137,9 @@ exports.getFee = catchAsync(async (req, res, next) => {
 exports.deleteClassInFee = async (req, res) => {
   // const { feeId, classId } = req.params;
 
-  // Log giá trị feeId và classId để kiểm tra
-  console.log('Received feeId:', req.params.id);
-  console.log('Received classId:', req.params.classId);
-
   try {
     // Tìm kiếm fee bằng feeId trong cơ sở dữ liệu
     const fee = await Fee.findById(req.params.id);
-
-    // Log kết quả của truy vấn
-    console.log('Fee found:', fee);
 
     if (!fee) {
       return res.status(404).json({ message: 'Fee not found' });

@@ -49,6 +49,10 @@ const feeSchema = new mongoose.Schema({
       },
     },
   ],
+  active: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 // Virtual để liên kết với các chi tiết lớp học
