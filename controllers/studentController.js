@@ -2,62 +2,15 @@ const Student = require('../models/studentModel');
 const Attendance = require('../models/attendanceModel');
 const Center = require('../models/centerModel');
 const Class = require('../models/classModel');
+const multer = require('multer');
+const path = require('path');
+const factory = require('./handlerFactory');
+const { response } = require('express');
 
-exports.getStudentDetails = async (req, res) => {
-  try {
-    const student = await Student.findById(req.params.id)
-      .populate('centers')
-      .populate('classes');
-
-    if (!student) {
-      return res.status(404).json({
-        status: 'fail',
-        message: 'Student not found',
-      });
-    }
-
-    res.status(200).json({
-      status: 'success',
-      data: {
-        student,
-      },
-    });
-  } catch (err) {
-    res.status(500).json({
-      status: 'error',
-      message: 'Something went wrong',
-      error: err.message,
-    });
-  }
-};
-
-exports.updateStudent = async (req, res) => {
-  try {
-    const student = await Student.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    });
-
-    if (!student) {
-      return res.status(404).json({
-        status: 'fail',
-        message: 'No student found with that ID',
-      });
-    }
-
-    res.status(200).json({
-      status: 'success',
-      data: {
-        student,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      message: err.message,
-    });
-  }
-};
+exports.getStudent = factory.getAll(Student);
+exports.getStudentDetails = factory.getOne(Student);
+exports.updateStudent = factory.updateOne(Student);
+exports.getAllClass = factory.getAll(Class);
 
 exports.getStudentAttendanceReport = async (req, res) => {
   const studentId = req.user._id;
@@ -93,6 +46,25 @@ exports.getStudentAttendanceReport = async (req, res) => {
   }
 };
 
+exports.getAttendanceById = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const attachment = await Attendance.findById(id);
+    if (!attachment) {
+      return res
+        .status(4004)
+        .json({ status: 'fail', message: 'Attendance not found' });
+    }
+    res.status(200).json({ status: 'success', data: attachment });
+  } catch (error) {
+    res.status(500).json({
+      status: 'error',
+      message: 'Something went wrong',
+      error: err.message,
+    });
+  }
+};
+
 exports.getCenterById = async (req, res) => {
   try {
     const centers = await Center.findById(req.params.id);
@@ -118,25 +90,6 @@ exports.getCenterById = async (req, res) => {
   }
 };
 
-exports.getAttendanceById = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const attachment = await Attendance.findById(id);
-    if (!attachment) {
-      return res
-        .status(4004)
-        .json({ status: 'fail', message: 'Attendance not found' });
-    }
-    res.status(200).json({ status: 'success', data: attachment });
-  } catch (error) {
-    res.status(500).json({
-      status: 'error',
-      message: 'Something went wrong',
-      error: err.message,
-    });
-  }
-};
-
 exports.getClassById = async (req, res) => {
   try {
     const classes = await Class.findById(req.params.id);
@@ -153,6 +106,33 @@ exports.getClassById = async (req, res) => {
       data: {
         classes,
       },
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: 'error',
+      message: 'Something went wrong',
+      error: err.message,
+    });
+  }
+};
+
+exports.uploadAvatar = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const avatar = req.body.avatar;
+    const student = await Student.findById(id);
+    if (!student) {
+      return res.status(404).json({
+        status: 'fail',
+        message: 'Student not found',
+      });
+    }
+    student.avatar = avatar;
+    await student.save();
+    res.status(200).json({
+      status: 'success',
+      message: 'Student successfully',
+      data: student,
     });
   } catch (err) {
     res.status(500).json({
