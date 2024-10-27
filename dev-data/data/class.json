@@ -10,8 +10,8 @@
     ],
     "schedule": [
       {
-        "date": "2024-10-27T00:00:00Z",
-        "dayOfWeek": "Sunday",
+        "date": "2024-10-28T00:00:00Z",
+        "dayOfWeek": "Monday",
         "slot": 1,
         "start_time": "07:00",
         "end_time": "08:30"
