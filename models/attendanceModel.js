@@ -10,6 +10,7 @@ const attendanceSchema = new mongoose.Schema({
   teacher_attendance: {
     teacher_id: {
       type: mongoose.Schema.ObjectId,
+      ref: 'Teacher',
     },
     status: {
       type: String,

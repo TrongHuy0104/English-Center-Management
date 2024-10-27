@@ -47,7 +47,10 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
   });
 
-  if (newUser) await Student.create({ name: req.body.name });
+  if (newUser) {
+    const newStudent = await Student.create({ name: req.body.name });
+    await User.findByIdAndUpdate(newUser._id, { role_id: newStudent._id });
+  }
 
   createSendToken(newUser, 201, res);
 });
@@ -142,8 +145,6 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   // GRANT ACCESS TO PROTECTED ROUTE
-  console.log('currentUser', currentUser);
-
   req.user = currentUser;
   next();
 });

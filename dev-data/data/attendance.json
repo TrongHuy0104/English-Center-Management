@@ -32,35 +32,5 @@
         "status": "present"
       }
     ]
-  },
-  {
-    "_id": "66fa9aed1723bc10a378c41c",
-    "class": "64f4ea01d33a4a001b8a9f03",
-    "date": "2024-10-01",
-    "teacher_attendance": {
-      "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "present"
-    },
-    "student_attendance": [
-      {
-        "student_id": "64f4ea01d33a4a001b8a9d06",
-        "status": "present"
-      }
-    ]
-  },
-  {
-    "_id": "66fa9aed1723bc10a378c41d",
-    "class": "64f4ea01d33a4a001b8a9f01",
-    "date": "2024-09-28",
-    "teacher_attendance": {
-      "teacher_id": "64f4ea01d33a4a001b8a9c03",
-      "status": "present"
-    },
-    "student_attendance": [
-      {
-        "student_id": "64f4ea01d33a4a001b8a9d06",
-        "status": "present"
-      }
-    ]
   }
 ]
