@@ -16,12 +16,6 @@ const adminSchema = new mongoose.Schema(
       default: 'male',
     },
     dateOfBirth: Date,
-    centers: [
-      {
-        type: mongoose.Schema.ObjectId,
-        ref: 'Center',
-      },
-    ],
     isSuperAdmin: {
       type: Boolean,
       default: false,

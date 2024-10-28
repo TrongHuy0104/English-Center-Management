@@ -14,12 +14,6 @@ const teacherSchema = new mongoose.Schema({
     enum: ['male', 'female', 'other'],
   },
   dateOfBirth: Date,
-  centers: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Center',
-    },
-  ],
   classes: [
     {
       type: mongoose.Schema.ObjectId,
@@ -38,6 +32,13 @@ const teacherSchema = new mongoose.Schema({
       ref: 'Attendance',
     },
   ],
+  shiftPay: {
+    type: Number,
+  },
+  active: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 const Teacher = mongoose.model('Teacher', teacherSchema);

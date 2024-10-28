@@ -99,7 +99,6 @@ exports.createNewUser = catchAsync(async (req, res, next) => {
       phone: req.body.phone,
       gender: req.body.gender,
       dateOfBirth: req.body.dateOfBirth,
-      centers: req.body.center,
     });
     await User.findByIdAndUpdate(newUser._id, { role_id: newStudent._id });
   }
@@ -109,7 +108,6 @@ exports.createNewUser = catchAsync(async (req, res, next) => {
       phone: req.body.phone,
       gender: req.body.gender,
       dateOfBirth: req.body.dateOfBirth,
-      centers: req.body.center,
     });
     await User.findByIdAndUpdate(newUser._id, { role_id: newAdmin._id });
   }
@@ -119,7 +117,6 @@ exports.createNewUser = catchAsync(async (req, res, next) => {
       phone: req.body.phone,
       gender: req.body.gender,
       dateOfBirth: req.body.dateOfBirth,
-      centers: req.body.center,
     });
     await User.findByIdAndUpdate(newUser._id, { role_id: newTeacher._id });
   }
