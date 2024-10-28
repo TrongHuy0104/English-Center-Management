@@ -64,14 +64,14 @@
     ],
     "schedule": [
       {
-        "date": "2024-10-27T00:00:00Z",
+        "date": "2024-10-28T00:00:00Z",
         "dayOfWeek": "Sunday",
         "slot": 5,
         "start_time": "14:15",
         "end_time": "15:45"
       },
       {
-        "date": "2024-10-27T00:00:00Z",
+        "date": "2024-10-29T00:00:00Z",
         "dayOfWeek": "Sunday",
         "slot": 6,
         "start_time": "16:00",
