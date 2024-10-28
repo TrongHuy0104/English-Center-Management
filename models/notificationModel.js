@@ -26,7 +26,7 @@ const notificationSchema = new mongoose.Schema({
   //   ref: 'Admin',
   //   required: true,
   // },
-  read: {
+  isSeen: {
     type: Boolean,
     default: false,
   },
