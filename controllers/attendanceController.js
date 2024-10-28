@@ -47,14 +47,13 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
   let attendance = await Attendance.findOne({
     'teacher_attendance.teacher_id': teacherId,
     date: formattedDate,
+    slot: slot // Cần kiểm tra slot ở đây
   });
 
   // Nếu bản ghi điểm danh đã tồn tại
   if (attendance) {
     // Cập nhật trạng thái của giáo viên nếu cần
-    if (attendance.teacher_attendance.status === 'absent') {
-      attendance.teacher_attendance.status = 'present';
-    }
+    attendance.teacher_attendance.status = 'present'; // Đặt trạng thái giáo viên là present
 
     // Cập nhật danh sách điểm danh của sinh viên
     attendance.student_attendance = attendanceList.map((student) => ({
@@ -68,7 +67,7 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
       date: formattedDate,
       teacher_attendance: {
         teacher_id: teacherId,
-        status: 'present',
+        status: 'present', // Đặt trạng thái giáo viên là present
       },
       slot,
       start_time,
@@ -108,7 +107,7 @@ exports.getAttendanceData = catchAsync(async (req, res, next) => {
   const attendanceData = await Attendance.findOne({
     'teacher_attendance.teacher_id': teacherId,
     date: formattedDate,
-    slot: slot
+    slot: slot // Đảm bảo tìm kiếm đúng slot
   });
 
   if (!attendanceData) {
