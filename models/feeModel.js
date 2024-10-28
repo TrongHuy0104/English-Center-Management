@@ -22,7 +22,7 @@ const feeSchema = new mongoose.Schema({
       },
       status: {
         type: String,
-        enum: ['complete', 'not yet', 'ongoing'],
+        enum: ['complete', 'not yet'],
         default: 'not yet',
       },
       due_date: {

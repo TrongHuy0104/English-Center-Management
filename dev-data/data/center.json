@@ -1,0 +1,36 @@
+[
+  {
+    "_id": "64f4ea01d33a4a001b8a9e03",
+    "name": "Center Three",
+    "location": "789 Center Rd, Townsville",
+    "phone": "4445556666",
+    "email": "center3@example.com",
+    "teachers": [
+      "64f4ea01d33a4a001b8a9c03",
+      "64f4ea01d33a4a001b8a9c04"
+    ],
+    "classes": [
+      "64f4ea01d33a4a001b8a9f02",
+      "64f4ea01d33a4a001b8a9f01"
+    ],
+    "admins": [
+      "64f4ea01d33a4a001b8a9b03"
+    ]
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9e04",
+    "name": "Center Four",
+    "location": "101 Center Blvd, Villagetown",
+    "phone": "7778889999",
+    "email": "center4@example.com",
+    "teachers": [
+      "64f4ea01d33a4a001b8a9c05"
+    ],
+    "classes": [
+      "64f4ea01d33a4a001b8a9f03"
+    ],
+    "admins": [
+      "64f4ea01d33a4a001b8a9b04"
+    ]
+  }
+]

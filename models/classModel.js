@@ -63,11 +63,37 @@ const classSchema = new mongoose.Schema({
   },
   students: [
     {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Student',
+      _id: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Student',
+        required: true,
+      },
+      enrollStatus: {
+        type: String,
+        enum: ['Not Enroll', 'Enrolled', 'Pending'],
+        default: 'Not Enroll',
+      },
     },
-  ],
+  ], // Sử dụng schema riêng cho học sinh với trạng thái enroll
+
   schedule: [scheduleSchema], // Sử dụng schema riêng cho schedule
+
+  description: {
+    type: String, // Mô tả lớp học
+    required: true,
+  },
+  current_enrollment: {
+    type: Number, // Số người đăng ký hiện tại
+    default: 0,
+  },
+  max_enrollment: {
+    type: Number, // Tổng số người có thể đăng ký trên 1 lượt
+    required: [true, 'Please specify the maximum number of students per class'],
+  },
+  enrollment_deadline: {
+    type: Date, // Hạn đăng ký
+    required: true,
+  },
 });
 
 const Class = mongoose.model('Class', classSchema);
