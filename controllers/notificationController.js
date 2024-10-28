@@ -43,7 +43,7 @@ exports.sendEnrollRequest = catchAsync(async (req, res, next) => {
       student: studentId,
       class: classId,
       center: centerId,
-      read: false,
+      isSeen: false,
     });
   
     res.status(200).json({
