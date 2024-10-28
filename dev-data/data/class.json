@@ -5,8 +5,8 @@
     "center": "64f4ea01d33a4a001b8a9e04",
     "teacher": "64f4ea01d33a4a001b8a9c05",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
-      "64f4ea01d33a4a001b8a9d04"
+      "64f4ea01d33a4a001b8a9d04",
+      "64f4ea01d33a4a001b8a9d05"
     ],
     "schedule": [
       {
@@ -17,8 +17,13 @@
         "end_time": "08:30"
       },
       {
+<<<<<<< HEAD
         "date": "2024-10-27T00:00:00Z",
         "dayOfWeek": "Sunday",
+=======
+        "date": "2024-10-28T00:00:00Z",
+        "dayOfWeek": "Monday",
+>>>>>>> 742063f0c91130f0420b676cdafa553ed02b364b
         "slot": 2,
         "start_time": "08:45",
         "end_time": "10:15"
@@ -30,9 +35,9 @@
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
     "center": "64f4ea01d33a4a001b8a9e05",
-    "teacher": "64f4ea01d33a4a001b8a9c06",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d04",
       "64f4ea01d33a4a001b8a9d05"
     ],
     "schedule": [
@@ -59,7 +64,7 @@
     "center": "64f4ea01d33a4a001b8a9e06",
     "teacher": "64f4ea01d33a4a001b8a9c03",
     "students": [
-      "64f4ea01d33a4a001b8a9b04",
+      "64f4ea01d33a4a001b8a9d04",
       "64f4ea01d33a4a001b8a9d06"
     ],
     "schedule": [
