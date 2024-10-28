@@ -8,7 +8,8 @@
     "centers": ["64f4ea01d33a4a001b8a9e04"],
     "classes": ["64f4ea01d33a4a001b8a9f01"],
     "salary": ["66fa9aed1723bc10a378c42a"],
-    "attendances": ["66fa9aed1723bc10a378c41a", "66fa9aed1723bc10a378c41d"]
+    "attendances": ["66fa9aed1723bc10a378c41a", "66fa9aed1723bc10a378c41d"],
+    "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9c04",
@@ -19,7 +20,8 @@
     "centers": ["64f4ea01d33a4a001b8a9e03"],
     "classes": ["64f4ea01d33a4a001b8a9f02"],
     "salary": ["66fa9aed1723bc10a378c42b"],
-    "attendances": ["66fa9aed1723bc10a378c41b"]
+    "attendances": ["66fa9aed1723bc10a378c41b"],
+    "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9c05",
@@ -30,6 +32,7 @@
     "centers": ["64f4ea01d33a4a001b8a9e03", "64f4ea01d33a4a001b8a9e04"],
     "classes": ["64f4ea01d33a4a001b8a9f03"],
     "salary": ["66fa9aed1723bc10a378c42c"],
-    "attendances": ["66fa9aed1723bc10a378c41c"]
+    "attendances": ["66fa9aed1723bc10a378c41c"],
+    "active": true
   }
 ]

@@ -27,7 +27,8 @@
         "_id": "64f4ea01d33a4a001b8a9d03",
         "status": "unpaid"
       }
-    ]
+    ],
+    "active": true
   },
   {
     "_id": "6716842c9bd17159f32ccd3a",
@@ -57,7 +58,8 @@
         "_id": "64f4ea01d33a4a001b8a9d03",
         "status": "unpaid"
       }
-    ]
+    ],
+    "active": true
   },
   {
     "_id": "671684b99bd17159f32ccd3b",
@@ -87,7 +89,8 @@
         "status": "unpaid"
       }
     ],
-    "price": 100000
+    "price": 100000,
+    "active": true
   },
   {
     "_id": "67185711ef919c06c2349bc9",
@@ -96,6 +99,7 @@
     "description": "Class for those who want to learn advanced from NB English classes",
     "classes": [],
     "students": [],
-    "__v": 0
+    "__v": 0,
+    "active": true
   }
 ]
