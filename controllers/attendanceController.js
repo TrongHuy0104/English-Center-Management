@@ -14,7 +14,6 @@ const slotTimeMapping = {
   7: { start: '18:00', end: '19:30' },
   8: { start: '19:45', end: '21:15' }
 };
-
 // 1. Ghi nhận hoặc cập nhật điểm danh theo slot
 exports.takeAttendance = catchAsync(async (req, res, next) => {
   const { attendanceList } = req.body;
