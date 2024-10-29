@@ -1,7 +1,7 @@
 const Teacher = require('../models/teacherModel');
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
-
+const multer = require('multer');
 
 // Get teacher by ID
 exports.getTeacherById = catchAsync(async (req, res, next) => {
@@ -51,6 +51,24 @@ exports.getTeacherById = catchAsync(async (req, res, next) => {
           gender,
           dateOfBirth,
         }, 
+      },
+    });
+  });
+
+  exports.uploadAvatar = catchAsync(async (req, res, next) => {
+    const { id } = req.params;
+    const avatar = req.body.avatar;
+    const teacher = await Teacher.findById(id);
+    if (!teacher) {
+      return next(new AppError('No teacher found with that ID', 404));
+    }
+    teacher.avatar = avatar;
+    await teacher.save();
+    res.status(200).json({
+      status: 'success',
+      message: 'Avatar uploaded successfully',
+      data: {
+        teacher,
       },
     });
   });
