@@ -11,4 +11,8 @@ router
   .route('/:id')
   .patch(authController.restrictTo('admin'), classController.updateClass);
 
+router
+  .route('/:id/schedule')
+  .get(authController.restrictTo('admin'), classController.getClassScheduleById);
+
 module.exports = router;
