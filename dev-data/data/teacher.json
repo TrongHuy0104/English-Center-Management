@@ -28,8 +28,8 @@
     "gender": "female",
     "dateOfBirth": "1991-08-08",
     "centers": ["64f4ea01d33a4a001b8a9e03", "64f4ea01d33a4a001b8a9e04"],
-    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "classes": ["64f4ea01d33a4a001b8a9f03", "64f4ea01d33a4a001b8a9f01", "64f4ea01d33a4a001b8a9f02"],
     "salary": ["66fa9aed1723bc10a378c42c"],
-    "attendances": ["66fa9aed1723bc10a378c41c"]
+    "attendances": ["66fa9aed1723bc10a378c41a","66fa9aed1723bc10a378c41b","66fa9aed1723bc10a378c41c","66fa9aed1723bc10a378c41d","66fa9aed1723bc10a378c41e","66fa9aed1723bc10a378c41f"]
   }
 ]
