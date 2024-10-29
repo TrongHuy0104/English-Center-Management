@@ -1,26 +1,8 @@
 [
   {
-<<<<<<< HEAD
-      "_id": "66fa9aed1723bc10a378c41a",
-      "class": "64f4ea01d33a4a001b8a9f01",
-      "date": "2024-10-28",
-      "slot": 5,
-      "start_time": "14:15",
-      "end_time": "15:45",
-      "teacher_attendance": {
-          "teacher_id": "64f4ea01d33a4a001b8a9c03",
-          "status": "absent"
-      },
-      "student_attendance": [
-          {
-              "student_id": "64f4ea01d33a4a001b8a9d03",
-              "status": "absent"
-          }
-      ]
-=======
     "_id": "66fa9aed1723bc10a378c41a",
     "class": "64f4ea01d33a4a001b8a9f03",
-    "date": "2024-10-27",
+    "date": "2024-10-29",
     "slot": 1,
     "start_time": "07:00",
     "end_time": "08:30",
@@ -37,13 +19,12 @@
         "status": "absent"
       }
     ]
->>>>>>> 742063f0c91130f0420b676cdafa553ed02b364b
   },
   
   {
     "_id": "66fa9aed1723bc10a378c41b",
     "class": "64f4ea01d33a4a001b8a9f03",
-    "date": "2024-10-28",
+    "date": "2024-10-29",
     "slot": 2,
     "start_time": "08:45",
     "end_time": "10:15",
@@ -84,17 +65,6 @@
     ]
   },
   {
-<<<<<<< HEAD
-      "_id": "66fa9aed1723bc10a378c41d",
-      "class": "64f4ea01d33a4a001b8a9f01",
-      "date": "2024-10-29",
-      "slot": 6,
-      "start_time": "16:00",
-      "end_time": "17:30",
-      "teacher_attendance": {
-          "teacher_id": "64f4ea01d33a4a001b8a9c03",
-          "status": "absent"
-=======
     "_id": "66fa9aed1723bc10a378c41d",
     "class": "64f4ea01d33a4a001b8a9f02",
     "date": "2024-10-18",
@@ -109,7 +79,6 @@
       {
         "student_id": "64f4ea01d33a4a001b8a9d04",
         "status": "absent"
->>>>>>> 742063f0c91130f0420b676cdafa553ed02b364b
       },
       {
         "student_id": "64f4ea01d33a4a001b8a9d05",
