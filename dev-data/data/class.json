@@ -3,6 +3,7 @@
     "_id": "64f4ea01d33a4a001b8a9f03",
     "name": "Class A1",
     "teacher": "64f4ea01d33a4a001b8a9c05",
+    "type": "Level 1",
     "students": [
       {
         "_id": "64f4ea01d33a4a001b8a9d04",
@@ -44,7 +45,7 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
-    "center": "64f4ea01d33a4a001b8a9e03",
+    "type": "Level 2",
     "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
       {
@@ -87,7 +88,7 @@
   {
     "_id": "64f4ea01d33a4a001b8a9f01",
     "name": "Class C3",
-    "center": "64f4ea01d33a4a001b8a9e03",
+    "type": "Level 3",
     "teacher": "64f4ea01d33a4a001b8a9c07",
     "students": [
       {
