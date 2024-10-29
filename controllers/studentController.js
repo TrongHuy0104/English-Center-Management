@@ -1,6 +1,5 @@
 const Student = require('../models/studentModel');
 const Attendance = require('../models/attendanceModel');
-const Center = require('../models/centerModel');
 const Class = require('../models/classModel');
 const multer = require('multer');
 const path = require('path');
@@ -61,31 +60,6 @@ exports.getAttendanceById = async (req, res) => {
       status: 'error',
       message: 'Something went wrong',
       error: err.message,
-    });
-  }
-};
-
-exports.getCenterById = async (req, res) => {
-  try {
-    const centers = await Center.findById(req.params.id);
-
-    if (!centers) {
-      return res.status(404).json({
-        status: 'fail',
-        message: 'Student not found',
-      });
-    }
-
-    res.status(200).json({
-      status: 'success',
-      data: {
-        centers,
-      },
-    });
-  } catch (err) {
-    res.status(500).json({
-      status: 'fail',
-      message: 'Something went wrong',
     });
   }
 };

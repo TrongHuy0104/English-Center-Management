@@ -17,8 +17,7 @@ router.get('/attendance/:id', studentController.getAttendanceById);
 
 router.put('/upload/:id', studentController.uploadAvatar);
 
-// Route to get the student center and class
-router.get('/centers/:id', studentController.getCenterById);
+// Route to get the student class
 router.get('/classes/:id', studentController.getClassById);
 
 module.exports = router;
