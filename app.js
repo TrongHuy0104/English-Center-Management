@@ -71,6 +71,7 @@ app.use((req, res, next) => {
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/students', studentRouter);
+app.use('/uploads', express.static('uploads'));
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {
   next(new AppError(`Cannot find ${req.originalUrl}. on this server!`, 404));
