@@ -16,6 +16,7 @@ const teacherRouter = require('./routes/teacherRoutes');
 const salaryRouter = require('./routes/salaryRoutes');
 const attendanceRouter = require('./routes/attendanceRoutes');
 const dashboardRouter = require('./routes/dashboardRoutes');
+const classRouter = require('./routes/classRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
@@ -79,6 +80,7 @@ app.use('/api/v1/salaries', salaryRouter);
 app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/attendances', attendanceRouter);
 app.use('/api/v1/dashboard', dashboardRouter);
+app.use('/api/v1/classes', classRouter);
 
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {

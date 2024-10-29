@@ -1,5 +1,6 @@
 const Class = require('../models/classModel');
 const catchAsync = require('../utils/catchAsync');
+const factory = require('./handlerFactory');
 const sendEmail = require('../utils/email');
 
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
@@ -29,8 +30,10 @@ exports.getAllClass = catchAsync(async (req, res, next) => {
 
   // Thêm thuộc tính `isEnrolled` cho mỗi lớp để kiểm tra xem user đã tham gia chưa
   const classesWithEnrollmentStatus = classes.map((classData) => {
-    const isEnrolled = classData.students.some(student => 
-      student._id.equals(req.user.role_id) && student.enrollStatus === 'Enrolled' // Kiểm tra nếu `student.id` trùng với `role_id` của user hiện tại
+    const isEnrolled = classData.students.some(
+      (student) =>
+        student._id.equals(req.user.role_id) &&
+        student.enrollStatus === 'Enrolled', // Kiểm tra nếu `student.id` trùng với `role_id` của user hiện tại
     );
     return {
       ...classData.toObject(),
@@ -60,8 +63,11 @@ exports.getClassById = catchAsync(async (req, res, next) => {
   }
 
   // Kiểm tra xem user hiện tại có enroll vào lớp này không
-  const isEnrolled = classData.students.some(student => 
-    student._id && student._id.equals(req.user.role_id) && student.enrollStatus === 'Enrolled'
+  const isEnrolled = classData.students.some(
+    (student) =>
+      student._id &&
+      student._id.equals(req.user.role_id) &&
+      student.enrollStatus === 'Enrolled',
   );
 
   // Thêm thuộc tính `isEnrolled` vào đối tượng lớp
@@ -77,3 +83,7 @@ exports.getClassById = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.getAll = factory.getAll(Class, ['schedule', 'teacher', 'students._id']);
+exports.createClass = factory.createOne(Class);
+exports.updateClass = factory.updateOne(Class);
