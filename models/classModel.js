@@ -107,6 +107,12 @@ const classSchema = new mongoose.Schema({
     type: Date, // Hạn đăng ký
     required: true,
   },
+  endDate: {
+    type: Date,
+  },
+  startDate: {
+    type: Date,
+  },
 });
 
 const Class = mongoose.model('Class', classSchema);
