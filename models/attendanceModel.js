@@ -8,64 +8,74 @@ const slotTimeMapping = {
   5: { start_time: '14:15', end_time: '15:45' },
   6: { start_time: '16:00', end_time: '17:30' },
   7: { start_time: '18:00', end_time: '19:30' },
-  8: { start_time: '19:45', end_time: '21:15' }
+  8: { start_time: '19:45', end_time: '21:15' },
 };
 
 const attendanceSchema = new mongoose.Schema({
-    class: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Class',
-        required: true,
+  class: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Class',
+  },
+  date: {
+    type: Date,
+  },
+  teacher_attendance: {
+    teacher_id: {
+      type: mongoose.Schema.ObjectId,
+      ref: 'Teacher',
     },
     date: {
-        type: Date,
-        required: true,
+      type: Date,
+      required: true,
     },
     slot: {
-        type: Number,
-        required: true,
-        enum: [1, 2, 3, 4, 5, 6, 7, 8],
+      type: Number,
+      required: true,
+      enum: [1, 2, 3, 4, 5, 6, 7, 8],
     },
     start_time: {
-        type: String,
+      type: String,
     },
     end_time: {
-        type: String,
+      type: String,
     },
     teacher_attendance: {
-        teacher_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Teacher',
-            required: true,
-        },
-        status: {
-            type: String,
-            enum: ['present', 'absent'],
-            default: 'present',
-        },
+      teacher_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Teacher',
+        required: true,
+      },
+      status: {
+        type: String,
+        enum: ['present', 'absent'],
+        default: 'present',
+      },
     },
-    student_attendance: [{
+    student_attendance: [
+      {
         student_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Student',
-            required: true,
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Student',
+          required: true,
         },
         status: {
-            type: String,
-            enum: ['present', 'absent'],
-            required: true,
+          type: String,
+          enum: ['present', 'absent'],
+          required: true,
         },
-    }],
+      },
+    ],
+  },
 });
 
 // Middleware để tự động gán start_time và end_time dựa vào slot
 attendanceSchema.pre('save', function (next) {
-    const slotTimes = slotTimeMapping[this.slot];
-    if (slotTimes) {
-        this.start_time = slotTimes.start_time;
-        this.end_time = slotTimes.end_time;
-    }
-    next();
+  const slotTimes = slotTimeMapping[this.slot];
+  if (slotTimes) {
+    this.start_time = slotTimes.start_time;
+    this.end_time = slotTimes.end_time;
+  }
+  next();
 });
 
 const Attendance = mongoose.model('Attendance', attendanceSchema);

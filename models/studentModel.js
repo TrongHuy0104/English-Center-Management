@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    required: [true, 'Please provide your phone number'],
+    // required: [true, 'Please provide your phone number'],
   },
   avatar: {
     type: String,
@@ -18,12 +18,6 @@ const studentSchema = new mongoose.Schema({
     enum: ['male', 'female', 'other'],
   },
   dateOfBirth: Date,
-  centers: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Center',
-    },
-  ],
   classes: [
     {
       type: mongoose.Schema.ObjectId,

@@ -8,33 +8,40 @@ const slotTimeMapping = {
   5: { start_time: '14:15', end_time: '15:45' },
   6: { start_time: '16:00', end_time: '17:30' },
   7: { start_time: '18:00', end_time: '19:30' },
-  8: { start_time: '19:45', end_time: '21:15' }
+  8: { start_time: '19:45', end_time: '21:15' },
 };
 
 const scheduleSchema = new mongoose.Schema({
   date: {
-    type: Date, 
-    required: true
+    type: Date, // Ngày tháng năm cụ thể
+    required: true,
   },
   dayOfWeek: {
-    type: String, 
-    required: true,
-    enum: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    type: String, // Thứ trong tuần
+    enum: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
   },
   slot: {
-    type: Number, 
+    type: Number, // Số slot trong ngày (1-8)
     required: true,
-    enum: [1, 2, 3, 4, 5, 6, 7, 8]
+    enum: [1, 2, 3, 4, 5, 6, 7, 8],
   },
   start_time: {
-    type: String, 
+    type: String, // Giờ bắt đầu (sẽ tự động được gán dựa vào slot)
   },
   end_time: {
-    type: String, 
+    type: String, // Giờ kết thúc (sẽ tự động được gán dựa vào slot)
   },
 });
 
-
+// Middleware để tự động gán giờ cho slot
 scheduleSchema.pre('save', function (next) {
   const slotTimes = slotTimeMapping[this.slot];
   if (slotTimes) {
@@ -49,9 +56,18 @@ const classSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide your class name'],
   },
-  center: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'Center',
+  type: {
+    type: String,
+    enum: [
+      'Level 1',
+      'Level 2',
+      'Level 3',
+      'Level 4',
+      'Level 5',
+      'Level 6',
+      'Level 7',
+      'Level 8',
+    ],
   },
   teacher: {
     type: mongoose.Schema.ObjectId,
@@ -59,27 +75,41 @@ const classSchema = new mongoose.Schema({
   },
   students: [
     {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Student',
+      _id: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Student',
+      },
+      enrollStatus: {
+        type: String,
+        enum: ['Not Enroll', 'Enrolled', 'Pending'],
+        default: 'Not Enroll',
+      },
     },
-  ],
-  schedule: [scheduleSchema],  
+  ], // Sử dụng schema riêng cho học sinh với trạng thái enroll
+
+  schedule: [scheduleSchema], // Sử dụng schema riêng cho schedule
 
   description: {
-    type: String, 
+    type: String, // Mô tả lớp học
     required: true,
   },
   current_enrollment: {
-    type: Number,  
+    type: Number, // Số người đăng ký hiện tại
     default: 0,
   },
   max_enrollment: {
-    type: Number,  
+    type: Number, // Tổng số người có thể đăng ký trên 1 lượt
     required: [true, 'Please specify the maximum number of students per class'],
   },
   enrollment_deadline: {
-    type: Date,  
+    type: Date, // Hạn đăng ký
     required: true,
+  },
+  endDate: {
+    type: Date,
+  },
+  startDate: {
+    type: Date,
   },
 });
 

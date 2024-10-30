@@ -29,15 +29,14 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['admin', 'teacher', 'student', 'user'],
-    default: 'user',
+    enum: ['admin', 'teacher', 'student'],
+    default: 'student',
     required: [true, 'Please choose a role'],
   },
   role_id: mongoose.Schema.ObjectId,
   active: {
     type: Boolean,
     default: true,
-    select: false,
   },
   passwordChangedAt: Date,
   passwordResetToken: String,
@@ -63,10 +62,10 @@ userSchema.pre('save', function (next) {
 });
 
 // Ignore user inactive
-userSchema.pre(/^find/, function (next) {
-  this.find({ active: { $ne: false } });
-  next();
-});
+// userSchema.pre(/^find/, function (next) {
+//   this.find({ active: { $ne: false } });
+//   next();
+// });
 
 // check input password is correct
 userSchema.methods.correctPassword = async function (

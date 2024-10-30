@@ -8,10 +8,15 @@ const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-// const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
-const teacherRouter = require('./routes/teacherRoutes');
+const adminRouter = require('./routes/adminRoutes');
 const studentRouter = require('./routes/studentRoutes');
+const feeRouter = require('./routes/feeRoutes');
+const teacherRouter = require('./routes/teacherRoutes');
+const salaryRouter = require('./routes/salaryRoutes');
+const attendanceRouter = require('./routes/attendanceRoutes');
+const dashboardRouter = require('./routes/dashboardRoutes');
+const classRouter = require('./routes/classRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
@@ -67,11 +72,17 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-// app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/admins', adminRouter);
+app.use('/api/v1/fees', feeRouter);
+app.use('/api/v1/salaries', salaryRouter);
 app.use('/api/v1/teachers', teacherRouter);
+app.use('/api/v1/attendances', attendanceRouter);
+app.use('/api/v1/dashboard', dashboardRouter);
+app.use('/api/v1/classes', classRouter);
 app.use('/api/v1/students', studentRouter);
 app.use('/uploads', express.static('uploads'));
+
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {
   next(new AppError(`Cannot find ${req.originalUrl}. on this server!`, 404));
