@@ -74,7 +74,7 @@ app.use((req, res, next) => {
 // 3) ROUTES
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/admins', adminRouter);
-app.use('/api/v1/student', studentRouter);
+app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/fees', feeRouter);
 app.use('/api/v1/salaries', salaryRouter);
 app.use('/api/v1/teachers', teacherRouter);

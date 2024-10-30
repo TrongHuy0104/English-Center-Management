@@ -30,6 +30,8 @@ exports.getAdmins = catchAsync(async (req, res, next) => {
       filterAdmins = allAdmins;
   }
   const admins = paginate(filterAdmins, +limit, +page);
+  
+  
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
@@ -108,3 +110,4 @@ exports.enableAdmin = catchAsync(async (req, res, next) => {
     data: null,
   });
 });
+
