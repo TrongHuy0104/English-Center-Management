@@ -10,15 +10,15 @@
     ],
     "schedule": [
       {
-        "date": "2024-10-28T00:00:00Z",
-        "dayOfWeek": "Monday",
+        "date": "2024-10-31T00:00:00Z",
+        "dayOfWeek": "Thursday",
         "slot": 1,
         "start_time": "07:00",
         "end_time": "08:30"
       },
       {
-        "date": "2024-10-29T00:00:00Z",
-        "dayOfWeek": "Tuesday",
+        "date": "2024-10-31T00:00:00Z",
+        "dayOfWeek": "Thursday",
         "slot": 2,
         "start_time": "08:45",
         "end_time": "10:15"
