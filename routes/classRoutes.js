@@ -9,6 +9,7 @@ router
   .post(authController.restrictTo('admin'), classController.createClass);
 router
   .route('/:id')
+  .get(authController.restrictTo('student'), classController.getClassById)
   .patch(authController.restrictTo('admin'), classController.updateClass);
 
 router

@@ -22,7 +22,9 @@ exports.getStudents = catchAsync(async (req, res, next) => {
   let filterStudents;
   switch (active) {
     case 'true':
-      filterStudents = allStudents.filter((student) => student.user[0].active === true);
+      filterStudents = allStudents.filter(
+        (student) => student.user[0].active === true,
+      );
       break;
     case 'false':
       filterStudents = allStudents.filter(
@@ -33,8 +35,7 @@ exports.getStudents = catchAsync(async (req, res, next) => {
       filterStudents = allStudents;
   }
   const students = paginate(filterStudents, +limit, +page);
-    
-  
+
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
@@ -114,3 +115,29 @@ exports.enableStudent = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.uploadAvatar = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const avatar = req.body.avatar;
+    const student = await Student.findById(id);
+    if (!student) {
+      return res.status(404).json({
+        status: 'fail',
+        message: 'Student not found',
+      });
+    }
+    student.avatar = avatar;
+    await student.save();
+    res.status(200).json({
+      status: 'success',
+      message: 'Student successfully',
+      data: student,
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: 'error',
+      message: 'Something went wrong',
+      error: err.message,
+    });
+  }
+};

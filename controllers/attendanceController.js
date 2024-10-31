@@ -113,3 +113,27 @@ exports.getTeacherAttendanceSummary = async (req, res) => {
     });
   }
 };
+
+exports.getAttendanceByStudentId = async (req, res) => {
+  try {
+    const { studentId } = req.params;
+    const attendanceRecords = await Attendance.find({
+      'student_attendance.student_id': studentId,
+    });
+    if (attendanceRecords.length === 0) {
+      return res.status(404).json({
+        status: 'error',
+        message: `No attendance records found for student with ID ${studentId}`,
+      });
+    }
+    res.status(200).json({
+      status: 'success',
+      data: attendanceRecords,
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'error',
+      message: error.message,
+    });
+  }
+};

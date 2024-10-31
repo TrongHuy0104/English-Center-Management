@@ -11,7 +11,7 @@ const Salary = require('../../models/salaryModel');
 const User = require('../../models/userModel');
 const Notification = require('../../models/notificationModel');
 
-dotenv.config({ path: '../../config.env' });
+dotenv.config({ path: '../../.env' });
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
@@ -38,8 +38,9 @@ const salaries = JSON.parse(
   fs.readFileSync(`${__dirname}/salary.json`, 'utf8'),
 );
 const fees = JSON.parse(fs.readFileSync(`${__dirname}/fee.json`, 'utf8'));
-const notifications = JSON.parse(fs.readFileSync(`${__dirname}/notification.json`, 'utf-8'));
-
+const notifications = JSON.parse(
+  fs.readFileSync(`${__dirname}/notification.json`, 'utf-8'),
+);
 
 // IMPORT DATA INTO DB
 const importData = async () => {
@@ -52,7 +53,7 @@ const importData = async () => {
     await Salary.create(salaries, { validateBeforeSave: false });
     await Teacher.create(teachers, { validateBeforeSave: false });
     await Student.create(students, { validateBeforeSave: false });
-    await Notification.create(notifications, { validateBeforeSave: false }); 
+    await Notification.create(notifications, { validateBeforeSave: false });
     console.log('Data successfully loaded!');
   } catch (err) {
     console.log(err);
@@ -71,7 +72,7 @@ const deleteData = async () => {
     await Attendance.deleteMany();
     await Fee.deleteMany();
     await User.deleteMany();
-    await Notification.deleteMany(); 
+    await Notification.deleteMany();
     console.log('Data successfully deleted!');
   } catch (err) {
     console.log(err);
