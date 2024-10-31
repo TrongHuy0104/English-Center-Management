@@ -13,6 +13,11 @@ router
 
 router
   .route('/:id/schedule')
-  .get(authController.restrictTo('admin'), classController.getClassScheduleById);
+  .get(authController.restrictTo('admin'), classController.getClassScheduleById)
+  .post(authController.restrictTo('admin'), classController.createClassSchedule)
+  .patch(
+    authController.restrictTo('admin'),
+    classController.deleteClassSchedule,
+  );
 
 module.exports = router;
