@@ -18,7 +18,6 @@ const scheduleSchema = new mongoose.Schema({
   },
   dayOfWeek: {
     type: String, // Thứ trong tuần
-    required: true,
     enum: [
       'Monday',
       'Tuesday',
