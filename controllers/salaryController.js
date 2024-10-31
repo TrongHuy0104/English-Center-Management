@@ -1,23 +1,8 @@
-const AppError = require('../utils/appError');
-const catchAsync = require('../utils/catchAsync');
-const factory = require('./handlerFactory');
+// controllers/feeController.js
 const Salary = require('../models/salaryModel');
-
-//Get salary by teacherId
-exports.getSalaryByTeacherId = catchAsync(async (req, res, next) => {
-  const salaryData = await Salary.find({ teacher: req.params.teacherId });
-
-  if (!salaryData || salaryData.length === 0) {
-    return next(new AppError('No salary data found for this teacher.', 404));
-  }
-
-  res.status(200).json({
-    status: 'success',
-    data: {
-      data: salaryData,
-    },
-  });
-});
+const factory = require('./handlerFactory');
+const catchAsync = require('../utils/catchAsync');
+const salaryModel = require('../models/salaryModel');
 
 // use funtcion from handlerFactory
 // exports.getAllSalaries = factory.getAll(Salary);
@@ -77,3 +62,20 @@ exports.getSalary = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+  //Get salary by teacherId
+  exports.getSalaryByTeacherId = catchAsync(async (req, res, next) => {
+    const salaryData = await salaryModel.find({ teacher: req.params.teacherId }); 
+  
+    if (!salaryData || salaryData.length === 0) {
+      return next(new AppError("No salary data found for this teacher.", 404));
+    }
+  
+   
+    res.status(200).json({
+      status: "success",
+      data: {
+        data: salaryData,
+      },
+    });
+  });

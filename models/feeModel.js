@@ -13,7 +13,7 @@ const feeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // Thêm ObjectId cho classes và status của từng class
+  // Array of classes with status and due date
   classes: [
     {
       _id: {
@@ -31,7 +31,7 @@ const feeSchema = new mongoose.Schema({
       },
     },
   ],
-  // Thêm ObjectId cho students và status của từng student
+  // Array of students with status and payment date
   students: [
     {
       _id: {
@@ -43,11 +43,14 @@ const feeSchema = new mongoose.Schema({
         enum: ['paid', 'unpaid', 'partial'],
         default: 'unpaid',
       },
+      payment_date: {
+        type: Date, // Field for the payment date
+      },
     },
   ],
 });
 
-// Virtual để liên kết với các chi tiết lớp học
+// Virtual to link to class details
 feeSchema.virtual('classDetails', {
   ref: 'Class',
   localField: 'classes._id',
@@ -55,7 +58,7 @@ feeSchema.virtual('classDetails', {
   justOne: false,
 });
 
-// Virtual để liên kết với chi tiết sinh viên
+// Virtual to link to student details
 feeSchema.virtual('studentDetails', {
   ref: 'Student',
   localField: 'students._id',

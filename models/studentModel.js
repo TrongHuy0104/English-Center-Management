@@ -9,10 +9,6 @@ const studentSchema = new mongoose.Schema({
     type: String,
     // required: [true, 'Please provide your phone number'],
   },
-  avatar: {
-    type: String,
-    default: '',
-  },
   gender: {
     type: String,
     enum: ['male', 'female', 'other'],
@@ -36,6 +32,18 @@ const studentSchema = new mongoose.Schema({
       ref: 'Fee',
     },
   ],
+  
+  },
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  },
+);
+// Virtual populate review
+studentSchema.virtual('user', {
+  ref: 'User',
+  foreignField: 'role_id',
+  localField: '_id',
 });
 
 const Student = mongoose.model('Student', studentSchema);

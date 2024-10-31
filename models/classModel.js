@@ -78,6 +78,7 @@ const classSchema = new mongoose.Schema({
       _id: {
         type: mongoose.Schema.ObjectId,
         ref: 'Student',
+        required: true,
       },
       enrollStatus: {
         type: String,

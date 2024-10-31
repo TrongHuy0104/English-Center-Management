@@ -14,9 +14,10 @@ router
 router
   .route('/:id/schedule')
   .get(authController.restrictTo('admin'), classController.getClassScheduleById)
-  .post(
+  .post(authController.restrictTo('admin'), classController.createClassSchedule)
+  .patch(
     authController.restrictTo('admin'),
-    classController.createClassSchedule,
+    classController.deleteClassSchedule,
   );
 
 module.exports = router;

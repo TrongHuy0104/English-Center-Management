@@ -8,7 +8,7 @@ exports.sendEnrollRequest = catchAsync(async (req, res, next) => {
     const studentId = req.user.role_id; // Lấy ID của học sinh từ thông tin đăng nhập của user
   
     // Tìm lớp học để kiểm tra và lấy thông tin trung tâm, giáo viên
-    const classData = await Class.findById(classId).populate('center');
+    const classData = await Class.findById(classId);
     
     if (!classData) {
       return next(new AppError('Class not found', 404));
@@ -35,14 +35,12 @@ exports.sendEnrollRequest = catchAsync(async (req, res, next) => {
     }
   
     // Lấy ID của trung tâm từ lớp học
-    const centerId = classData.center._id;
   
     // Tạo thông báo đăng ký mới
     const notification = await Notification.create({
       notificationType: 'requestEnroll',
       student: studentId,
       class: classId,
-      center: centerId,
       isSeen: false,
     });
   

@@ -4,15 +4,24 @@
     "fee_name": "NB English 1",
     "price": 500000,
     "description": "Class for newbie, need to learn base english",
-    "classes": [],
+    "classes": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9f01",
+        "status": "complete",
+        "due_date": "2024-10-20T00:00:00.000Z",
+        "create_date": "2024-10-10T00:00:00.000Z"
+      }
+    ],
     "students": [
       {
-        "_id": "64f4ea01d33a4a001b8a9d06",
-        "status": "paid"
+        "_id": "64f4ea01d33a4a001b8a9d04",
+        "status": "paid",
+        "payment_date": "2024-10-25T00:00:00.000Z"
       },
       {
         "_id": "64f4ea01d33a4a001b8a9d03",
-        "status": "unpaid"
+        "status": "unpaid",
+        "payment_date": null
       }
     ],
     "__v": 15,
@@ -34,11 +43,13 @@
     "students": [
       {
         "_id": "64f4ea01d33a4a001b8a9d06",
-        "status": "paid"
+        "status": "paid",
+        "payment_date": "2024-10-22T00:00:00.000Z"
       },
       {
         "_id": "64f4ea01d33a4a001b8a9d03",
-        "status": "unpaid"
+        "status": "unpaid",
+        "payment_date": null
       }
     ],
     "__v": 7,
@@ -72,11 +83,13 @@
     "students": [
       {
         "_id": "64f4ea01d33a4a001b8a9d06",
-        "status": "paid"
+        "status": "paid",
+        "payment_date": "2024-10-23T00:00:00.000Z"
       },
       {
         "_id": "64f4ea01d33a4a001b8a9d03",
-        "status": "unpaid"
+        "status": "unpaid",
+        "payment_date": null
       }
     ],
     "__v": 1,
@@ -89,92 +102,20 @@
     "description": "Class for newbie, need to learn base english",
     "classes": [
       {
-        "_id": "64f4ea01d33a4a001b8a9d06",
+        "_id": "64f4ea01d33a4a001b8a9f06",
         "status": "complete",
         "due_date": "2024-11-01T00:00:00.000Z",
         "create_date": "2024-10-25T00:00:00.000Z"
       }
     ],
-    "students": [],
+    "students": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9d05",
+        "status": "unpaid",
+        "payment_date": null
+      }
+    ],
     "__v": 2,
-    "active": true
-  },
-  {
-    "_id": "671cdc387a381b2b3fcb7203",
-    "fee_name": "NB English 54",
-    "price": 10000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [],
-    "students": [],
-    "__v": 0,
-    "active": true
-  },
-  {
-    "_id": "671cdc3e7a381b2b3fcb720f",
-    "fee_name": "NB English 54",
-    "price": 50000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [
-      {
-        "_id": "64f4ea01d33a4a001b8a9f01",
-        "status": "not yet",
-        "due_date": "2024-10-21T00:00:00.000Z",
-        "create_date": "2024-10-23T00:00:00.000Z"
-      },
-      {
-        "_id": "64f4ea01d33a4a001b8a9f03",
-        "status": "not yet",
-        "due_date": "2024-10-29T00:00:00.000Z",
-        "create_date": "2024-10-29T00:00:00.000Z"
-      },
-      {
-        "_id": "64f4ea01d33a4a001b8a9f02",
-        "status": "not yet",
-        "due_date": "2024-10-24T00:00:00.000Z",
-        "create_date": "2024-10-28T00:00:00.000Z"
-      }
-    ],
-    "students": [],
-    "__v": 3,
-    "active": true
-  },
-  {
-    "_id": "671cdc457a381b2b3fcb721b",
-    "fee_name": "NB English 54",
-    "price": 50000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [
-      {
-        "_id": "64f4ea01d33a4a001b8a9f01",
-        "status": "not yet",
-        "due_date": "2024-10-16T00:00:00.000Z",
-        "create_date": "2024-10-30T00:00:00.000Z"
-      },
-      {
-        "_id": "64f4ea01d33a4a001b8a9f03",
-        "status": "not yet",
-        "due_date": "2024-10-23T00:00:00.000Z",
-        "create_date": "2024-10-29T00:00:00.000Z"
-      },
-      {
-        "_id": "64f4ea01d33a4a001b8a9f02",
-        "status": "not yet",
-        "due_date": "2024-10-29T00:00:00.000Z",
-        "create_date": "2024-10-24T00:00:00.000Z"
-      }
-    ],
-    "students": [],
-    "__v": 3,
-    "active": true
-  },
-  {
-    "_id": "671cdc4a7a381b2b3fcb7227",
-    "fee_name": "NB English 54",
-    "price": 10000,
-    "description": "Class for newbie, need to learn base english",
-    "classes": [],
-    "students": [],
-    "__v": 0,
     "active": true
   }
 ]
