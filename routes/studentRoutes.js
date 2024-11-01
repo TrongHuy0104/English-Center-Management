@@ -25,7 +25,10 @@ router
   .route('/classes/enroll-request')
   .post(notificationController.sendEnrollRequest);
 //
-router.use(authController.protect, authController.restrictTo('admin'));
+router.use(
+  authController.protect,
+  authController.restrictTo('admin', 'student'),
+);
 
 router
   .route('/')

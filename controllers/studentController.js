@@ -72,32 +72,6 @@ exports.createStudent = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.updateStudent = catchAsync(async (req, res, next) => {
-  const updateUser = await User.findByIdAndUpdate(
-    req.body.userId,
-    {
-      email: req.body.email,
-    },
-    {
-      new: true,
-      runValidators: true,
-    },
-  );
-
-  if (!updateUser) return;
-  await Student.findByIdAndUpdate(req.params.id, {
-    name: req.body.name,
-    phone: req.body.phone,
-    gender: req.body.gender,
-    dateOfBirth: req.body.dateOfBirth,
-  });
-
-  res.status(200).json({
-    status: 'success',
-    message: 'Update successful',
-  });
-});
-
 exports.disableStudent = catchAsync(async (req, res, next) => {
   await User.findByIdAndUpdate(req.params.id, { active: false });
 
