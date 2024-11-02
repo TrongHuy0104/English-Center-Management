@@ -1,6 +1,10 @@
-const router = require('express').Router();
-const authController = require('../controllers/authController');
+// routes/classRoutes.js
+const express = require('express');
 const classController = require('../controllers/classController');
+const authController = require('../controllers/authController');
+
+const router = express.Router();
+
 router.use(authController.protect);
 
 router
@@ -19,5 +23,9 @@ router
     authController.restrictTo('admin'),
     classController.deleteClassSchedule,
   );
+
+router
+  .route('/all-classes')
+  .get(authController.restrictTo('admin'), classController.getAllClasses);
 
 module.exports = router;

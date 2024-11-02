@@ -17,4 +17,7 @@ router
   .get(teacherController.getTeacher)
   .patch(teacherController.updateTeacher)
   .delete(teacherController.deleteTeacher);
+
+router.route('/:id/disable').patch(teacherController.disableTeacher);
+router.route('/:id/enable').patch(teacherController.enableTeacher);
 module.exports = router;
