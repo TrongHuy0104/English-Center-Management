@@ -1,38 +1,42 @@
 const mongoose = require('mongoose');
 
-const studentSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'Please provide your name'],
-  },
-  phone: {
-    type: String,
-    // required: [true, 'Please provide your phone number'],
-  },
-  gender: {
-    type: String,
-    enum: ['male', 'female', 'other'],
-  },
-  dateOfBirth: Date,
-  classes: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Class',
+const studentSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, 'Please provide your name'],
     },
-  ],
-  attendances: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Attendance',
+    phone: {
+      type: String,
+      // required: [true, 'Please provide your phone number'],
     },
-  ],
-  fees: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Fee',
+    gender: {
+      type: String,
+      enum: ['male', 'female', 'other'],
     },
-  ],
-  
+    avatar: {
+      type: String,
+      default: '',
+    },
+    dateOfBirth: Date,
+    classes: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Class',
+      },
+    ],
+    attendances: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Attendance',
+      },
+    ],
+    fees: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Fee',
+      },
+    ],
   },
   {
     toJSON: { virtuals: true },

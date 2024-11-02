@@ -12,4 +12,9 @@ router.get(
   attendanceController.getTeacherAttendanceSummary,
 );
 
+router.get(
+  '/attendance/student/:studentId',
+  attendanceController.getAttendanceByStudentId,
+);
+
 module.exports = router;
