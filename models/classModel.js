@@ -18,7 +18,6 @@ const scheduleSchema = new mongoose.Schema({
   },
   dayOfWeek: {
     type: String, // Thứ trong tuần
-    required: true,
     enum: [
       'Monday',
       'Tuesday',
@@ -57,6 +56,19 @@ const classSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide your class name'],
   },
+  type: {
+    type: String,
+    enum: [
+      'Level 1',
+      'Level 2',
+      'Level 3',
+      'Level 4',
+      'Level 5',
+      'Level 6',
+      'Level 7',
+      'Level 8',
+    ],
+  },
   teacher: {
     type: mongoose.Schema.ObjectId,
     ref: 'Teacher',
@@ -93,6 +105,12 @@ const classSchema = new mongoose.Schema({
   enrollment_deadline: {
     type: Date, // Hạn đăng ký
     required: true,
+  },
+  endDate: {
+    type: Date,
+  },
+  startDate: {
+    type: Date,
   },
 });
 

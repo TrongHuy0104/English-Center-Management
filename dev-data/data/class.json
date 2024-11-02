@@ -3,6 +3,7 @@
     "_id": "64f4ea01d33a4a001b8a9f03",
     "name": "Class A1",
     "teacher": "64f4ea01d33a4a001b8a9c05",
+    "type": "Level 1",
     "students": [
       {
         "_id": "64f4ea01d33a4a001b8a9d04",
@@ -39,12 +40,14 @@
     "description": "Class A1 for students learning Ielts 6.0.",
     "current_enrollment": 2,
     "max_enrollment": 30,
-    "enrollment_deadline": "2024-10-10T00:00:00Z"
+    "enrollment_deadline": "2024-10-10T00:00:00Z",
+    "endDate": "2024-10-31T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z"
   },
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
-    "center": "64f4ea01d33a4a001b8a9e03",
+    "type": "Level 2",
     "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
       {
@@ -82,13 +85,15 @@
     "description": "Class B2 for students learning Ielts 5.0.",
     "current_enrollment": 2,
     "max_enrollment": 25,
-    "enrollment_deadline": "2024-10-12T00:00:00Z"
+    "enrollment_deadline": "2024-10-12T00:00:00Z",
+    "endDate": "2024-11-25T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z"
   },
   {
     "_id": "64f4ea01d33a4a001b8a9f01",
     "name": "Class C3",
-    "center": "64f4ea01d33a4a001b8a9e03",
-    "teacher": "64f4ea01d33a4a001b8a9c07",
+    "type": "Level 3",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
       {
         "_id": "64f4ea01d33a4a001b8a9b04",
@@ -125,6 +130,8 @@
     "description": "Class C3 for students learning Ielts 10.0.",
     "current_enrollment": 2,
     "max_enrollment": 20,
-    "enrollment_deadline": "2024-10-15T00:00:00Z"
+    "enrollment_deadline": "2024-10-15T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z",
+    "endDate": "2024-10-25T00:00:00Z"
   }
 ]

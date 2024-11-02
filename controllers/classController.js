@@ -1,6 +1,5 @@
 const Class = require('../models/classModel');
 const catchAsync = require('../utils/catchAsync');
-const sendEmail = require('../utils/email');
 const factory = require('./handlerFactory');
 
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
@@ -56,8 +55,7 @@ exports.getClassById = catchAsync(async (req, res, next) => {
   // Tìm lớp học theo ID
   const classData = await Class.findById(id)
     .populate('teacher', 'name')
-    .populate('students._id', 'name phone')
-    .populate('center', 'name location');
+    .populate('students._id', 'name phone');
 
   if (!classData) {
     return next(new AppError('Class not found', 404));
@@ -85,8 +83,92 @@ exports.getClassById = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getClass = factory.getAll(Class);
+exports.getClassScheduleById = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  const classData = await Class.findById(id)
+    .populate('teacher', 'name')
+    .populate('students._id', 'name phone');
+
+  if (!classData) {
+    return next(new AppError('Class not found', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      class: classData,
+    },
+  });
+});
+
+exports.createClassSchedule = catchAsync(async (req, res, next) => {
+  const { id: classId } = req.params;
+  const { schedules } = req.body;
+
+  if (!Array.isArray(schedules) || schedules.length === 0) {
+    return res.status(400).json({ message: 'Invalid schedules array' });
+  }
+
+  const classToUpdate = await Class.findById(classId);
+
+  if (!classToUpdate) {
+    return res.status(404).json({ message: 'Class not found' });
+  }
+
+  // Add new schedules to the class
+  schedules.forEach((schedule) => {
+    if (
+      !classToUpdate.schedule.find((item) => {
+        return (
+          item.date.toISOString().split('T')[0] ===
+            schedule.date.split('T')[0] && +item.slot === +schedule.slot
+        );
+      })
+    ) {
+      classToUpdate.schedule.push(schedule);
+    }
+  });
+
+  // Save the updated class
+  await classToUpdate.save();
+  res.status(200).json({
+    message: 'Schedules added successfully',
+    schedules: classToUpdate.schedule,
+  });
+});
+
+exports.deleteClassSchedule = catchAsync(async (req, res, next) => {
+  const { id: classId } = req.params;
+  const { postSchedule } = req.body;
+
+  const classToUpdate = await Class.findById(classId);
+
+  if (!classToUpdate) {
+    return res.status(404).json({ message: 'Class not found' });
+  }
+
+  const filterSchedule = classToUpdate.schedule.filter((schedule) => {
+    return (
+      (schedule.date.toISOString().split('T')[0] ===
+        postSchedule.date.split('T')[0] &&
+        +schedule.slot !== +postSchedule.slot) ||
+      schedule.date.toISOString().split('T')[0] !==
+        postSchedule.date.split('T')[0]
+    );
+  });
+
+  classToUpdate.schedule = filterSchedule;
+
+  // Save the updated class
+  await classToUpdate.save();
+  res.status(200).json({
+    message: 'Schedules added successfully',
+    schedules: classToUpdate.schedule,
+  });
+});
+
 exports.getAllClasses = factory.getAll(Class);
+exports.getAll = factory.getAll(Class, ['schedule', 'teacher', 'students._id']);
 exports.createClass = factory.createOne(Class);
 exports.updateClass = factory.updateOne(Class);
-exports.deleteClass = factory.deleteOne(Class);

@@ -9,12 +9,23 @@ router.use(authController.protect);
 
 router
   .route('/')
-  .get(classController.getAllClasses)
+  .get(authController.restrictTo('admin'), classController.getAll)
   .post(authController.restrictTo('admin'), classController.createClass);
-
 router
   .route('/:id')
-  .get(classController.getClass)
-  .patch(classController.updateClass)
-  .delete(classController.deleteClass);
+  .patch(authController.restrictTo('admin'), classController.updateClass);
+
+router
+  .route('/:id/schedule')
+  .get(authController.restrictTo('admin'), classController.getClassScheduleById)
+  .post(authController.restrictTo('admin'), classController.createClassSchedule)
+  .patch(
+    authController.restrictTo('admin'),
+    classController.deleteClassSchedule,
+  );
+
+router
+  .route('/all-classes')
+  .get(authController.restrictTo('admin'), classController.getAllClasses);
+
 module.exports = router;

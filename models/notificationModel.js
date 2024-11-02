@@ -16,16 +16,6 @@ const notificationSchema = new mongoose.Schema({
     ref: 'Class',
     required: true,
   },
-  center: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Center',
-    required: true,
-  },
-  // admin: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'Admin',
-  //   required: true,
-  // },
   isSeen: {
     type: Boolean,
     default: false,
