@@ -19,6 +19,7 @@ const paginate = (array, page_size, page_number) => {
 exports.getStudents = catchAsync(async (req, res, next) => {
   const { page = 1, limit = 10, active = 'all' } = req.query;
   const allStudents = await Student.find().populate('user');
+
   let filterStudents;
   switch (active) {
     case 'true':

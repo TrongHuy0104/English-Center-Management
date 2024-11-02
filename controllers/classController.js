@@ -55,7 +55,7 @@ exports.getClassById = catchAsync(async (req, res, next) => {
   // Tìm lớp học theo ID
   const classData = await Class.findById(id)
     .populate('teacher', 'name')
-    .populate('students._id', 'name phone')
+    .populate('students._id', 'name phone');
 
   if (!classData) {
     return next(new AppError('Class not found', 404));
@@ -168,6 +168,7 @@ exports.deleteClassSchedule = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getAllClasses = factory.getAll(Class);
 exports.getAll = factory.getAll(Class, ['schedule', 'teacher', 'students._id']);
 exports.createClass = factory.createOne(Class);
 exports.updateClass = factory.updateOne(Class);
