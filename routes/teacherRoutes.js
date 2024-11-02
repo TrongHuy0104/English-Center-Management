@@ -26,7 +26,7 @@ router.get('/:teacherId/classes', classController.getClassesByTeacherId);
 router.put('/:id', teacherController.updateTeacher);
 router.get('/:teacherId/salary', salaryController.getSalaryByTeacherId);
 //const upload = multer({ dest: 'uploads/' });
-router.put('/upload/:id', teacherController.uploadAvatar);
+// router.put('/upload/:id', teacherController.uploadAvatar);
 // Nested attendance routes under teacher with slot support
 router.put(
   '/:teacherId/attendance/:date/:slot',
