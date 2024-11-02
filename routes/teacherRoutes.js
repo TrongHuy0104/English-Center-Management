@@ -11,6 +11,7 @@ router
   .route('/')
   .get(teacherController.getAllTeachers)
   .post(authController.restrictTo('admin'), teacherController.createTeacher);
+router.route('/all').get(teacherController.getAll);
 
 router
   .route('/:id')

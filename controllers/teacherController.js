@@ -9,7 +9,7 @@ const paginate = (array, page_size, page_number) => {
   return array.slice(start, end);
 };
 
-// exports.getAllTeachers = factory.getAll(Teacher);
+exports.getAll = factory.getAll(Teacher);
 exports.getTeacher = factory.getOne(Teacher);
 exports.deleteTeacher = factory.deleteOne(Teacher);
 // exports.createTeacher = factory.createOne(Teacher);
