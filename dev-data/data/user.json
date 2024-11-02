@@ -77,7 +77,7 @@
     "password": "hashedpassword16",
     "passwordConfirm": "hashedpassword16",
     "role": "student",
-    "role_id": "64f4ea01d33a4a001b8a9d07",
+    "role_id": "64f4ea01d33a4a001b8a9d03",
     "active": true
   }
 ]
