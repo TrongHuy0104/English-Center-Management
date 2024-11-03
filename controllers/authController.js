@@ -15,7 +15,7 @@ const signToken = (id) =>
   });
 
 const createSendToken = (user, statusCode, res) => {
-  const token = signToken(user.user._id);
+  const token = signToken(user?.user?._id || user._id);
 
   const cookieOptions = {
     expires: new Date(
@@ -46,6 +46,12 @@ exports.signup = catchAsync(async (req, res, next) => {
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
   });
+
+  if (newUser) {
+    const newStudent = await Student.create({ name: req.body.name });
+    await User.findByIdAndUpdate(newUser._id, { role_id: newStudent._id });
+  }
+
   createSendToken(newUser, 201, res);
 });
 
@@ -139,8 +145,6 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
   // GRANT ACCESS TO PROTECTED ROUTE
-  console.log('currentUser', currentUser);
-
   req.user = currentUser;
   next();
 });

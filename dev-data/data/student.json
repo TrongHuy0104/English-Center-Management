@@ -5,10 +5,10 @@
     "phone": "3213211234",
     "gender": "male",
     "dateOfBirth": "2001-04-04",
-    "centers": ["64f4ea01d33a4a001b8a9e03"],
     "classes": ["64f4ea01d33a4a001b8a9f01"],
     "attendances": ["66fa9aed1723bc10a378c41a"],
-    "fees": ["66fa9aed1723bc10a378c40a"]
+    "fees": ["66fa9aed1723bc10a378c40a"],
+    "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9d04",
@@ -16,10 +16,10 @@
     "phone": "4321231234",
     "gender": "female",
     "dateOfBirth": "2002-12-12",
-    "centers": ["64f4ea01d33a4a001b8a9e03"],
     "classes": ["64f4ea01d33a4a001b8a9f02"],
-    "attendances": ["66fa9aed1723bc10a378c41b"],
-    "fees": ["66fa9aed1723bc10a378c40b"]
+    "attendances": ["66fa9aed1723bc10a378c41b", "66fa9aed1723bc10a378c41f"],
+    "fees": ["66fa9aed1723bc10a378c40b"],
+    "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9d05",
@@ -27,10 +27,10 @@
     "phone": "5678901234",
     "gender": "male",
     "dateOfBirth": "2003-01-15",
-    "centers": ["64f4ea01d33a4a001b8a9e04"],
     "classes": ["64f4ea01d33a4a001b8a9f03"],
     "attendances": ["66fa9aed1723bc10a378c41c"],
-    "fees": ["66fa9aed1723bc10a378c40c"]
+    "fees": ["66fa9aed1723bc10a378c40c"],
+    "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9d06",
@@ -38,9 +38,9 @@
     "phone": "6789012345",
     "gender": "female",
     "dateOfBirth": "2004-02-20",
-    "centers": ["64f4ea01d33a4a001b8a9e04"],
     "classes": ["64f4ea01d33a4a001b8a9f01"],
-    "attendances": ["66fa9aed1723bc10a378c41d"],
-    "fees": ["66fa9aed1723bc10a378c40d"]
+    "attendances": ["66fa9aed1723bc10a378c41d", "66fa9aed1723bc10a378c41f"],
+    "fees": ["66fa9aed1723bc10a378c40d"],
+    "active": true
   }
 ]

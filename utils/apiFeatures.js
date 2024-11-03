@@ -49,5 +49,9 @@ class APIFeatures {
 
     return this;
   }
+
+  async countFilteredDocuments() {
+    return await this.query.countDocuments();
+  }
 }
 module.exports = APIFeatures;

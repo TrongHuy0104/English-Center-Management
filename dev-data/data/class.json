@@ -1,83 +1,137 @@
 [
   {
-    "_id": "64f4ea01d33a4a001b8a9f01",
+    "_id": "64f4ea01d33a4a001b8a9f03",
     "name": "Class A1",
-    "center": "64f4ea01d33a4a001b8a9e04",
     "teacher": "64f4ea01d33a4a001b8a9c05",
+    "type": "Level 1",
     "students": [
-      "64f4ea01d33a4a001b8a9d04",
-      "64f4ea01d33a4a001b8a9d05"
+      {
+        "_id": "64f4ea01d33a4a001b8a9d04",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d05",
+        "enrollStatus": "Pending"
+      }
     ],
     "schedule": [
       {
-        "date": "2024-10-28T00:00:00Z",
-        "dayOfWeek": "Monday",
+        "date": "2024-10-16T00:00:00Z",
+        "dayOfWeek": "Wednesday",
         "slot": 1,
         "start_time": "07:00",
         "end_time": "08:30"
       },
       {
-        "date": "2024-10-29T00:00:00Z",
-        "dayOfWeek": "Tuesday",
+        "date": "2024-10-23T00:00:00Z",
+        "dayOfWeek": "Wednesday",
         "slot": 2,
         "start_time": "08:45",
         "end_time": "10:15"
+      },
+      {
+        "date": "2024-10-25T00:00:00Z",
+        "dayOfWeek": "Friday",
+        "slot": 3,
+        "start_time": "10:30",
+        "end_time": "12:00"
       }
     ],
-    "__v": 0
+    "description": "Class A1 for students learning Ielts 6.0.",
+    "current_enrollment": 2,
+    "max_enrollment": 30,
+    "enrollment_deadline": "2024-10-10T00:00:00Z",
+    "endDate": "2024-10-31T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z"
   },
   {
     "_id": "64f4ea01d33a4a001b8a9f02",
     "name": "Class B2",
-    "center": "64f4ea01d33a4a001b8a9e05",
-    "teacher": "64f4ea01d33a4a001b8a9c05",
+    "type": "Level 2",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
-      "64f4ea01d33a4a001b8a9d04",
-      "64f4ea01d33a4a001b8a9d05"
+      {
+        "_id": "64f4ea01d33a4a001b8a9d04",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d05",
+        "enrollStatus": "Not Enroll"
+      }
     ],
     "schedule": [
       {
-        "date": "2024-10-28T00:00:00Z",
-        "dayOfWeek": "Monday",
+        "date": "2024-10-15T00:00:00Z",
+        "dayOfWeek": "Tuesday",
         "slot": 3,
         "start_time": "10:30",
         "end_time": "12:00"
       },
       {
-        "date": "2024-10-29T00:00:00Z",
-        "dayOfWeek": "Tuesday",
+        "date": "2024-10-24T00:00:00Z",
+        "dayOfWeek": "Thursday",
         "slot": 4,
         "start_time": "12:30",
         "end_time": "14:00"
+      },
+      {
+        "date": "2024-10-27T00:00:00Z",
+        "dayOfWeek": "Sunday",
+        "slot": 5,
+        "start_time": "14:15",
+        "end_time": "15:45"
       }
     ],
-    "__v": 0
+    "description": "Class B2 for students learning Ielts 5.0.",
+    "current_enrollment": 2,
+    "max_enrollment": 25,
+    "enrollment_deadline": "2024-10-12T00:00:00Z",
+    "endDate": "2024-11-25T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z"
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9f03",
+    "_id": "64f4ea01d33a4a001b8a9f01",
     "name": "Class C3",
-    "center": "64f4ea01d33a4a001b8a9e06",
-    "teacher": "64f4ea01d33a4a001b8a9c05",
+    "type": "Level 3",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
     "students": [
-      "64f4ea01d33a4a001b8a9d04",
-      "64f4ea01d33a4a001b8a9d06"
+      {
+        "_id": "64f4ea01d33a4a001b8a9b04",
+        "enrollStatus": "Not Enroll"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d06",
+        "enrollStatus": "Enrolled"
+      }
     ],
     "schedule": [
       {
-        "date": "2024-10-28T00:00:00Z",
-        "dayOfWeek": "Monday",
+        "date": "2024-10-19T00:00:00Z",
+        "dayOfWeek": "Saturday",
         "slot": 5,
         "start_time": "14:15",
         "end_time": "15:45"
       },
       {
-        "date": "2024-10-29T00:00:00Z",
-        "dayOfWeek": "Tuesday",
+        "date": "2024-10-28T00:00:00Z",
+        "dayOfWeek": "Monday",
         "slot": 6,
         "start_time": "16:00",
         "end_time": "17:30"
+      },
+      {
+        "date": "2024-10-29T00:00:00Z",
+        "dayOfWeek": "Tuesday",
+        "slot": 7,
+        "start_time": "18:00",
+        "end_time": "19:30"
       }
     ],
-    "__v": 0
+    "description": "Class C3 for students learning Ielts 10.0.",
+    "current_enrollment": 2,
+    "max_enrollment": 20,
+    "enrollment_deadline": "2024-10-15T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z",
+    "endDate": "2024-10-25T00:00:00Z"
   }
 ]

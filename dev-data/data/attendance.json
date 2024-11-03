@@ -14,7 +14,8 @@
       {
         "student_id": "64f4ea01d33a4a001b8a9d04",
         "status": "absent"
-      },{
+      },
+      {
         "student_id": "64f4ea01d33a4a001b8a9d05",
         "status": "absent"
       }
@@ -79,7 +80,8 @@
       {
         "student_id": "64f4ea01d33a4a001b8a9d04",
         "status": "absent"
-      },{
+      },
+      {
         "student_id": "64f4ea01d33a4a001b8a9d05",
         "status": "absent"
       }
@@ -107,7 +109,7 @@
       }
     ]
   },
-  
+
   {
     "_id": "66fa9aed1723bc10a378c41f",
     "class": "64f4ea01d33a4a001b8a9f03",

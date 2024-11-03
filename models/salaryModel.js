@@ -4,6 +4,7 @@ const salarySchema = new mongoose.Schema({
   teacher: {
     type: mongoose.Schema.ObjectId,
     required: true,
+    ref: 'Teacher',
   },
   month: {
     type: String,
@@ -26,6 +27,11 @@ const salarySchema = new mongoose.Schema({
     default: false,
   },
   paymentDate: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
 });
 
 const Salary = mongoose.model('Salary', salarySchema);

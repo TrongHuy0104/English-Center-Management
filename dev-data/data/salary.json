@@ -1,32 +1,157 @@
 [
   {
+    "_id": "66fa9aed1723bc10a378c42b",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
+    "month": "October 2024",
+    "calculatedSalary": 2000,
+    "paid": false,
+    "paymentDate": null,
+    "__v": 0,
+    "active": true
+  },
+  {
     "_id": "66fa9aed1723bc10a378c42a",
     "teacher": "64f4ea01d33a4a001b8a9c03",
     "month": "October 2024",
     "shifts": 10,
-    "shiftPay": 250,
     "calculatedSalary": 2500,
-    "paid": true,
-    "paymentDate": "2024-09-29"
-  },
-  {
-    "_id": "66fa9aed1723bc10a378c42b",
-    "teacher": "64f4ea01d33a4a001b8a9c04",
-    "month": "October 2024",
-    "shifts": 8,
     "shiftPay": 250,
-    "calculatedSalary": 2000,
-    "paid": false,
-    "paymentDate": null
+    "paid": true,
+    "paymentDate": "2024-09-29T00:00:00.000Z",
+    "__v": 0,
+    "active": true
   },
   {
     "_id": "66fa9aed1723bc10a378c42c",
     "teacher": "64f4ea01d33a4a001b8a9c05",
     "month": "October 2024",
     "shifts": 12,
-    "shiftPay": 250,
     "calculatedSalary": 3000,
+    "shiftPay": 250,
     "paid": false,
-    "paymentDate": null
+    "paymentDate": null,
+    "__v": 0,
+    "active": true
+  },
+  {
+    "_id": "671e233f10857ec5f82ade35",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "month": "October 2024",
+    "shifts": 2,
+    "calculatedSalary": 440,
+    "shiftPay": 220,
+    "paid": false,
+    "active": false,
+    "__v": 0
+  },
+  {
+    "_id": "671e2afa6f030b448b2aae5c",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "month": "October 2024",
+    "shifts": 2,
+    "calculatedSalary": 440,
+    "shiftPay": 220,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e2b0c6f030b448b2aae7e",
+    "teacher": "64f4ea01d33a4a001b8a9c05",
+    "month": "October 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 270,
+    "paid": false,
+    "active": false,
+    "__v": 0
+  },
+  {
+    "_id": "671e2f6f6f030b448b2aaf12",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
+    "month": "October 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 250,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e2f756f030b448b2aaf2a",
+    "teacher": "64f4ea01d33a4a001b8a9c05",
+    "month": "October 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 270,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e3019af1e7e6094aace87",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
+    "month": "October 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 250,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e301faf1e7e6094aacea1",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "month": "October 2024",
+    "shifts": 2,
+    "calculatedSalary": 440,
+    "shiftPay": 220,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e3024af1e7e6094aaceb9",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
+    "month": "December 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 250,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e30ffaf1e7e6094aacee5",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "month": "October 2024",
+    "shifts": 2,
+    "calculatedSalary": 440,
+    "shiftPay": 220,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e37af38dc0a8c9fb9f9ef",
+    "teacher": "64f4ea01d33a4a001b8a9c04",
+    "month": "October 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 250,
+    "paid": false,
+    "active": true,
+    "__v": 0
+  },
+  {
+    "_id": "671e50e808b76e6359c4a882",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "month": "October 2024",
+    "shifts": 2,
+    "calculatedSalary": 440,
+    "shiftPay": 220,
+    "paid": false,
+    "active": true,
+    "__v": 0
   }
 ]
