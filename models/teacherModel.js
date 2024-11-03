@@ -18,6 +18,10 @@ const teacherSchema = new mongoose.Schema(
       type: String,
       enum: ['male', 'female', 'other'],
     },
+    avatar: {
+      type: String,
+      default: '',
+    },
     dateOfBirth: Date,
     classes: [
       {

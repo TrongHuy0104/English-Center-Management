@@ -10,6 +10,10 @@ const adminSchema = new mongoose.Schema(
       type: String,
       // required: [true, 'Please provide your phone number'],
     },
+    avatar: {
+      type: String,
+      default: '',
+    },
     gender: {
       type: String,
       enum: ['male', 'female', 'other'],
