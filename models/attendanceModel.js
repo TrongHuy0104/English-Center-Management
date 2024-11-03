@@ -41,7 +41,8 @@ const attendanceSchema = new mongoose.Schema({
     status: {
       type: String,
       enum: ['present', 'absent'],
-      default: 'present',
+
+      default: 'absent',
     },
   },
   student_attendance: [
@@ -49,7 +50,6 @@ const attendanceSchema = new mongoose.Schema({
       student_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student',
-        required: true,
       },
       status: {
         type: String,
@@ -58,6 +58,16 @@ const attendanceSchema = new mongoose.Schema({
       },
     },
   ],
+});
+
+// Middleware để tự động gán start_time và end_time dựa vào slot
+attendanceSchema.pre('save', function (next) {
+  const slotTimes = slotTimeMapping[this.slot];
+  if (slotTimes) {
+    this.start_time = slotTimes.start_time;
+    this.end_time = slotTimes.end_time;
+  }
+  next();
 });
 
 // Middleware để tự động gán start_time và end_time dựa vào slot

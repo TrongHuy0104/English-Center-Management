@@ -1,6 +1,25 @@
+const AppError = require('../utils/appError');
 const Class = require('../models/classModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
+const attendanceController = require('./attendanceController');
+const Attendance = require('../models/attendanceModel');
+
+exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
+  const teacherId = req.params.teacherId;
+  const classes = await Class.find({ teacher: teacherId });
+
+  if (classes.length === 0) {
+    return next(new AppError('No classes found for this teacher ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      classes,
+    },
+  });
+});
 
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
   // Tìm tất cả các lớp mà sinh viên hiện tại đang tham gia
@@ -102,6 +121,7 @@ exports.getClassScheduleById = catchAsync(async (req, res, next) => {
   });
 });
 
+// Updated createClassSchedule API to include initial attendance creation
 exports.createClassSchedule = catchAsync(async (req, res, next) => {
   const { id: classId } = req.params;
   const { schedules } = req.body;
@@ -110,11 +130,21 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
     return res.status(400).json({ message: 'Invalid schedules array' });
   }
 
-  const classToUpdate = await Class.findById(classId);
-
+  // Check if the class exists
+  const classToUpdate = await Class.findById(classId).populate('teacher');
   if (!classToUpdate) {
     return res.status(404).json({ message: 'Class not found' });
   }
+
+  const teacher = classToUpdate.teacher;
+  if (!teacher) {
+    return res
+      .status(400)
+      .json({ message: 'Teacher not assigned to the class' });
+  }
+
+  console.log('classToUpdate:', classToUpdate);
+  console.log('teacherId:', teacher._id);
 
   // Add new schedules to the class
   schedules.forEach((schedule) => {
@@ -122,7 +152,8 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
       !classToUpdate.schedule.find((item) => {
         return (
           item.date.toISOString().split('T')[0] ===
-            schedule.date.split('T')[0] && +item.slot === +schedule.slot
+            new Date(schedule.date).toISOString().split('T')[0] &&
+          +item.slot === +schedule.slot
         );
       })
     ) {
@@ -132,8 +163,48 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
 
   // Save the updated class
   await classToUpdate.save();
+
+  // Create initial attendance
+  const attendancePromises = schedules.map(async (schedule) => {
+    console.log('Processing schedule:', schedule);
+
+    const existingAttendance = await Attendance.findOne({
+      class: classId,
+      date: schedule.date,
+      slot: schedule.slot,
+    });
+
+    if (!existingAttendance) {
+      const newAttendance = new Attendance({
+        class: classId,
+        date: schedule.date,
+        slot: schedule.slot,
+        teacher_attendance: {
+          teacher_id: teacher._id, // Ensure this is passed as an ObjectId
+          status: 'absent', // or 'scheduled' depending on initial status
+        },
+        student_attendance: classToUpdate.students.map((student) => ({
+          student_id: student._id,
+          status: 'absent', // or 'absent' by default
+        })),
+      });
+
+      console.log('Saving new attendance:', newAttendance);
+      await newAttendance.save();
+    } else {
+      console.log(
+        'Attendance already exists for date:',
+        schedule.date,
+        'and slot:',
+        schedule.slot,
+      );
+    }
+  });
+
+  await Promise.all(attendancePromises);
+
   res.status(200).json({
-    message: 'Schedules added successfully',
+    message: 'Schedules and initial attendance added successfully',
     schedules: classToUpdate.schedule,
   });
 });
