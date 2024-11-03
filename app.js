@@ -23,7 +23,7 @@ const AppError = require('./utils/appError');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: process.env.FRONTEND,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
