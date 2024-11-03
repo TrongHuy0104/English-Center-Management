@@ -2,44 +2,26 @@
   {
     "_id": "64f4ea01d33a4a001b8a9a08",
     "email": "teacher3@example.com",
-    "password": "hashedpassword8",
-    "passwordConfirm": "hashedpassword8",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
     "role": "teacher",
     "role_id": "64f4ea01d33a4a001b8a9c03",
     "active": true
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9a09",
-    "email": "student4@example.com",
-    "password": "hashedpassword9",
-    "passwordConfirm": "hashedpassword9",
-    "role": "student",
-    "role_id": "64f4ea01d33a4a001b8a9d04",
-    "active": true
-  },
-  {
     "_id": "64f4ea01d33a4a001b8a9a0a",
     "email": "admin3@example.com",
-    "password": "hashedpassword10",
-    "passwordConfirm": "hashedpassword10",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
     "role": "admin",
     "role_id": "64f4ea01d33a4a001b8a9b03",
     "active": true
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9a0b",
-    "email": "student5@example.com",
-    "password": "hashedpassword11",
-    "passwordConfirm": "hashedpassword11",
-    "role": "student",
-    "role_id": "64f4ea01d33a4a001b8a9d05",
-    "active": true
-  },
-  {
     "_id": "64f4ea01d33a4a001b8a9a0c",
     "email": "teacher4@example.com",
-    "password": "hashedpassword12",
-    "passwordConfirm": "hashedpassword12",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
     "role": "teacher",
     "role_id": "64f4ea01d33a4a001b8a9c04",
     "active": true
@@ -47,37 +29,199 @@
   {
     "_id": "64f4ea01d33a4a001b8a9a0d",
     "email": "admin4@example.com",
-    "password": "hashedpassword13",
-    "passwordConfirm": "hashedpassword13",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
     "role": "admin",
     "role_id": "64f4ea01d33a4a001b8a9b04",
     "active": true
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9a0e",
-    "email": "student6@example.com",
-    "password": "hashedpassword14",
-    "passwordConfirm": "hashedpassword14",
-    "role": "student",
-    "role_id": "64f4ea01d33a4a001b8a9d06",
-    "active": true
-  },
-  {
     "_id": "64f4ea01d33a4a001b8a9a0f",
     "email": "teacher5@example.com",
-    "password": "hashedpassword15",
-    "passwordConfirm": "hashedpassword15",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
     "role": "teacher",
     "role_id": "64f4ea01d33a4a001b8a9c05",
     "active": true
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9a10",
-    "email": "student7@example.com",
-    "password": "hashedpassword16",
-    "passwordConfirm": "hashedpassword16",
+    "_id": "64f4ea01d33a4a001b8a9d01",
+    "email": "nguyenthimai@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d01",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d02",
+    "email": "tranvanhoang@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d02",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d03",
+    "email": "lequoctuan@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
     "role": "student",
     "role_id": "64f4ea01d33a4a001b8a9d03",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d04",
+    "email": "phamthilan@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d04",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d05",
+    "email": "vominhduc@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d05",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d06",
+    "email": "tranthihoa@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d06",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d07",
+    "email": "nguyenvanlong@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d07",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d08",
+    "email": "dangthikim@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d08",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d09",
+    "email": "phamvankhoa@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d09",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d10",
+    "email": "nguyenthily@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d10",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d11",
+    "email": "nguyenvannam@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d11",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d12",
+    "email": "tranthilan@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d12",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d13",
+    "email": "levanhung@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d13",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d14",
+    "email": "phamthiminh@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d14",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d15",
+    "email": "dangquockhanh@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d15",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d16",
+    "email": "ngothiha@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d16",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d17",
+    "email": "hoangvanbao@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d17",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d18",
+    "email": "vuthihong@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d18",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d19",
+    "email": "nguyenvanphuc@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d19",
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d20",
+    "email": "tranthimai@example.com",
+    "password": "hashedpassword",
+    "passwordConfirm": "hashedpassword",
+    "role": "student",
+    "role_id": "64f4ea01d33a4a001b8a9d20",
     "active": true
   }
 ]

@@ -1,46 +1,352 @@
 [
   {
-    "_id": "64f4ea01d33a4a001b8a9d03",
-    "name": "Student Three",
-    "phone": "3213211234",
+    "_id": "64f4ea01d33a4a001b8a9d11",
+    "name": "Nguyễn Văn Nam",
+    "phone": "0909123456",
     "gender": "male",
     "dateOfBirth": "2001-04-04",
-    "classes": ["64f4ea01d33a4a001b8a9f01"],
-    "attendances": ["66fa9aed1723bc10a378c41a"],
-    "fees": ["66fa9aed1723bc10a378c40a"],
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d12",
+    "name": "Trần Thị Lan",
+    "phone": "0912345678",
+    "gender": "female",
+    "dateOfBirth": "2002-12-12",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d13",
+    "name": "Lê Văn Hùng",
+    "phone": "0987654321",
+    "gender": "male",
+    "dateOfBirth": "2003-01-15",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d14",
+    "name": "Phạm Thị Minh",
+    "phone": "0976543210",
+    "gender": "female",
+    "dateOfBirth": "2004-02-20",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d15",
+    "name": "Đặng Quốc Khánh",
+    "phone": "0911222333",
+    "gender": "male",
+    "dateOfBirth": "2005-05-05",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d16",
+    "name": "Ngô Thị Hà",
+    "phone": "0933445566",
+    "gender": "female",
+    "dateOfBirth": "2006-06-06",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d17",
+    "name": "Hoàng Văn Bảo",
+    "phone": "0944556677",
+    "gender": "male",
+    "dateOfBirth": "2007-07-07",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d18",
+    "name": "Vũ Thị Hồng",
+    "phone": "0955667788",
+    "gender": "female",
+    "dateOfBirth": "2008-08-08",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d19",
+    "name": "Nguyễn Văn Phúc",
+    "phone": "0966778899",
+    "gender": "male",
+    "dateOfBirth": "2009-09-09",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d20",
+    "name": "Trần Thị Mai",
+    "phone": "0977889900",
+    "gender": "female",
+    "dateOfBirth": "2010-10-10",
+    "classes": ["64f4ea01d33a4a001b8a9f02"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f",
+      "66fa9aed1723bc10a378c41g",
+      "66fa9aed1723bc10a378c41h",
+      "66fa9aed1723bc10a378c41i",
+      "66fa9aed1723bc10a378c41l"
+    ],
+    "fees": ["671684b99bd17159f32ccd3b"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d01",
+    "name": "Nguyen Thi Mai",
+    "phone": "0901234567",
+    "gender": "female",
+    "dateOfBirth": "2000-05-10",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d02",
+    "name": "Tran Van Hoang",
+    "phone": "0912345678",
+    "gender": "male",
+    "dateOfBirth": "2001-07-15",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d03",
+    "name": "Le Quoc Tuan",
+    "phone": "0923456789",
+    "gender": "male",
+    "dateOfBirth": "2001-04-04",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
     "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9d04",
-    "name": "Student Four",
-    "phone": "4321231234",
+    "name": "Pham Thi Lan",
+    "phone": "0934567890",
     "gender": "female",
     "dateOfBirth": "2002-12-12",
-    "classes": ["64f4ea01d33a4a001b8a9f02"],
-    "attendances": ["66fa9aed1723bc10a378c41b"],
-    "fees": ["66fa9aed1723bc10a378c40b"],
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
     "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9d05",
-    "name": "Student Five",
-    "phone": "5678901234",
+    "name": "Vo Minh Duc",
+    "phone": "0945678901",
     "gender": "male",
     "dateOfBirth": "2003-01-15",
     "classes": ["64f4ea01d33a4a001b8a9f03"],
-    "attendances": ["66fa9aed1723bc10a378c41c"],
-    "fees": ["66fa9aed1723bc10a378c40c"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
     "active": true
   },
   {
     "_id": "64f4ea01d33a4a001b8a9d06",
-    "name": "Student Six",
-    "phone": "6789012345",
+    "name": "Tran Thi Hoa",
+    "phone": "0956789012",
     "gender": "female",
     "dateOfBirth": "2004-02-20",
-    "classes": ["64f4ea01d33a4a001b8a9f01"],
-    "attendances": ["66fa9aed1723bc10a378c41d"],
-    "fees": ["66fa9aed1723bc10a378c40d"],
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d07",
+    "name": "Nguyen Van Long",
+    "phone": "0967890123",
+    "gender": "male",
+    "dateOfBirth": "2000-09-09",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d08",
+    "name": "Dang Thi Kim",
+    "phone": "0978901234",
+    "gender": "female",
+    "dateOfBirth": "2001-11-30",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d09",
+    "name": "Pham Van Khoa",
+    "phone": "0989012345",
+    "gender": "male",
+    "dateOfBirth": "2002-03-25",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
+    "active": true
+  },
+  {
+    "_id": "64f4ea01d33a4a001b8a9d10",
+    "name": "Nguyen Thi Ly",
+    "phone": "0990123456",
+    "gender": "female",
+    "dateOfBirth": "2003-06-18",
+    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e"
+    ],
+    "fees": ["670e90cdd92f4207cfb72127"],
     "active": true
   }
 ]

@@ -11,7 +11,7 @@ const Salary = require('../../models/salaryModel');
 const User = require('../../models/userModel');
 const Notification = require('../../models/notificationModel');
 
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: '../../config.env' });
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',
