@@ -1,8 +1,26 @@
+const AppError = require('../utils/appError');
 const Class = require('../models/classModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 const attendanceController = require('./attendanceController');
 const Attendance = require('../models/attendanceModel');
+
+exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
+  const teacherId = req.params.teacherId;
+  const classes = await Class.find({ teacher: teacherId });
+
+  if (classes.length === 0) {
+    return next(new AppError('No classes found for this teacher ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      classes,
+    },
+  });
+});
+
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
   // Tìm tất cả các lớp mà sinh viên hiện tại đang tham gia
   const classes = await Class.find({
@@ -120,7 +138,9 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
 
   const teacher = classToUpdate.teacher;
   if (!teacher) {
-    return res.status(400).json({ message: 'Teacher not assigned to the class' });
+    return res
+      .status(400)
+      .json({ message: 'Teacher not assigned to the class' });
   }
 
   console.log('classToUpdate:', classToUpdate);
@@ -146,12 +166,12 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
 
   // Create initial attendance
   const attendancePromises = schedules.map(async (schedule) => {
-    console.log("Processing schedule:", schedule);
+    console.log('Processing schedule:', schedule);
 
-    const existingAttendance = await Attendance.findOne({ 
-      class: classId, 
-      date: schedule.date, 
-      slot: schedule.slot 
+    const existingAttendance = await Attendance.findOne({
+      class: classId,
+      date: schedule.date,
+      slot: schedule.slot,
     });
 
     if (!existingAttendance) {
@@ -161,18 +181,23 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
         slot: schedule.slot,
         teacher_attendance: {
           teacher_id: teacher._id, // Ensure this is passed as an ObjectId
-          status: 'absent' // or 'scheduled' depending on initial status
+          status: 'absent', // or 'scheduled' depending on initial status
         },
         student_attendance: classToUpdate.students.map((student) => ({
           student_id: student._id,
-          status: 'absent' // or 'absent' by default
-        }))
+          status: 'absent', // or 'absent' by default
+        })),
       });
 
-      console.log("Saving new attendance:", newAttendance);
+      console.log('Saving new attendance:', newAttendance);
       await newAttendance.save();
     } else {
-      console.log("Attendance already exists for date:", schedule.date, "and slot:", schedule.slot);
+      console.log(
+        'Attendance already exists for date:',
+        schedule.date,
+        'and slot:',
+        schedule.slot,
+      );
     }
   });
 
@@ -183,8 +208,6 @@ exports.createClassSchedule = catchAsync(async (req, res, next) => {
     schedules: classToUpdate.schedule,
   });
 });
-
-
 
 exports.deleteClassSchedule = catchAsync(async (req, res, next) => {
   const { id: classId } = req.params;

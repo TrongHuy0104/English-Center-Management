@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 
 const teacherSchema = new mongoose.Schema(
   {
+    avatar: {
+      type: String,
+      default: '',
+    },
     name: {
       type: String,
       required: [true, 'Please provide your name'],

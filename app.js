@@ -23,7 +23,7 @@ const AppError = require('./utils/appError');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: process.env.FRONTEND,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
@@ -82,6 +82,7 @@ app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/attendances', attendanceRouter);
 app.use('/api/v1/dashboard', dashboardRouter);
 app.use('/api/v1/classes', classRouter);
+app.use('/uploads', express.static('uploads'));
 
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {
