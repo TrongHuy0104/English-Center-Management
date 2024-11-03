@@ -1,137 +1,261 @@
 [
   {
     "_id": "64f4ea01d33a4a001b8a9f03",
-    "name": "Class A1",
+    "name": "Advanced English",
     "teacher": "64f4ea01d33a4a001b8a9c05",
-    "type": "Level 1",
+    "type": "Level 2",
     "students": [
+      {
+        "_id": "64f4ea01d33a4a001b8a9d01",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d02",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d03",
+        "enrollStatus": "Enrolled"
+      },
       {
         "_id": "64f4ea01d33a4a001b8a9d04",
         "enrollStatus": "Enrolled"
       },
       {
         "_id": "64f4ea01d33a4a001b8a9d05",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d06",
+        "enrollStatus": "Not Enroll"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d07",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d08",
+        "enrollStatus": "Pending"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d09",
+        "enrollStatus": "Pending"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d10",
         "enrollStatus": "Pending"
       }
     ],
     "schedule": [
       {
-        "date": "2024-10-16T00:00:00Z",
-        "dayOfWeek": "Wednesday",
+        "date": "2024-10-29T00:00:00Z",
+        "dayOfWeek": "Monday",
         "slot": 1,
         "start_time": "07:00",
         "end_time": "08:30"
       },
       {
-        "date": "2024-10-23T00:00:00Z",
+        "date": "2024-10-30T00:00:00Z",
         "dayOfWeek": "Wednesday",
         "slot": 2,
         "start_time": "08:45",
         "end_time": "10:15"
       },
       {
-        "date": "2024-10-25T00:00:00Z",
+        "date": "2024-11-01T00:00:00Z",
         "dayOfWeek": "Friday",
         "slot": 3,
         "start_time": "10:30",
         "end_time": "12:00"
-      }
-    ],
-    "description": "Class A1 for students learning Ielts 6.0.",
-    "current_enrollment": 2,
-    "max_enrollment": 30,
-    "enrollment_deadline": "2024-10-10T00:00:00Z",
-    "endDate": "2024-10-31T00:00:00Z",
-    "startDate": "2024-10-22T00:00:00Z"
-  },
-  {
-    "_id": "64f4ea01d33a4a001b8a9f02",
-    "name": "Class B2",
-    "type": "Level 2",
-    "teacher": "64f4ea01d33a4a001b8a9c04",
-    "students": [
-      {
-        "_id": "64f4ea01d33a4a001b8a9d04",
-        "enrollStatus": "Enrolled"
       },
       {
-        "_id": "64f4ea01d33a4a001b8a9d05",
-        "enrollStatus": "Not Enroll"
-      }
-    ],
-    "schedule": [
+        "date": "2024-11-06T00:00:00Z",
+        "dayOfWeek": "Wednesday",
+        "slot": 2,
+        "start_time": "08:45",
+        "end_time": "10:15"
+      },
       {
-        "date": "2024-10-15T00:00:00Z",
-        "dayOfWeek": "Tuesday",
+        "date": "2024-11-08T00:00:00Z",
+        "dayOfWeek": "Friday",
         "slot": 3,
         "start_time": "10:30",
         "end_time": "12:00"
       },
       {
-        "date": "2024-10-24T00:00:00Z",
-        "dayOfWeek": "Thursday",
-        "slot": 4,
-        "start_time": "12:30",
-        "end_time": "14:00"
+        "date": "2024-11-11T00:00:00Z",
+        "dayOfWeek": "Monday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
       },
       {
-        "date": "2024-10-27T00:00:00Z",
-        "dayOfWeek": "Sunday",
-        "slot": 5,
-        "start_time": "14:15",
-        "end_time": "15:45"
+        "date": "2024-11-13T00:00:00Z",
+        "dayOfWeek": "Wednesday",
+        "slot": 2,
+        "start_time": "08:45",
+        "end_time": "10:15"
+      },
+      {
+        "date": "2024-11-15T00:00:00Z",
+        "dayOfWeek": "Friday",
+        "slot": 3,
+        "start_time": "10:30",
+        "end_time": "12:00"
+      },
+      {
+        "date": "2024-11-18T00:00:00Z",
+        "dayOfWeek": "Monday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
+      },
+      {
+        "date": "2024-11-20T00:00:00Z",
+        "dayOfWeek": "Wednesday",
+        "slot": 2,
+        "start_time": "08:45",
+        "end_time": "10:15"
+      },
+      {
+        "date": "2024-11-22T00:00:00Z",
+        "dayOfWeek": "Friday",
+        "slot": 3,
+        "start_time": "10:30",
+        "end_time": "12:00"
+      },
+      {
+        "date": "2024-11-25T00:00:00Z",
+        "dayOfWeek": "Monday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
+      },
+      {
+        "date": "2024-11-27T00:00:00Z",
+        "dayOfWeek": "Wednesday",
+        "slot": 2,
+        "start_time": "08:45",
+        "end_time": "10:15"
+      },
+      {
+        "date": "2024-11-29T00:00:00Z",
+        "dayOfWeek": "Friday",
+        "slot": 3,
+        "start_time": "10:30",
+        "end_time": "12:00"
+      },
+      {
+        "date": "2024-12-02T00:00:00Z",
+        "dayOfWeek": "Monday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
       }
     ],
-    "description": "Class B2 for students learning Ielts 5.0.",
-    "current_enrollment": 2,
-    "max_enrollment": 25,
-    "enrollment_deadline": "2024-10-12T00:00:00Z",
-    "endDate": "2024-11-25T00:00:00Z",
-    "startDate": "2024-10-22T00:00:00Z"
+    "description": "Advanced English for students learning Ielts 7.0.",
+    "current_enrollment": 7,
+    "max_enrollment": 30,
+    "enrollment_deadline": "2024-9-29T00:00:00Z",
+    "endDate": "2024-12-02T00:00:00Z",
+    "startDate": "2024-10-29T00:00:00Z"
   },
   {
-    "_id": "64f4ea01d33a4a001b8a9f01",
-    "name": "Class C3",
-    "type": "Level 3",
+    "_id": "64f4ea01d33a4a001b8a9f02",
+    "name": "Basic English",
+    "type": "Level 1",
     "teacher": "64f4ea01d33a4a001b8a9c04",
     "students": [
       {
-        "_id": "64f4ea01d33a4a001b8a9b04",
+        "_id": "64f4ea01d33a4a001b8a9d11",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d12",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d13",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d14",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d15",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d16",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d17",
+        "enrollStatus": "Enrolled"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d18",
         "enrollStatus": "Not Enroll"
       },
       {
-        "_id": "64f4ea01d33a4a001b8a9d06",
-        "enrollStatus": "Enrolled"
+        "_id": "64f4ea01d33a4a001b8a9d19",
+        "enrollStatus": "Not Enroll"
+      },
+      {
+        "_id": "64f4ea01d33a4a001b8a9d20",
+        "enrollStatus": "Not Enroll"
       }
     ],
     "schedule": [
       {
-        "date": "2024-10-19T00:00:00Z",
-        "dayOfWeek": "Saturday",
-        "slot": 5,
-        "start_time": "14:15",
-        "end_time": "15:45"
+        "date": "2024-10-22T00:00:00Z",
+        "dayOfWeek": "Tuesday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
       },
       {
-        "date": "2024-10-28T00:00:00Z",
-        "dayOfWeek": "Monday",
-        "slot": 6,
-        "start_time": "16:00",
-        "end_time": "17:30"
+        "date": "2024-10-24T00:00:00Z",
+        "dayOfWeek": "Thursday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
+      },
+      {
+        "date": "2024-10-26T00:00:00Z",
+        "dayOfWeek": "Saturday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
       },
       {
         "date": "2024-10-29T00:00:00Z",
         "dayOfWeek": "Tuesday",
-        "slot": 7,
-        "start_time": "18:00",
-        "end_time": "19:30"
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
+      },
+      {
+        "date": "2024-10-31T00:00:00Z",
+        "dayOfWeek": "Thursday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
+      },
+      {
+        "date": "2024-11-02T00:00:00Z",
+        "dayOfWeek": "Saturday",
+        "slot": 1,
+        "start_time": "07:00",
+        "end_time": "08:30"
       }
     ],
-    "description": "Class C3 for students learning Ielts 10.0.",
-    "current_enrollment": 2,
-    "max_enrollment": 20,
-    "enrollment_deadline": "2024-10-15T00:00:00Z",
-    "startDate": "2024-10-22T00:00:00Z",
-    "endDate": "2024-10-25T00:00:00Z"
+    "description": "Basic English for newbie",
+    "current_enrollment": 7,
+    "max_enrollment": 25,
+    "enrollment_deadline": "2024-10-12T00:00:00Z",
+    "endDate": "2024-11-25T00:00:00Z",
+    "startDate": "2024-10-22T00:00:00Z"
   }
 ]

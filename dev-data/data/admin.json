@@ -1,16 +1,16 @@
 [
   {
     "_id": "64f4ea01d33a4a001b8a9b03",
-    "name": "Admin Three",
-    "phone": "1231231234",
+    "name": "Dinh Trong Anh",
+    "phone": "0231231234",
     "gender": "female",
     "dateOfBirth": "1990-01-01",
     "isSuperAdmin": false
   },
   {
     "_id": "64f4ea01d33a4a001b8a9b04",
-    "name": "Admin Four",
-    "phone": "3213213210",
+    "name": "Dinh Trong Huy",
+    "phone": "0213213210",
     "gender": "male",
     "dateOfBirth": "1988-02-02",
     "isSuperAdmin": true
