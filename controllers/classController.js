@@ -1,6 +1,23 @@
+const AppError = require('../utils/appError');
 const Class = require('../models/classModel');
 const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
+
+exports.getClassesByTeacherId = catchAsync(async (req, res, next) => {
+  const teacherId = req.params.teacherId;
+  const classes = await Class.find({ teacher: teacherId });
+
+  if (classes.length === 0) {
+    return next(new AppError('No classes found for this teacher ID', 404));
+  }
+
+  res.status(200).json({
+    status: 'success',
+    data: {
+      classes,
+    },
+  });
+});
 
 exports.getScheduleOfStudent = catchAsync(async (req, res, next) => {
   // Tìm tất cả các lớp mà sinh viên hiện tại đang tham gia

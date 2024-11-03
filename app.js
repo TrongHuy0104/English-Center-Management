@@ -82,6 +82,7 @@ app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/attendances', attendanceRouter);
 app.use('/api/v1/dashboard', dashboardRouter);
 app.use('/api/v1/classes', classRouter);
+app.use('/uploads', express.static('uploads'));
 
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {

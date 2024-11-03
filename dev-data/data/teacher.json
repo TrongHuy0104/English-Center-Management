@@ -30,12 +30,20 @@
     "name": "Teacher Five",
     "phone": "6549873210",
     "gender": "female",
-    "dateOfBirth": "1991-08-08T00:00:00.000Z",
-    "classes": ["64f4ea01d33a4a001b8a9f03"],
+    "dateOfBirth": "1991-08-08",
+    "classes": [
+      "64f4ea01d33a4a001b8a9f03",
+      "64f4ea01d33a4a001b8a9f01",
+      "64f4ea01d33a4a001b8a9f02"
+    ],
     "salary": ["66fa9aed1723bc10a378c42c"],
-    "attendances": ["66fa9aed1723bc10a378c41c"],
-    "__v": 0,
-    "shiftPay": 270,
-    "active": true
+    "attendances": [
+      "66fa9aed1723bc10a378c41a",
+      "66fa9aed1723bc10a378c41b",
+      "66fa9aed1723bc10a378c41c",
+      "66fa9aed1723bc10a378c41d",
+      "66fa9aed1723bc10a378c41e",
+      "66fa9aed1723bc10a378c41f"
+    ]
   }
 ]

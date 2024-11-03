@@ -17,7 +17,7 @@
     "gender": "female",
     "dateOfBirth": "2002-12-12",
     "classes": ["64f4ea01d33a4a001b8a9f02"],
-    "attendances": ["66fa9aed1723bc10a378c41b"],
+    "attendances": ["66fa9aed1723bc10a378c41b", "66fa9aed1723bc10a378c41f"],
     "fees": ["66fa9aed1723bc10a378c40b"],
     "active": true
   },
@@ -39,7 +39,7 @@
     "gender": "female",
     "dateOfBirth": "2004-02-20",
     "classes": ["64f4ea01d33a4a001b8a9f01"],
-    "attendances": ["66fa9aed1723bc10a378c41d"],
+    "attendances": ["66fa9aed1723bc10a378c41d", "66fa9aed1723bc10a378c41f"],
     "fees": ["66fa9aed1723bc10a378c40d"],
     "active": true
   }
