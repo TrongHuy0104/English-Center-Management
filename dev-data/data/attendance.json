@@ -1,135 +1,291 @@
 [
   {
     "_id": "66fa9aed1723bc10a378c41a",
-    "class": "64f4ea01d33a4a001b8a9f01",
-    "date": "2024-10-28",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "date": "2024-10-29",
     "slot": 1,
-    "start_time": "07:00",
-    "end_time": "08:30",
     "teacher_attendance": {
       "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "absent"
+      "status": "present"
     },
     "student_attendance": [
       {
+        "student_id": "64f4ea01d33a4a001b8a9d01",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d02",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d03",
+        "status": "present"
+      },
+      {
         "student_id": "64f4ea01d33a4a001b8a9d04",
-        "status": "absent"
+        "status": "present"
       },
       {
         "student_id": "64f4ea01d33a4a001b8a9d05",
-        "status": "absent"
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d06",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d07",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d08",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d09",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d10",
+        "status": "present"
       }
     ]
   },
   {
     "_id": "66fa9aed1723bc10a378c41b",
-    "class": "64f4ea01d33a4a001b8a9f02",
-    "date": "2024-10-28",
-    "slot": 3,
-    "start_time": "10:30",
-    "end_time": "12:00",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "date": "2024-10-30",
+    "slot": 2,
     "teacher_attendance": {
       "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "absent"
+      "status": "present"
     },
     "student_attendance": [
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d01",
+        "status": "absent"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d02",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d03",
+        "status": "present"
+      },
       {
         "student_id": "64f4ea01d33a4a001b8a9d04",
         "status": "absent"
       },
       {
         "student_id": "64f4ea01d33a4a001b8a9d05",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d06",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d07",
         "status": "absent"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d08",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d09",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d10",
+        "status": "present"
       }
     ]
   },
   {
     "_id": "66fa9aed1723bc10a378c41c",
     "class": "64f4ea01d33a4a001b8a9f03",
-    "date": "2024-10-28",
-    "slot": 5,
-    "start_time": "14:15",
-    "end_time": "15:45",
+    "date": "2024-11-01",
+    "slot": 3,
     "teacher_attendance": {
       "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "absent"
+      "status": "present"
     },
     "student_attendance": [
       {
+        "student_id": "64f4ea01d33a4a001b8a9d01",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d02",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d03",
+        "status": "present"
+      },
+      {
         "student_id": "64f4ea01d33a4a001b8a9d04",
-        "status": "absent"
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d05",
+        "status": "present"
       },
       {
         "student_id": "64f4ea01d33a4a001b8a9d06",
         "status": "absent"
-      }
-    ]
-  },
-  {
-    "_id": "66fa9aed1723bc10a378c41d",
-    "class": "64f4ea01d33a4a001b8a9f01",
-    "date": "2024-10-29",
-    "slot": 2,
-    "start_time": "08:45",
-    "end_time": "10:15",
-    "teacher_attendance": {
-      "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "absent"
-    },
-    "student_attendance": [
-      {
-        "student_id": "64f4ea01d33a4a001b8a9d04",
-        "status": "absent"
       },
       {
-        "student_id": "64f4ea01d33a4a001b8a9d05",
-        "status": "absent"
-      }
-    ]
-  },
-  {
-    "_id": "66fa9aed1723bc10a378c41e",
-    "class": "64f4ea01d33a4a001b8a9f02",
-    "date": "2024-10-29",
-    "slot": 4,
-    "start_time": "12:30",
-    "end_time": "14:00",
-    "teacher_attendance": {
-      "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "absent"
-    },
-    "student_attendance": [
-      {
-        "student_id": "64f4ea01d33a4a001b8a9d04",
-        "status": "absent"
+        "student_id": "64f4ea01d33a4a001b8a9d07",
+        "status": "present"
       },
       {
-        "student_id": "64f4ea01d33a4a001b8a9d05",
-        "status": "absent"
+        "student_id": "64f4ea01d33a4a001b8a9d08",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d09",
+        "status": "present"
+      },
+      {
+        "student_id": "64f4ea01d33a4a001b8a9d10",
+        "status": "present"
       }
     ]
   },
 
   {
-    "_id": "66fa9aed1723bc10a378c41f",
-    "class": "64f4ea01d33a4a001b8a9f03",
-    "date": "2024-10-29",
-    "slot": 6,
-    "start_time": "16:00",
-    "end_time": "17:30",
+    "_id": "66fa9aed1723bc10a378c41e",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "date": "2024-10-22",
+    "slot": 1,
     "teacher_attendance": {
-      "teacher_id": "64f4ea01d33a4a001b8a9c05",
-      "status": "absent"
+      "teacher_id": "64f4ea01d33a4a001b8a9c04",
+      "status": "present"
     },
     "student_attendance": [
-      {
-        "student_id": "64f4ea01d33a4a001b8a9d04",
-        "status": "absent"
-      },
-      {
-        "student_id": "64f4ea01d33a4a001b8a9d06",
-        "status": "absent"
-      }
+      { "student_id": "64f4ea01d33a4a001b8a9d11", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d12", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d13", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d14", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d15", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d16", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d17", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d18", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d19", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d20", "status": "absent" }
+    ]
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c41f",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "date": "2024-10-24",
+    "slot": 1,
+    "teacher_attendance": {
+      "teacher_id": "64f4ea01d33a4a001b8a9c04",
+      "status": "present"
+    },
+    "student_attendance": [
+      { "student_id": "64f4ea01d33a4a001b8a9d11", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d12", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d13", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d14", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d15", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d16", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d17", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d18", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d19", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d20", "status": "present" }
+    ]
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c41g",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "date": "2024-10-26",
+    "slot": 1,
+    "teacher_attendance": {
+      "teacher_id": "64f4ea01d33a4a001b8a9c04",
+      "status": "present"
+    },
+    "student_attendance": [
+      { "student_id": "64f4ea01d33a4a001b8a9d11", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d12", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d13", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d14", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d15", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d16", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d17", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d18", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d19", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d20", "status": "present" }
+    ]
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c41h",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "date": "2024-10-29",
+    "slot": 1,
+    "teacher_attendance": {
+      "teacher_id": "64f4ea01d33a4a001b8a9c04",
+      "status": "present"
+    },
+    "student_attendance": [
+      { "student_id": "64f4ea01d33a4a001b8a9d11", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d12", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d13", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d14", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d15", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d16", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d17", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d18", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d19", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d20", "status": "present" }
+    ]
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c41i",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "date": "2024-10-31",
+    "slot": 1,
+    "teacher_attendance": {
+      "teacher_id": "64f4ea01d33a4a001b8a9c04",
+      "status": "present"
+    },
+    "student_attendance": [
+      { "student_id": "64f4ea01d33a4a001b8a9d11", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d12", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d13", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d14", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d15", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d16", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d17", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d18", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d19", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d20", "status": "absent" }
+    ]
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c41l",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "date": "2024-11-02",
+    "slot": 1,
+    "teacher_attendance": {
+      "teacher_id": "64f4ea01d33a4a001b8a9c04",
+      "status": "present"
+    },
+    "student_attendance": [
+      { "student_id": "64f4ea01d33a4a001b8a9d11", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d12", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d13", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d14", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d15", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d16", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d17", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d18", "status": "present" },
+      { "student_id": "64f4ea01d33a4a001b8a9d19", "status": "absent" },
+      { "student_id": "64f4ea01d33a4a001b8a9d20", "status": "present" }
     ]
   }
 ]

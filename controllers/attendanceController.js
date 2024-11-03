@@ -13,6 +13,17 @@ const slotTimeMapping = {
   8: { start: '19:45', end: '21:15' },
 };
 
+function convertToISOString(dateStr) {
+  // Split the input string into month, day, and year
+  const [month, day, year] = dateStr.split('/').map(Number);
+
+  // Create a Date object (month is 0-indexed)
+  const date = new Date(year, month - 1, day);
+
+  // Return the ISO string format
+  return date.toISOString();
+}
+
 function timeStringToDate(timeString) {
   const [hours, minutes] = timeString.split(':').map(Number);
   const date = new Date();
@@ -20,22 +31,29 @@ function timeStringToDate(timeString) {
   return date;
 }
 
-function getCurrentSlot() {
-  const now = new Date();
-  const currentTime = new Date(
-    timeStringToDate(now.toTimeString().slice(0, 5)).getTime(),
-  );
+function convertIsoToVietnamTime(isoString) {
+  // Create a Date object from the ISO string
+  const dateInUTC = new Date(isoString);
 
-  for (const [slot, times] of Object.entries(slotTimeMapping)) {
-    const startTime = new Date(timeStringToDate(times.start)).getTime();
-    const endTime = new Date(timeStringToDate(times.end)).getTime();
+  // Define options for Vietnam time formatting
+  const options = {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZone: 'Asia/Ho_Chi_Minh',
+    hour12: false, // Use 24-hour format
+  };
 
-    if (currentTime >= startTime && currentTime <= endTime) {
-      return slot;
-    }
-  }
+  // Convert to Vietnam time in a string format similar to ISO
+  const vietnamTime = dateInUTC.toLocaleString('sv-SE', options);
 
-  return null;
+  // Format to ISO by replacing space with 'T' and adding the timezone offset
+  const isoVietnamTime = vietnamTime.replace(' ', 'T') + '+07:00';
+
+  return isoVietnamTime;
 }
 
 exports.takeAttendance = catchAsync(async (req, res, next) => {
@@ -43,6 +61,7 @@ exports.takeAttendance = catchAsync(async (req, res, next) => {
   const teacherId = req.params.teacherId;
   const slot = req.params.slot;
   const today = new Date();
+  today.setHours(today.getHours() + 7);
   const currentDate = today.toISOString().split('T')[0];
 
   let attendance = await Attendance.findOne({
@@ -78,6 +97,7 @@ exports.getAttendanceData = catchAsync(async (req, res, next) => {
   const teacherId = req.params.teacherId;
   const slot = req.params.slot;
   const today = new Date();
+  today.setHours(today.getHours() + 7);
   const currentDate = today.toISOString().split('T')[0];
 
   const attendanceData = await Attendance.findOne({
