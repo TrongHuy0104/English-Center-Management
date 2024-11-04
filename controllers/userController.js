@@ -57,6 +57,8 @@ exports.deleteMe = catchAsync(async (req, res, next) => {
 
 exports.getRoleUser = catchAsync(async (req, res, next) => {
   let user = await User.findById(req.params.id);
+  console.log(user);
+
   if (!user) {
     return next(new AppError('No user found with that ID', 404));
   }
@@ -135,3 +137,79 @@ exports.getUser = factory.getOne(User);
 // Do NOT update passwords with this!
 exports.deleteUser = factory.deleteOne(User);
 exports.updateUser = factory.updateOne(User);
+
+
+exports.updateUserProfile = catchAsync(async (req, res) => {
+  try {
+    const { id } = req.params; // The ID of the user being updated
+    const updateData = req.body; // The data to update
+    console.log(id);
+    
+    // Find the user by ID
+    const user = await User.findByIdAndUpdate(
+      id,
+      updateData,
+      { new: true, runValidators: true }
+    );;
+    if (!user) {
+      return res.status(404).json({
+        status: 'fail',
+        message: 'User not found',
+      });
+    }
+
+    // Check user role and update based on role_id
+    let updatedProfile;
+    switch (user.role) {
+      case 'student':
+        updatedProfile = await Student.findByIdAndUpdate(
+          user.role_id,
+          updateData,
+          { new: true, runValidators: true }
+        );
+        break;
+      case 'teacher':
+        updatedProfile = await Teacher.findByIdAndUpdate(
+          user.role_id,
+          updateData,
+          { new: true, runValidators: true }
+        );
+        break;
+      case 'admin':
+        updatedProfile = await Admin.findByIdAndUpdate(
+          user.role_id,
+          updateData,
+          { new: true, runValidators: true }
+        );
+        break;
+      default:
+        return res.status(400).json({
+          status: 'fail',
+          message: 'Unsupported role for update',
+        });
+    }
+
+    // Ensure the update was successful
+    if (!updatedProfile) {
+      return res.status(500).json({
+        status: 'error',
+        message: 'Failed to update user profile',
+      });
+    }
+
+    // Send the response
+    res.status(200).json({
+      status: 'success',
+      data: {
+        roleDetails: updatedProfile,
+        user: user
+      },
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: 'error',
+      message: 'Something went wrong',
+      error: err.message,
+    });
+  }
+});

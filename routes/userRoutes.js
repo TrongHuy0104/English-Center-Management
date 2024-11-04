@@ -8,6 +8,11 @@ router.get('/logout', authController.logout);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 
+router
+  .route('/:id/getUserProfile')
+  .get(userController.getRoleUser) // Ensure this method exists or rename it appropriately
+  .patch(userController.updateUserProfile); // This should match the method name in the controller
+
 // Protect all routes after this middleware
 router.use(authController.protect);
 
@@ -15,6 +20,7 @@ router.patch('/updatePassword', authController.updatePassword);
 router.patch('/updateMe', userController.updateMe);
 router.patch('/deleteMe', userController.deleteMe);
 router.get('/me', userController.getMe, userController.getRoleUser);
+
 
 router.use(authController.restrictTo('admin'));
 
