@@ -29,6 +29,10 @@ const feeSchema = new mongoose.Schema({
         type: Date,
         required: true,
       },
+      create_date: {
+        type: Date,
+        required: true,
+      },
     },
   ],
   // Array of students with status and payment date
@@ -48,6 +52,10 @@ const feeSchema = new mongoose.Schema({
       },
     },
   ],
+  active: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 // Virtual to link to class details

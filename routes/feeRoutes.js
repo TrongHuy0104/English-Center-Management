@@ -16,5 +16,8 @@ router
   .route('/:id')
   .get(feeController.getFee)
   .patch(feeController.updateFee)
-  .delete(feeController.deleteFee);
+  .delete(feeController.deleteFee)
+  .post(feeController.createClassInFee);
+
+router.route('/:id/classes/:classId').delete(feeController.deleteClassInFee);
 module.exports = router;
