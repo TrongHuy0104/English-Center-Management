@@ -8,17 +8,22 @@ const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
-// const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
+const adminRouter = require('./routes/adminRoutes');
+const studentRouter = require('./routes/studentRoutes');
 const feeRouter = require('./routes/feeRoutes');
+const teacherRouter = require('./routes/teacherRoutes');
+const salaryRouter = require('./routes/salaryRoutes');
 const classRouter = require('./routes/classRoutes');
+const attendanceRouter = require('./routes/attendanceRoutes');
+const dashboardRouter = require('./routes/dashboardRoutes');
 const globalErrorHandler = require('./controllers/errorController');
 const AppError = require('./utils/appError');
 
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: process.env.FRONTEND,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
@@ -67,10 +72,17 @@ app.use((req, res, next) => {
 });
 
 // 3) ROUTES
-// app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/admins', adminRouter);
+app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/fees', feeRouter);
+app.use('/api/v1/salaries', salaryRouter);
 app.use('/api/v1/classes', classRouter);
+app.use('/api/v1/teachers', teacherRouter);
+app.use('/api/v1/attendances', attendanceRouter);
+app.use('/api/v1/dashboard', dashboardRouter);
+app.use('/api/v1/classes', classRouter);
+app.use('/uploads', express.static('uploads'));
 
 // HANDLING UNHANDLED ROUTES
 app.all('*', (req, res, next) => {

@@ -1,35 +1,38 @@
 [
   {
-    "_id": "66fa9aed1723bc10a378c42a",
-    "teacher": "64f4ea01d33a4a001b8a9c03",
-    "month": "October 2024",
-    "shifts": 10,
-    "shiftPay": 250,
-    "calculatedSalary": 2500,
-    "paid": true,
-    "paymentDate": "2024-09-29",
-    "active": true
-  },
-  {
     "_id": "66fa9aed1723bc10a378c42b",
     "teacher": "64f4ea01d33a4a001b8a9c04",
     "month": "October 2024",
-    "shifts": 8,
-    "shiftPay": 250,
-    "calculatedSalary": 2000,
+    "shifts": 6,
+    "calculatedSalary": 150,
+    "shiftPay": 25,
     "paid": false,
     "paymentDate": null,
+    "__v": 0,
+    "active": true
+  },
+  {
+    "_id": "66fa9aed1723bc10a378c42a",
+    "teacher": "64f4ea01d33a4a001b8a9c03",
+    "month": "October 2024",
+    "shifts": 0,
+    "calculatedSalary": 0,
+    "shiftPay": 20,
+    "paid": true,
+    "paymentDate": "2024-09-29T00:00:00.000Z",
+    "__v": 0,
     "active": true
   },
   {
     "_id": "66fa9aed1723bc10a378c42c",
     "teacher": "64f4ea01d33a4a001b8a9c05",
     "month": "October 2024",
-    "shifts": 12,
-    "shiftPay": 250,
-    "calculatedSalary": 3000,
+    "shifts": 4,
+    "calculatedSalary": 120,
+    "shiftPay": 30,
     "paid": false,
     "paymentDate": null,
+    "__v": 0,
     "active": true
   }
 ]

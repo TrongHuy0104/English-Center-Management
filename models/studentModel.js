@@ -1,43 +1,53 @@
 const mongoose = require('mongoose');
 
-const studentSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, 'Please provide your name'],
+const studentSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, 'Please provide your name'],
+    },
+    phone: {
+      type: String,
+      // required: [true, 'Please provide your phone number'],
+    },
+    gender: {
+      type: String,
+      enum: ['male', 'female', 'other'],
+    },
+    avatar: {
+      type: String,
+      default: '',
+    },
+    dateOfBirth: Date,
+    classes: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Class',
+      },
+    ],
+    attendances: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Attendance',
+      },
+    ],
+    fees: [
+      {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Fee',
+      },
+    ],
   },
-  phone: {
-    type: String,
-    required: [true, 'Please provide your phone number'],
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
   },
-  gender: {
-    type: String,
-    enum: ['male', 'female', 'other'],
-  },
-  dateOfBirth: Date,
-  centers: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Center',
-    },
-  ],
-  classes: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Class',
-    },
-  ],
-  attendances: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Attendance',
-    },
-  ],
-  fees: [
-    {
-      type: mongoose.Schema.ObjectId,
-      ref: 'Fee',
-    },
-  ],
+);
+// Virtual populate review
+studentSchema.virtual('user', {
+  ref: 'User',
+  foreignField: 'role_id',
+  localField: '_id',
 });
 
 const Student = mongoose.model('Student', studentSchema);

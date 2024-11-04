@@ -1,0 +1,74 @@
+[
+  {
+    "_id": "672f5ea92bfba9001c8a7c01",
+    "notificationType": "requestEnroll",
+    "student": "64f4ea01d33a4a001b8a9d04",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "admin": "64f4ea01d33a4a001b8a9b04",
+    "isSeen": false,
+    "createdAt": "2024-10-21T08:30:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c02",
+    "notificationType": "attendance",
+    "student": "64f4ea01d33a4a001b8a9d05",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "admin": "64f4ea01d33a4a001b8a9b03",
+    "isSeen": false,
+    "createdAt": "2024-10-22T09:00:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c03",
+    "notificationType": "feePayment",
+    "student": "64f4ea01d33a4a001b8a9d06",
+    "class": "64f4ea01d33a4a001b8a9f01",
+    "admin": "64f4ea01d33a4a001b8a9b04",
+    "isSeen": true,
+    "createdAt": "2024-10-23T12:00:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c04",
+    "notificationType": "general",
+    "student": "64f4ea01d33a4a001b8a9d03",
+    "class": "64f4ea01d33a4a001b8a9f01",
+    "admin": "64f4ea01d33a4a001b8a9b03",
+    "isSeen": false,
+    "createdAt": "2024-10-24T15:45:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c05",
+    "notificationType": "requestEnroll",
+    "student": "64f4ea01d33a4a001b8a9d05",
+    "class": "64f4ea01d33a4a001b8a9f02",
+    "admin": "64f4ea01d33a4a001b8a9b03",
+    "isSeen": true,
+    "createdAt": "2024-10-20T10:20:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c06",
+    "notificationType": "attendance",
+    "student": "64f4ea01d33a4a001b8a9d06",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "admin": "64f4ea01d33a4a001b8a9b04",
+    "isSeen": false,
+    "createdAt": "2024-10-25T14:30:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c07",
+    "notificationType": "feePayment",
+    "student": "64f4ea01d33a4a001b8a9d03",
+    "class": "64f4ea01d33a4a001b8a9f01",
+    "admin": "64f4ea01d33a4a001b8a9b03",
+    "isSeen": true,
+    "createdAt": "2024-10-26T09:50:00.000Z"
+  },
+  {
+    "_id": "672f5ea92bfba9001c8a7c08",
+    "notificationType": "general",
+    "student": "64f4ea01d33a4a001b8a9d04",
+    "class": "64f4ea01d33a4a001b8a9f03",
+    "admin": "64f4ea01d33a4a001b8a9b04",
+    "isSeen": false,
+    "createdAt": "2024-10-24T18:00:00.000Z"
+  }
+]
